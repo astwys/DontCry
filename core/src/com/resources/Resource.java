@@ -8,5 +8,9 @@ package com.resources;
  *
  */
 public abstract class Resource {
+	private String name;
 
+	public Resource(String name) {
+		name=name;
+	}
 }
