@@ -1,5 +1,5 @@
 #DontCry
 
-<i>2015 POS Project</i>
+**2015 POS Project**
 
-branch for all resource files/classes/interfaces
+<i>branch for all resource files/classes/interfaces</i>

@@ -41,5 +41,4 @@ public class Axe extends Resource{
 		resourcesNeeded.add("Stone");
 		return resourcesNeeded;
 	}
-
 }
