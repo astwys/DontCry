@@ -1,0 +1,38 @@
+/**
+ * 
+ */
+package com.resources;
+
+import java.util.ArrayList;
+
+/**
+ * @author michael
+ * 
+ * Used to mine stone
+ */
+public class Stoneaxe extends Resource{
+	private String name="Stoneaxe";
+	
+	public Stoneaxe(String name) {
+		super(name);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public boolean isNatural() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.resources.IfCraftable#neededToCraft()
+	 */
+	@Override
+	public ArrayList<String> neededToCraft() {
+		// TODO Auto-generated method stub
+		resourcesNeeded.add("Wood");
+		resourcesNeeded.add("Wood");
+		resourcesNeeded.add("Stone");
+		return resourcesNeeded;
+	}
+}
