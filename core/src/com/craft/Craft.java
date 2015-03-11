@@ -1,7 +1,7 @@
 package com.craft;
 
 import java.util.ArrayList;
-import com.resources;
+import com.resources.*;
 
 /*Craft class
 *created: 10.3.2015
