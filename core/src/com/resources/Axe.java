@@ -22,15 +22,6 @@ public class Axe extends Resource{
 	}
 
 	/* (non-Javadoc)
-	 * @see com.resources.Craftable#isNatural()
-	 */
-	@Override
-	public boolean isNatural() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	/* (non-Javadoc)
 	 * @see com.resources.IfCraftable#neededToCraft()
 	 */
 	@Override

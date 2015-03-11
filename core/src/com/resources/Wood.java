@@ -17,12 +17,6 @@ public class Wood extends Resource{
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public boolean isNatural() {
-		// TODO Auto-generated method stub
-		return true;
-	}
-
 	/* (non-Javadoc)
 	 * @see com.resources.IfCraftable#neededToCraft()
 	 */

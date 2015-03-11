@@ -18,12 +18,6 @@ public class Stoneaxe extends Resource{
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public boolean isNatural() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
 	/* (non-Javadoc)
 	 * @see com.resources.IfCraftable#neededToCraft()
 	 */
