@@ -10,8 +10,6 @@ import java.util.ArrayList;
  *
  */
 public class Stone extends Resource {
-	String name="Stone";
-	
 	/**
 	 * @param name
 	 */

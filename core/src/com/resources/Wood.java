@@ -10,8 +10,6 @@ import java.util.ArrayList;
  *
  */
 public class Wood extends Resource{
-	String name="Wood";
-	
 	public Wood(String name) {
 		super(name);
 		// TODO Auto-generated constructor stub

@@ -11,8 +11,6 @@ import java.util.ArrayList;
  * Used to mine stone
  */
 public class Stoneaxe extends Resource{
-	private String name="Stoneaxe";
-	
 	public Stoneaxe(String name) {
 		super(name);
 		// assign the resources needed

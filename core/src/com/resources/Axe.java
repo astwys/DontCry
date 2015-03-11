@@ -11,13 +11,15 @@ import java.util.ArrayList;
  * used to
  */
 public class Axe extends Resource{
-	
 	/**
 	 * @param name
 	 */
 	public Axe(String name) {
 		super(name);
-		// TODO Auto-generated constructor stub
+		// assign the resources needed
+		resourcesNeeded.add("Wood");
+		resourcesNeeded.add("Stone");
+		resourcesNeeded.add("Stone");
 	}
 
 	/* (non-Javadoc)
@@ -26,9 +28,6 @@ public class Axe extends Resource{
 	@Override
 	public ArrayList<String> neededToCraft() {
 		// TODO Auto-generated method stub
-		resourcesNeeded.add("Wood");
-		resourcesNeeded.add("Stone");
-		resourcesNeeded.add("Stone");
 		return resourcesNeeded;
 	}
 }
