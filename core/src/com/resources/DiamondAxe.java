@@ -6,7 +6,7 @@ package com.resources;
 import java.util.ArrayList;
 
 /**
- * @author michael
+ * @author Franz
  *
  */
 public class DiamondAxe extends Resource {
@@ -28,7 +28,7 @@ public class DiamondAxe extends Resource {
 	@Override
 	public ArrayList<String> neededToCraft() {
 		// TODO Auto-generated method stub
-		return null;
+		return resourcesNeeded;
 	}
 
 }

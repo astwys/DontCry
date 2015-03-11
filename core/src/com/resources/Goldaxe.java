@@ -28,7 +28,7 @@ public class Goldaxe extends Resource {
 	@Override
 	public ArrayList<String> neededToCraft() {
 		// TODO Auto-generated method stub
-		return null;
+		return resourcesNeeded;
 	}
 
 }
