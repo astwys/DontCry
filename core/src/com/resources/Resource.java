@@ -3,14 +3,18 @@
  */
 package com.resources;
 
+import java.util.ArrayList;
+
 /**
  * @author michael
- *
+ * main class that is used to extend all resources themselves
  */
-public abstract class Resource {
+public abstract class Resource implements Craftable{
+	ArrayList<String> resourcesNeeded;
 	private String name;
 
 	public Resource(String name) {
-		name=name;
+		this.name=name;
+		resourcesNeeded=new ArrayList<String>();
 	}
 }
