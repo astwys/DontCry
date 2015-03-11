@@ -11,7 +11,6 @@ import java.util.ArrayList;
  * used to
  */
 public class Axe extends Resource{
-	private String name="Axe";
 	
 	/**
 	 * @param name

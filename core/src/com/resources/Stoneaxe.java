@@ -15,7 +15,10 @@ public class Stoneaxe extends Resource{
 	
 	public Stoneaxe(String name) {
 		super(name);
-		// TODO Auto-generated constructor stub
+		// assign the resources needed
+		resourcesNeeded.add("Wood");
+		resourcesNeeded.add("Wood");
+		resourcesNeeded.add("Stone");
 	}
 
 	/* (non-Javadoc)
@@ -23,10 +26,6 @@ public class Stoneaxe extends Resource{
 	 */
 	@Override
 	public ArrayList<String> neededToCraft() {
-		// TODO Auto-generated method stub
-		resourcesNeeded.add("Wood");
-		resourcesNeeded.add("Wood");
-		resourcesNeeded.add("Stone");
 		return resourcesNeeded;
 	}
 }

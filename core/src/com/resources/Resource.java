@@ -11,9 +11,10 @@ import java.util.ArrayList;
  */
 public abstract class Resource implements Craftable{
 	ArrayList<String> resourcesNeeded;
-	
+	private String name;
+
 	public Resource(String name) {
-		name=name;
+		this.name=name;
 		resourcesNeeded=new ArrayList<String>();
 	}
 }
