@@ -12,6 +12,7 @@ public class Craft{
 
 	private Craftable crafting;
 	private ArrayList<Resource> required;
+	private boolean unlocked;
 
 	public Craft(Craftable craft, ArrayList<Resource> req){
 		required = new ArrayList<Resource>(req);
@@ -28,6 +29,10 @@ public class Craft{
 
 	public Resource getResourceByIndex(int index){
 		return required.get(index);
+	}
+	
+	public void setUnlocked(boolean isUnlocked){
+		unlocked = isUnlocked;
 	}
 
 
