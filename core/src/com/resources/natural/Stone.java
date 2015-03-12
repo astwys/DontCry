@@ -1,26 +1,27 @@
 /**
  * 
  */
-package com.resources;
+package com.resources.natural;
 
 import java.util.ArrayList;
+
+import com.resources.Resource;
 
 /**
  * @author michael
  *
  */
-public class Gold extends Resource {
-
+public class Stone extends Resource {
 	/**
 	 * @param name
 	 */
-	public Gold(String name) {
-		super(name);
+	public Stone() {
+		super("Stone");
 		// TODO Auto-generated constructor stub
 	}
 
 	/* (non-Javadoc)
-	 * @see com.resources.Craftable#neededToCraft()
+	 * @see com.resources.IfCraftable#neededToCraft()
 	 */
 	@Override
 	public ArrayList<String> neededToCraft() {

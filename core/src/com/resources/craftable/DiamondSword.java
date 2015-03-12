@@ -1,25 +1,28 @@
 /**
  * 
  */
-package com.resources;
+package com.resources.craftable;
 
 import java.util.ArrayList;
+
+import com.resources.Resource;
 
 /**
  * @author michael
  *
  */
-public class Goldaxe extends Resource {
+public class DiamondSword extends Resource {
 
 	/**
 	 * @param name
 	 */
-	public Goldaxe(String name) {
-		super(name);
-		// TODO Auto-generated constructor stub
+	public DiamondSword() {
+		super("DiamondSword");
+		// assign the resources needed
 		resourcesNeeded.add("Wood");
-		resourcesNeeded.add("Wood");
-		resourcesNeeded.add("Gold");
+		resourcesNeeded.add("Diamond");
+		resourcesNeeded.add("Diamond");
+		resourcesNeeded.add("Diamond");
 	}
 
 	/* (non-Javadoc)

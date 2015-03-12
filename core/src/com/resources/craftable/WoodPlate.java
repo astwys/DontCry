@@ -1,25 +1,28 @@
 /**
  * 
  */
-package com.resources;
+package com.resources.craftable;
 
 import java.util.ArrayList;
+
+import com.resources.Resource;
 
 /**
  * @author michael
  *
  */
-public class Goldsword extends Resource {
+public class WoodPlate extends Resource {
 
 	/**
 	 * @param name
 	 */
-	public Goldsword(String name) {
-		super(name);
+	public WoodPlate() {
+		super("WoodPlate");
+		// assign the resources needed
+		resourcesNeeded.add("2");
 		resourcesNeeded.add("Wood");
-		resourcesNeeded.add("Gold");
-		resourcesNeeded.add("Gold");
-		resourcesNeeded.add("Gold");
+		resourcesNeeded.add("Wood");
+		resourcesNeeded.add("Wood");
 	}
 
 	/* (non-Javadoc)

@@ -1,25 +1,27 @@
 /**
  * 
  */
-package com.resources;
+package com.resources.craftable;
 
 import java.util.ArrayList;
+
+import com.resources.Resource;
 
 /**
  * @author michael
  *
  */
-public class Diamondsword extends Resource {
+public class IronAxe extends Resource {
 
 	/**
 	 * @param name
 	 */
-	public Diamondsword(String name) {
-		super(name);
-		resourcesNeeded.add("Wood");
-		resourcesNeeded.add("Diamond");
-		resourcesNeeded.add("Diamond");
-		resourcesNeeded.add("Diamond");
+	public IronAxe() {
+		super("IronAxe");
+		// assign the resources needed
+		resourcesNeeded.add("Stick");
+		resourcesNeeded.add("IronPlate");
+		resourcesNeeded.add("IronPlate");
 	}
 
 	/* (non-Javadoc)
