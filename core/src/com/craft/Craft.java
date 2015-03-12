@@ -11,11 +11,11 @@ import com.resources.*;
 public class Craft{
 
 	private Craftable crafting;
-	private ArrayList<Resource> required;
+	private ArrayList<String> required;
 	private boolean unlocked;
 
-	public Craft(Craftable craft, ArrayList<Resource> req){
-		required = new ArrayList<Resource>(req);
+	public Craft(Craftable craft, ArrayList<String> req){
+		required = new ArrayList<String>(req);
 		crafting = craft;
 	} 
 
@@ -27,7 +27,7 @@ public class Craft{
 		return required.size();
 	}
 
-	public Resource getResourceByIndex(int index){
+	public String getResourceByIndex(int index){
 		return required.get(index);
 	}
 	
