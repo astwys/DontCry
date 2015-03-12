@@ -1,22 +1,25 @@
 /**
  * 
  */
-package com.resources;
+package com.resources.craftable;
 
 import java.util.ArrayList;
+
+import com.resources.Resource;
 
 /**
  * @author michael
  * 
  * Used to mine stone
  */
-public class Stoneaxe extends Resource{
-	public Stoneaxe(String name) {
-		super(name);
+public class StoneAxe extends Resource{
+	
+	public StoneAxe() {
+		super("StoneAxe", 1);
 		// assign the resources needed
-		resourcesNeeded.add("Wood");
-		resourcesNeeded.add("Wood");
-		resourcesNeeded.add("Stone");
+		resourcesNeeded.add("Stick");
+		resourcesNeeded.add("StonePlate");
+		resourcesNeeded.add("StonePlate");
 	}
 
 	/* (non-Javadoc)

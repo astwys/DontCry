@@ -1,22 +1,26 @@
 /**
  * 
  */
-package com.resources;
+package com.resources.craftable;
 
 import java.util.ArrayList;
+
+import com.resources.Resource;
 
 /**
  * @author michael
  *
  */
-public class Diamond extends Resource {
+public class GoldPlate extends Resource {
 
 	/**
 	 * @param name
 	 */
-	public Diamond(String name) {
-		super(name);
-		// TODO Auto-generated constructor stub
+	public GoldPlate() {
+		super("GoldPlate", 2);
+		resourcesNeeded.add("Gold");
+		resourcesNeeded.add("Gold");
+		resourcesNeeded.add("Gold");
 	}
 
 	/* (non-Javadoc)
@@ -25,7 +29,7 @@ public class Diamond extends Resource {
 	@Override
 	public ArrayList<String> neededToCraft() {
 		// TODO Auto-generated method stub
-		return null;
+		return resourcesNeeded;
 	}
 
 }

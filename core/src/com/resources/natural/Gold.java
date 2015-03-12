@@ -1,25 +1,24 @@
 /**
  * 
  */
-package com.resources;
+package com.resources.natural;
 
 import java.util.ArrayList;
 
+import com.resources.Resource;
+
 /**
- * @author Franz
+ * @author michael
  *
  */
-public class DiamondAxe extends Resource {
+public class Gold extends Resource {
 
 	/**
 	 * @param name
 	 */
-	public DiamondAxe(String name) {
-		super(name);
+	public Gold() {
+		super("Gold", 1);
 		// TODO Auto-generated constructor stub
-		resourcesNeeded.add("Wood");
-		resourcesNeeded.add("Wood");
-		resourcesNeeded.add("Diamnond");
 	}
 
 	/* (non-Javadoc)
@@ -28,7 +27,7 @@ public class DiamondAxe extends Resource {
 	@Override
 	public ArrayList<String> neededToCraft() {
 		// TODO Auto-generated method stub
-		return resourcesNeeded;
+		return null;
 	}
 
 }

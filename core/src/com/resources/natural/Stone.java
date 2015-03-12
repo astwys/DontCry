@@ -1,9 +1,11 @@
 /**
  * 
  */
-package com.resources;
+package com.resources.natural;
 
 import java.util.ArrayList;
+
+import com.resources.Resource;
 
 /**
  * @author michael
@@ -13,8 +15,8 @@ public class Stone extends Resource {
 	/**
 	 * @param name
 	 */
-	public Stone(String name) {
-		super(name);
+	public Stone() {
+		super("Stone", 1);
 		// TODO Auto-generated constructor stub
 	}
 

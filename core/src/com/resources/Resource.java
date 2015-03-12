@@ -10,11 +10,21 @@ import java.util.ArrayList;
  * main class that is used to extend all resources themselves
  */
 public abstract class Resource implements Craftable{
-	ArrayList<String> resourcesNeeded;
+	protected ArrayList<String> resourcesNeeded;
 	private String name;
+	private int amount;
 
-	public Resource(String name) {
+	public Resource(String name, int amount) {
 		this.name=name;
+		this.amount=amount;
 		resourcesNeeded=new ArrayList<String>();
+	}
+	
+	public String getName() {
+		return this.name;
+	}
+	
+	public int getAmount() {
+		return this.amount;
 	}
 }
