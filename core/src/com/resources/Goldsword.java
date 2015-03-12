@@ -7,27 +7,28 @@ import java.util.ArrayList;
 
 /**
  * @author michael
- * used to cut trees
- * used to
+ *
  */
-public class Axe extends Resource{
+public class Goldsword extends Resource {
+
 	/**
 	 * @param name
 	 */
-	public Axe(String name) {
+	public Goldsword(String name) {
 		super(name);
-		// assign the resources needed
 		resourcesNeeded.add("Wood");
-		resourcesNeeded.add("Stone");
-		resourcesNeeded.add("Stone");
+		resourcesNeeded.add("Gold");
+		resourcesNeeded.add("Gold");
+		resourcesNeeded.add("Gold");
 	}
 
 	/* (non-Javadoc)
-	 * @see com.resources.IfCraftable#neededToCraft()
+	 * @see com.resources.Craftable#neededToCraft()
 	 */
 	@Override
 	public ArrayList<String> neededToCraft() {
 		// TODO Auto-generated method stub
 		return resourcesNeeded;
 	}
+
 }

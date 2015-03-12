@@ -6,25 +6,29 @@ package com.resources;
 import java.util.ArrayList;
 
 /**
- * @author michael
+ * @author Franz
  *
  */
-public class Stone extends Resource {
+public class DiamondAxe extends Resource {
+
 	/**
 	 * @param name
 	 */
-	public Stone(String name) {
+	public DiamondAxe(String name) {
 		super(name);
 		// TODO Auto-generated constructor stub
+		resourcesNeeded.add("Wood");
+		resourcesNeeded.add("Wood");
+		resourcesNeeded.add("Diamnond");
 	}
 
 	/* (non-Javadoc)
-	 * @see com.resources.IfCraftable#neededToCraft()
+	 * @see com.resources.Craftable#neededToCraft()
 	 */
 	@Override
 	public ArrayList<String> neededToCraft() {
 		// TODO Auto-generated method stub
-		return null;
+		return resourcesNeeded;
 	}
 
 }

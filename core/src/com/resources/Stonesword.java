@@ -7,23 +7,28 @@ import java.util.ArrayList;
 
 /**
  * @author michael
- * 
- * Used to mine stone
+ *
  */
-public class Stoneaxe extends Resource{
-	public Stoneaxe(String name) {
+public class Stonesword extends Resource {
+
+	/**
+	 * @param name
+	 */
+	public Stonesword(String name) {
 		super(name);
-		// assign the resources needed
 		resourcesNeeded.add("Wood");
-		resourcesNeeded.add("Wood");
+		resourcesNeeded.add("Stone");
+		resourcesNeeded.add("Stone");
 		resourcesNeeded.add("Stone");
 	}
 
 	/* (non-Javadoc)
-	 * @see com.resources.IfCraftable#neededToCraft()
+	 * @see com.resources.Craftable#neededToCraft()
 	 */
 	@Override
 	public ArrayList<String> neededToCraft() {
+		// TODO Auto-generated method stub
 		return resourcesNeeded;
 	}
+
 }
