@@ -2,4 +2,6 @@
 
 **2015 POS Project**
 
-branch for all resource files/classes/interfaces
+branch for craftings and stuff
+
+implements branch for all resource files/classes/interfaces
