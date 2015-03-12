@@ -4,16 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 
-import com.resources.Axe;
-import com.resources.Craftable;
-import com.resources.Diamondsword;
-import com.resources.Goldaxe;
-import com.resources.Goldsword;
-import com.resources.Ironaxe;
-import com.resources.Ironsword;
-import com.resources.Resource;
-import com.resources.Stoneaxe;
-import com.resources.Stonesword;
+import com.resources.*;
+import com.resources.craftable.*;
+import com.resources.natural.*;
 
 public class Craftingbook{
 
@@ -22,7 +15,7 @@ public class Craftingbook{
 		int amount;
 		Craftable craftable;
 		
-		public ReturnForCraft(int amount, Craftable craftable){
+		public ReturnForCraft(int amount, Resource craftable){
 			this.amount = amount;
 			this.craftable = craftable;
 		}
@@ -31,7 +24,7 @@ public class Craftingbook{
 	private int totalEntries, entries;
 	private Craft[] craftings;
 	
-	public HashMap<Craftable, ArrayList<String>> craftMap;
+	public HashMap<Resource, ArrayList<String>> craftMap;
 	
 	public Craftingbook(){
 		initialiseCraftMap();
@@ -40,14 +33,14 @@ public class Craftingbook{
 		craftings = new Craft[totalEntries];
 	}
 	
-	public boolean newEntry(ArrayList<String> resources, Craftable crafting){
+	public boolean newEntry(ArrayList<String> resources, Resource crafting){
 		
 		
 		return false;
 	}
 	
 	//checking for a possible crafting
-	private Craftable craftsInto(ArrayList<String> resources){
+	private Resource craftsInto(ArrayList<String> resources){
 		
 		Set keySet = craftMap.keySet();
 		Object[] keys = keySet.toArray();
@@ -78,7 +71,7 @@ public class Craftingbook{
 			}// j for
 			
 			if(checkIfNull == 0){
-				return (Craftable)keys[i];
+				return (Resource) keys[i];
 			}
 			
 		}// i for
@@ -88,29 +81,28 @@ public class Craftingbook{
 	}
 	
 	public ReturnForCraft craft(ArrayList<String> resources){
-		Craftable craft = craftsInto(resources);
+		Resource craft = craftsInto(resources);
+		if(craft == null) return null;
 		return new ReturnForCraft(craft.getAmount(), craft);
 	}
 	
 	
 	private void initialiseCraftMap(){
 		
-		craftMap = new HashMap<Craftable, ArrayList<String>>();
+		craftMap = new HashMap<Resource, ArrayList<String>>();
 		
-		ArrayList<Craftable> listOfCraftables = new ArrayList<Craftable>();
+		ArrayList<Resource> listOfCraftables = new ArrayList<Resource>();
 		
 		//Initialising listOfCraftables
-		listOfCraftables.add(new Axe("axe"));
-//		listOfCraftables.add(new Diamondaxe());
-//		listOfCraftables.add(new Diamondsword());
-//		listOfCraftables.add(new Goldaxe());
-//		listOfCraftables.add(new Goldsword());
-//		listOfCraftables.add(new Ironaxe());
-//		listOfCraftables.add(new Ironsword());
-//		listOfCraftables.add(new Stoneaxe());
-//		listOfCraftables.add(new Stonesword());
-//		listOfCraftables.add(new Axe());
-//		listOfCraftables.add(new Axe());
+		listOfCraftables.add(new DiamondAxe());
+		listOfCraftables.add(new DiamondSword());
+		listOfCraftables.add(new GoldAxe());
+		listOfCraftables.add(new GoldSword());
+		listOfCraftables.add(new IronAxe());
+		listOfCraftables.add(new IronSword());
+		listOfCraftables.add(new StoneAxe());
+		listOfCraftables.add(new StoneSword());
+
 		
 		//initialising the actual craftMap
 		for(int i=0; i<listOfCraftables.size(); i++){

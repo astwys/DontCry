@@ -13,10 +13,12 @@ public class Test {
 	public static void test(){
 		Craftingbook craft = new Craftingbook();
 		ArrayList<String> arrayL = new ArrayList<String>();
-		arrayL.add("Stone");
-		arrayL.add("Gas");
-		arrayL.add("Stone");
+		arrayL.add("Stick");
+		arrayL.add("GoldPlate");
+		arrayL.add("GoldPlate");
+		arrayL.add("GoldPlate");
 		ReturnForCraft rfc = craft.craft(arrayL);
+		System.out.println(rfc.amount+"\n"+rfc.craftable.toString());
 	}
 
 }
