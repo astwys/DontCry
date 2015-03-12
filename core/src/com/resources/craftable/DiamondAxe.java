@@ -6,7 +6,6 @@ package com.resources.craftable;
 import java.util.ArrayList;
 
 import com.resources.Resource;
-import com.resources.ToString;
 
 /**
  * @author Franz
@@ -18,7 +17,7 @@ public class DiamondAxe extends Resource{
 	 * @param name
 	 */
 	public DiamondAxe() {
-		super("DiamondAxe");
+		super("DiamondAxe", 1);
 		// assign the resources needed
 		resourcesNeeded.add("Stick");
 		resourcesNeeded.add("DiamondPlate");

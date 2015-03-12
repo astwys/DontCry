@@ -17,8 +17,7 @@ public class GoldPlate extends Resource {
 	 * @param name
 	 */
 	public GoldPlate() {
-		super("GoldPlate");
-		resourcesNeeded.add("2");
+		super("GoldPlate", 2);
 		resourcesNeeded.add("Gold");
 		resourcesNeeded.add("Gold");
 		resourcesNeeded.add("Gold");

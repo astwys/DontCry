@@ -17,12 +17,12 @@ public class StoneSword extends Resource {
 	 * @param name
 	 */
 	public StoneSword() {
-		super("StoneSword");
+		super("StoneSword", 1);
 		// assign the resources needed
-		resourcesNeeded.add("Wood");
-		resourcesNeeded.add("Stone");
-		resourcesNeeded.add("Stone");
-		resourcesNeeded.add("Stone");
+		resourcesNeeded.add("Stick");
+		resourcesNeeded.add("StonePlate");
+		resourcesNeeded.add("StonePlate");
+		resourcesNeeded.add("StonePlate");
 	}
 
 	/* (non-Javadoc)

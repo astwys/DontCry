@@ -17,9 +17,8 @@ public class WoodPlate extends Resource {
 	 * @param name
 	 */
 	public WoodPlate() {
-		super("WoodPlate");
+		super("WoodPlate", 2);
 		// assign the resources needed
-		resourcesNeeded.add("2");
 		resourcesNeeded.add("Wood");
 		resourcesNeeded.add("Wood");
 		resourcesNeeded.add("Wood");

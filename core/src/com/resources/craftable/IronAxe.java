@@ -17,7 +17,7 @@ public class IronAxe extends Resource {
 	 * @param name
 	 */
 	public IronAxe() {
-		super("IronAxe");
+		super("IronAxe", 1);
 		// assign the resources needed
 		resourcesNeeded.add("Stick");
 		resourcesNeeded.add("IronPlate");

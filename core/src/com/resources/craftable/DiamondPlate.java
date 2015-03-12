@@ -17,8 +17,7 @@ public class DiamondPlate extends Resource {
 	 * @param name
 	 */
 	public DiamondPlate() {
-		super("DiamondPlate");
-		resourcesNeeded.add("2");
+		super("DiamondPlate", 2);
 		resourcesNeeded.add("Diamond");
 		resourcesNeeded.add("Diamond");
 		resourcesNeeded.add("Diamond");

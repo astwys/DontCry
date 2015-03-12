@@ -17,7 +17,7 @@ public class WoodAxe extends Resource{
 	 * @param name
 	 */
 	public WoodAxe() {
-		super("WoodAxe");
+		super("WoodAxe", 1);
 		// assign the resources needed
 		resourcesNeeded.add("Stick");
 		resourcesNeeded.add("WoodPlate");

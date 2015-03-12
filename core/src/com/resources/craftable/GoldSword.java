@@ -17,12 +17,12 @@ public class GoldSword extends Resource {
 	 * @param name
 	 */
 	public GoldSword() {
-		super("GoldSword");
+		super("GoldSword", 1);
 		// assign the resources needed
-		resourcesNeeded.add("Wood");
-		resourcesNeeded.add("Gold");
-		resourcesNeeded.add("Gold");
-		resourcesNeeded.add("Gold");
+		resourcesNeeded.add("Stick");
+		resourcesNeeded.add("GoldPlate");
+		resourcesNeeded.add("GoldPlate");
+		resourcesNeeded.add("GoldPlate");
 	}
 
 	/* (non-Javadoc)

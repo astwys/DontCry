@@ -12,13 +12,19 @@ import java.util.ArrayList;
 public abstract class Resource implements Craftable{
 	protected ArrayList<String> resourcesNeeded;
 	private String name;
+	private int amount;
 
-	public Resource(String name) {
+	public Resource(String name, int amount) {
 		this.name=name;
+		this.amount=amount;
 		resourcesNeeded=new ArrayList<String>();
 	}
 	
 	public String getName() {
 		return this.name;
+	}
+	
+	public int getAmount() {
+		return this.amount;
 	}
 }

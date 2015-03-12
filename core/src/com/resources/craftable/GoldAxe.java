@@ -17,7 +17,7 @@ public class GoldAxe extends Resource {
 	 * @param name
 	 */
 	public GoldAxe() {
-		super("GoldAxe");
+		super("GoldAxe", 1);
 		// assign the resources needed
 		resourcesNeeded.add("Stick");
 		resourcesNeeded.add("GoldPlate");

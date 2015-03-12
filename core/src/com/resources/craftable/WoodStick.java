@@ -17,9 +17,8 @@ public class WoodStick extends Resource {
 	 * @param name
 	 */
 	public WoodStick() {
-		super("WoodStick");
+		super("WoodStick", 4);
 		// assign the resources needed
-		resourcesNeeded.add("4");
 		resourcesNeeded.add("Wood");
 		resourcesNeeded.add("Wood");
 	}

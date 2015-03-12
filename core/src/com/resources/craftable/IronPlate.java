@@ -17,9 +17,8 @@ public class IronPlate extends Resource {
 	 * @param name
 	 */
 	public IronPlate() {
-		super("IronPlate");
+		super("IronPlate", 2);
 		// assign the resources needed
-		resourcesNeeded.add("2");
 		resourcesNeeded.add("Iron");
 		resourcesNeeded.add("Iron");
 		resourcesNeeded.add("Iron");

@@ -17,12 +17,12 @@ public class DiamondSword extends Resource {
 	 * @param name
 	 */
 	public DiamondSword() {
-		super("DiamondSword");
+		super("DiamondSword", 1);
 		// assign the resources needed
-		resourcesNeeded.add("Wood");
-		resourcesNeeded.add("Diamond");
-		resourcesNeeded.add("Diamond");
-		resourcesNeeded.add("Diamond");
+		resourcesNeeded.add("Stick");
+		resourcesNeeded.add("DiamondPlate");
+		resourcesNeeded.add("DiamondPlate");
+		resourcesNeeded.add("DiamondPlate");
 	}
 
 	/* (non-Javadoc)

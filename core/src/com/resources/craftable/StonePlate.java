@@ -17,9 +17,8 @@ public class StonePlate extends Resource {
 	 * @param name
 	 */
 	public StonePlate() {
-		super("StonePlate");
+		super("StonePlate", 2);
 		// assign the resources needed
-		resourcesNeeded.add("2");
 		resourcesNeeded.add("Stone");
 		resourcesNeeded.add("Stone");
 		resourcesNeeded.add("Stone");

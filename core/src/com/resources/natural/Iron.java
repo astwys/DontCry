@@ -17,7 +17,7 @@ public class Iron extends Resource{
 	 * @param name
 	 */
 	public Iron() {
-		super("Iron");
+		super("Iron", 1);
 		// TODO Auto-generated constructor stub
 	}
 

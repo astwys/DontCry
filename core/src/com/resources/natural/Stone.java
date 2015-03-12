@@ -16,7 +16,7 @@ public class Stone extends Resource {
 	 * @param name
 	 */
 	public Stone() {
-		super("Stone");
+		super("Stone", 1);
 		// TODO Auto-generated constructor stub
 	}
 

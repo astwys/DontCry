@@ -15,7 +15,7 @@ import com.resources.Resource;
 public class StoneAxe extends Resource{
 	
 	public StoneAxe() {
-		super("StoneAxe");
+		super("StoneAxe", 1);
 		// assign the resources needed
 		resourcesNeeded.add("Stick");
 		resourcesNeeded.add("StonePlate");
