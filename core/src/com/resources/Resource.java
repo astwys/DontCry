@@ -33,4 +33,13 @@ public abstract class Resource implements Craftable{
 	public int getAmount() {
 		return this.amount;
 	}
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return getName();
+	}
 }
