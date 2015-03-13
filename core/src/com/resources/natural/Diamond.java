@@ -18,7 +18,7 @@ public class Diamond extends Resource {
 	 */
 	public Diamond() {
 		super("Diamond", 1);
-		// TODO Auto-generated constructor stub
+		// no resources needed
 	}
 
 	/* (non-Javadoc)

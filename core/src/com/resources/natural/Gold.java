@@ -18,7 +18,7 @@ public class Gold extends Resource {
 	 */
 	public Gold() {
 		super("Gold", 1);
-		// TODO Auto-generated constructor stub
+		// no resources needed
 	}
 
 	/* (non-Javadoc)

@@ -18,6 +18,7 @@ public class GoldPlate extends Resource {
 	 */
 	public GoldPlate() {
 		super("GoldPlate", 2);
+		// assign the resources needed
 		resourcesNeeded.add("Gold");
 		resourcesNeeded.add("Gold");
 		resourcesNeeded.add("Gold");

@@ -18,7 +18,7 @@ public class Iron extends Resource{
 	 */
 	public Iron() {
 		super("Iron", 1);
-		// TODO Auto-generated constructor stub
+		// no resources needed
 	}
 
 	/* (non-Javadoc)

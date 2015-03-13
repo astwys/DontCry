@@ -20,10 +20,16 @@ public abstract class Resource implements Craftable{
 		resourcesNeeded=new ArrayList<String>();
 	}
 	
+	/*
+	 * get name of current resource
+	 */
 	public String getName() {
 		return this.name;
 	}
 	
+	/*
+	 * amount of items of the resource you are currently crafting
+	 */
 	public int getAmount() {
 		return this.amount;
 	}
