@@ -64,6 +64,7 @@ public class Craftingbook{
 						if(compareToRes.equalsIgnoreCase(compareWithStr)){
 							required[c] = null;
 							checkIfNull--;
+							break;
 						}
 					}
 				}// c for
