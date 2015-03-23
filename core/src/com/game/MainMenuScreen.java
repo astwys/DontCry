@@ -80,7 +80,7 @@ public class MainMenuScreen implements Screen, InputProcessor {
 	public void initialiseButtons(){
 		//initialising txtbtn_play
 		txtbtn_play = new TextButton("Play", skin);
-		txtbtn_play.setBounds(200, 200, 50, 20);
+		txtbtn_play.setBounds(900/2-80-80/2-40, 200, 80, 50);
 		txtbtn_play.addListener(new ClickListener(){
 			
 			public void clicked(InputEvent input, float x, float y){
@@ -91,7 +91,7 @@ public class MainMenuScreen implements Screen, InputProcessor {
 		
 		//initialise txtbtn_options
 		txtbtn_options = new TextButton("Options", skin);
-		txtbtn_options.setBounds(200, 160, 50, 20);
+		txtbtn_options.setBounds(900/2-80/2, 200, 80, 50);
 		txtbtn_options.addListener(new ClickListener(){
 			
 			public void clicked(InputEvent input, float x, float y){
@@ -101,7 +101,7 @@ public class MainMenuScreen implements Screen, InputProcessor {
 		});
 		
 		txtbtn_exit = new TextButton("Exit", skin);
-		txtbtn_exit.setBounds(200, 120, 50, 20);
+		txtbtn_exit.setBounds(900/2+80/2+40, 200, 80, 50);
 		txtbtn_exit.addListener(new ClickListener(){
 			
 			public void clicked(InputEvent input, float x, float y){
