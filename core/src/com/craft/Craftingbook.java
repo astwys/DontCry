@@ -90,13 +90,21 @@ public class Craftingbook{
 		
 		//Initialising listOfCraftables
 		listOfCraftables.add(new DiamondAxe());
+		listOfCraftables.add(new DiamondPlate());
 		listOfCraftables.add(new DiamondSword());
 		listOfCraftables.add(new GoldAxe());
+		listOfCraftables.add(new GoldPlate());
 		listOfCraftables.add(new GoldSword());
 		listOfCraftables.add(new IronAxe());
+		listOfCraftables.add(new IronPlate());
 		listOfCraftables.add(new IronSword());
 		listOfCraftables.add(new StoneAxe());
+		listOfCraftables.add(new StonePlate());
 		listOfCraftables.add(new StoneSword());
+		listOfCraftables.add(new WoodAxe());
+		listOfCraftables.add(new WoodPlate());
+		listOfCraftables.add(new WoodStick());
+		listOfCraftables.add(new WoodSword());
 
 		
 		//initialising the actual craftMap
