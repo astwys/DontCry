@@ -137,6 +137,7 @@ public class OpeningScreen implements Screen, InputProcessor {
 	//---------------------------------------------------------- my methods -------------------------------
 	
 	private void goAhead(){
+		this.dispose();
 		game.setScreen(new MainMenuScreen(game));
 	}
 
