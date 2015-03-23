@@ -11,6 +11,7 @@ import com.resources.natural.*;
 public class Craftingbook{
 
 	
+	//special class for returning the craft (out of some resources) and the amount that is crafted
 	public class ReturnForCraft{
 		int amount;
 		Craftable craftable;
@@ -21,22 +22,15 @@ public class Craftingbook{
 		}
 	}
 	
-	private int totalEntries, entries;
-	private Craft[] craftings;
+	
+	//-------------------------------------------------------------------------- fields -----------------------------------------------------------
 	
 	public HashMap<Resource, ArrayList<String>> craftMap;
 	
+	//-------------------------------------------------------------------------- methods ----------------------------------------------------------
+	
 	public Craftingbook(){
 		initialiseCraftMap();
-		totalEntries = craftMap.size();
-		entries = 0;
-		craftings = new Craft[totalEntries];
-	}
-	
-	public boolean newEntry(ArrayList<String> resources, Resource crafting){
-		
-		
-		return false;
 	}
 	
 	//checking for a possible crafting
