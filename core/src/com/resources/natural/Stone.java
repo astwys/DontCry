@@ -17,7 +17,7 @@ public class Stone extends Resource {
 	 */
 	public Stone() {
 		super("Stone", 1);
-		// TODO Auto-generated constructor stub
+		// no resources needed
 	}
 
 	/* (non-Javadoc)

@@ -18,6 +18,7 @@ public class DiamondPlate extends Resource {
 	 */
 	public DiamondPlate() {
 		super("DiamondPlate", 2);
+		// assign the resources needed
 		resourcesNeeded.add("Diamond");
 		resourcesNeeded.add("Diamond");
 		resourcesNeeded.add("Diamond");

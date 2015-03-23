@@ -20,11 +20,26 @@ public abstract class Resource implements Craftable{
 		resourcesNeeded=new ArrayList<String>();
 	}
 	
+	/*
+	 * get name of current resource
+	 */
 	public String getName() {
 		return this.name;
 	}
 	
+	/*
+	 * amount of items of the resource you are currently crafting
+	 */
 	public int getAmount() {
 		return this.amount;
+	}
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return getName();
 	}
 }

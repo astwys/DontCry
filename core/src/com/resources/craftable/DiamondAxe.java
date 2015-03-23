@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import com.resources.Resource;
 
 /**
- * @author Franz
+ * @author michael
  *
  */
 public class DiamondAxe extends Resource{

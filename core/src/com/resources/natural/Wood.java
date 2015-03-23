@@ -14,7 +14,7 @@ import com.resources.Resource;
 public class Wood extends Resource{
 	public Wood() {
 		super("Wood", 1);
-		// TODO Auto-generated constructor stub
+		// no resources needed
 	}
 
 	/* (non-Javadoc)
