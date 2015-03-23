@@ -9,8 +9,8 @@ import com.resources.Resource;
 
 /**
  * @author michael
- * used to cut trees
- * used to
+ * used to cut down trees
+ * 
  */
 public class WoodAxe extends Resource{
 	/**
