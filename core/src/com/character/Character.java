@@ -12,12 +12,29 @@ import com.slot.Bag;
  */
 public class Character {
 	private String name;
-	private int hunger;
-	private int health;
+	private int hunger = 100, health = 100;
 	
 	private Bag bag;
-	private Craftingbook craftingBook;
+	private Craftingbook craftingbook;
 	
+	/**
+	 * 
+	 */
+	public Character(String name) {
+		setName(name);
+		bag=new Bag();
+		craftingbook=new Craftingbook();
+	}
+	
+	public int decreaseHunger() {
+		setHunger(getHunger()-1);
+		return getHunger();
+	}
+	
+	public int decreaseHealth() {
+		setHealth(getHealth()-1);
+		return getHealth();
+	}
 	
 	/**
 	 * @return the name
