@@ -3,6 +3,9 @@
  */
 package com.character;
 
+import com.craft.Craftingbook;
+import com.slot.Bag;
+
 /**
  * @author michael
  *
@@ -13,7 +16,7 @@ public class Character {
 	private int health;
 	
 	private Bag bag;
-	private CraftingBook craftingBook;
+	private Craftingbook craftingBook;
 	
 	
 	/**
