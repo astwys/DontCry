@@ -1,54 +1,92 @@
 package com.slot;
 
-import javax.annotation.Resource;
+import com.resources.*;
 
 /*
- * date 23/03
  * author jonas
  */
 
 public class Slot {
 
+	//the type of resource in the SLOT
 	private Resource resource;
+	
+	//amount = how much the SLOT contains
 	private int amount;
-	private static int full = 32;
+	
+	//size = the max size of the SLOT
+	private static int size = 32;
 	
 	
 	
-	public Slot(Resource r, int a, int plus) {
+	/*
+	 * default constructor
+	 * 		sets the SIZE of the SLOT
+	 * 		sets the type of RESOURCE
+	 * 		sets the AMOUNT of resources
+	 */
+	public Slot(Resource r, int a) {
 		super();
-		setSlot(r,a);
-		add(plus);
+		setSize(Slot.size);
+		setResource(r);
+		setAmount(a);
 		// TODO Auto-generated constructor stub
 	}
 
-	public int setSlot(Resource r, int amount) {
-		return amount;
+	/*
+	 * returns the size of the SLOT
+	 */
+	public int getSize() {
+		return Slot.size;
 	}
 	
-	public Resource getResource() {
-		return this.resource;
+	/*
+	 * sets the max size of the SLOT --> default value
+	 */
+	public void setSize(int size) {
+		Slot.size = size;
 	}
-	
-	public int add(int plus) {
-		//if there is something to add
-		if (plus > 0) {
-			//if the SLOT is empty, it doesn't matter which resource you add
-			if(resource) {
-				this.resource.getName() = re
-			}
-			return plus;
-		}
-	}
-	
+
+	/*
+	 * returns how much resources are in the SLOT
+	 */
 	public int getAmount() {
 		return this.amount;
 	}
 	
+	/*
+	 * sets the amount of the resource in the SLOT
+	 */
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
 	
+	/*
+	 * returns how much resource you can add to the SLOT
+	*/
+	public int resourcesToAdd() {
+		return getSize()-getAmount();
+		//return this.size-this.amount;
+	}
+	
+	/*
+	 * returns the type of the resource
+	 */
+	public Resource getResource() {
+		return this.resource;
+	}
+	
+	/*
+	 * sets the type of resource
+	 */
+	public void setResource(Resource r) {
+		this.resource = r;
+	}
+
+	@Override
+	public String toString() {
+		return "Slot [resource=" + this.resource + ", amount=" + this.amount + "size=" + Slot.size +"]";
+	}
 	
 	
 }
