@@ -34,6 +34,16 @@ public class Slot {
 	}
 
 	/*
+	 * checks if the SLOT is empty or not
+	 */
+	public boolean isEmpty() {
+		if(getAmount()==0) {
+			return true;
+		}
+		return false;
+	}
+	
+	/*
 	 * returns the size of the SLOT
 	 */
 	public int getSize() {
