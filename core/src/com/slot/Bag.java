@@ -26,7 +26,7 @@ public class Bag {
 	 *  	if you add a valid resource OR amount
 	 */
 	public int add(Resource r, int plus) {
-		if(r != null || plus != 0) {
+		if(r != null || plus > 0) {
 			for(int i = 0; i < resources.length || plus==0; i++) {
 				if(resources[i].getResource() == r) {
 					if(resources[i].resourcesToAdd() < plus) {
