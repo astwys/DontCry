@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 
@@ -25,10 +26,10 @@ public class PlayScreen implements Screen {
 	public PlayScreen(final DontCry dontcry){
 		game = dontcry;
 		map = new TmxMapLoader().load("../core/assets/maps/map1/map1.tmx");
-		renderer = new OrthogonalTiledMapRenderer(map, 1.5f, game.batch);
+		renderer = new OrthogonalTiledMapRenderer(map, 1.0f, game.batch);
 		camera = new OrthographicCamera();
 		
-		player = new Player(new Sprite(new Texture("../core/assets/player/p_back.png")));
+		player = new Player(new Sprite(new Texture("../core/assets/player/p_back.png")), (TiledMapTileLayer) map.getLayers().get("blocking"));
 	}
 	
 	@Override
@@ -39,9 +40,7 @@ public class PlayScreen implements Screen {
 
 	@Override
 	public void render(float delta) {
-		Gdx.gl.glEnable(GL20.GL_BLEND);
 		Gdx.gl.glClearColor(0, 1, 0, 1);
-		Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
 		renderer.setView(camera);

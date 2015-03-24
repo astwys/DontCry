@@ -3,19 +3,28 @@ package com.game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.math.Vector2;
 
 public class Player extends Sprite{
 
+	//character reference
+	private Character character;
+	
 	//movement velocity
 	private Vector2 velocity;
 	
 	//speed of the player
 	private float speed = 60*2;
 	
-	public Player(Sprite sprite){
+	//reference to the collisionlayer
+	private TiledMapTileLayer collisionLayer;
+	
+	
+	public Player(Sprite sprite, TiledMapTileLayer tiledMapLayer){
 		super(sprite);
 		velocity = new Vector2();
+		collisionLayer = tiledMapLayer;
 	}
 	
 	public void draw(SpriteBatch spriteBatch){
@@ -24,13 +33,13 @@ public class Player extends Sprite{
 	}
 	
 	public void update(float deltaTime){
-		velocity.y += 100*deltaTime;
 		
-//		if(velocity.x > speed) velocity.x = speed;
-//		else if(velocity.y < -speed) velocity.x = -speed;
+		//collision detection
+		//old positions
+		float oldX = getX(), oldY = getY();
+		//tile dimensions
+		float tileWidth = collisionLayer.getTileWidth(), tileHeight = collisionLayer.getTileHeight();
 		
-		setX(getX()+velocity.x*deltaTime);
-		setY(getY()+velocity.y*deltaTime);
 	}
 	
 }
