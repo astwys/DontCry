@@ -8,6 +8,11 @@ import java.util.ArrayList;
 /**
  * @author michael
  * main class that is used to extend all resources themselves
+ * 
+ * resources are seperated into natural and craftable resources
+ * 
+ * natural: these resourcese can only be found in nature which means you can't craft them
+ * craftable: you cannot find these resources in nature; they have to be crafted
  */
 public abstract class Resource implements Craftable{
 	protected ArrayList<String> resourcesNeeded;
