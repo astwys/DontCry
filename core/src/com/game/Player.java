@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 
-public class Player extends Sprite {
+public class Player extends Sprite{
 
 	//movement velocity
 	private Vector2 velocity;
@@ -24,10 +24,10 @@ public class Player extends Sprite {
 	}
 	
 	public void update(float deltaTime){
-		velocity.y -= 2*deltaTime;
+		velocity.y += 100*deltaTime;
 		
-		if(velocity.y > speed) velocity.y = speed;
-		else if(velocity.y < -speed) velocity.y = -speed;
+//		if(velocity.x > speed) velocity.x = speed;
+//		else if(velocity.y < -speed) velocity.x = -speed;
 		
 		setX(getX()+velocity.x*deltaTime);
 		setY(getY()+velocity.y*deltaTime);

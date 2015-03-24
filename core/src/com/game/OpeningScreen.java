@@ -25,7 +25,7 @@ public class OpeningScreen implements Screen, InputProcessor {
 	//------------------------------------------------------ methods from Screen ------------------------------------------------------------
 	@Override
 	public void show() {
-		texture = new Texture("badlogic.jpg");
+		texture = new Texture("../core/assets/openingscreen/badlogic.jpg");
 		Gdx.input.setInputProcessor(this);
 	}
 
