@@ -15,8 +15,7 @@ public class Bag {
 		resources = new Slot[12];
 	}
 	
-	
-	/*	
+	/**
 	 * adds resources to a slot and 
 	 * returns the resources, which couldn't be added
 	 * 
@@ -24,6 +23,10 @@ public class Bag {
 	 *  	you add the same resource
 	 *  	it has enough free space
 	 *  	if you add a valid resource OR amount
+	 *  
+	 * @param r
+	 * @param plus
+	 * @return
 	 */
 	public int add(Resource r, int plus) {
 		if(r != null || plus > 0) {
@@ -44,6 +47,9 @@ public class Bag {
 	}
 	
 	/*
+	 * 
+	 */
+	/**
 	 * deletes certain type of resources and
 	 * returns true if sth is deleted
 	 * 		(5 wood and you want to delete 6, it doesn't care and deletes all 5)
@@ -51,23 +57,30 @@ public class Bag {
 	 *
 	 * checks if
 	 * 		the SLOT contains the resource
+	 * 
+	 * @param index
+	 * @return
 	 */
-//	public boolean dispose(Resource r, int amount) {
-//		
-//		if(r != null || amount != 0) {
-//			for(int i = 0; i < resources.length; i++) {
-//				if(resources[i].getResource() == r) {
-//					if(resources[i].getAmount() < amount) {
-//						
-//					}
-//				}
-//			}
-//		}
-//		return false;//only if resource doesn't exist
-//	}
-	
-	/*
+/*
+	public boolean dispose(Resource r, int amount) {
+		
+		if(r != null || amount != 0) {
+			for(int i = 0; i < resources.length; i++) {
+				if(resources[i].getResource() == r) {
+					if(resources[i].getAmount() < amount) {
+						
+					}
+				}
+			}
+		}
+		return false;//only if resource doesn't exist
+	}
+*/
+
+	/**
 	 * deletes all resources in a specified SLOT
+	 * @param index
+	 * @return
 	 */
 	public boolean clearSlot(int index) {
 		if(!resources[index].isEmpty()) {
@@ -77,8 +90,7 @@ public class Bag {
 		return false;
 	}
 
-	
-	/*
+	/**
 	 * deletes all resources in the whole backpack
 	 */
 	public void clearBackpack() {
