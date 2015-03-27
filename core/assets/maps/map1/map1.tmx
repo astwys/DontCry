@@ -27,11 +27,6 @@
     <property name="blocked" value=""/>
    </properties>
   </tile>
-  <tile id="12034">
-   <properties>
-    <property name="blocked" value=""/>
-   </properties>
-  </tile>
   <tile id="12035">
    <properties>
     <property name="blocked" value=""/>
@@ -112,12 +107,88 @@
     <property name="blocked" value=""/>
    </properties>
   </tile>
+  <tile id="18044">
+   <properties>
+    <property name="action" value=""/>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="18045">
+   <properties>
+    <property name="action" value=""/>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="18046">
+   <properties>
+    <property name="action" value=""/>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="18199">
+   <properties>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="18200">
+   <properties>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="18201">
+   <properties>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="18202">
+   <properties>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
   <tile id="18203">
    <properties>
     <property name="blocked" value=""/>
    </properties>
   </tile>
   <tile id="18204">
+   <properties>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="18205">
+   <properties>
+    <property name="action" value=""/>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="18206">
+   <properties>
+    <property name="action" value=""/>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="18207">
+   <properties>
+    <property name="action" value=""/>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="18360">
+   <properties>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="18361">
+   <properties>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="18362">
+   <properties>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="18363">
    <properties>
     <property name="blocked" value=""/>
    </properties>
@@ -132,6 +203,44 @@
     <property name="blocked" value=""/>
    </properties>
   </tile>
+  <tile id="18366">
+   <properties>
+    <property name="action" value=""/>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="18367">
+   <properties>
+    <property name="action" value=""/>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="18368">
+   <properties>
+    <property name="action" value=""/>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="18521">
+   <properties>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="18522">
+   <properties>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="18523">
+   <properties>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="18524">
+   <properties>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
   <tile id="18525">
    <properties>
     <property name="blocked" value=""/>
@@ -139,6 +248,24 @@
   </tile>
   <tile id="18526">
    <properties>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="18527">
+   <properties>
+    <property name="action" value=""/>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="18528">
+   <properties>
+    <property name="action" value=""/>
+    <property name="blocked" value=""/>
+   </properties>
+  </tile>
+  <tile id="18529">
+   <properties>
+    <property name="action" value=""/>
     <property name="blocked" value=""/>
    </properties>
   </tile>

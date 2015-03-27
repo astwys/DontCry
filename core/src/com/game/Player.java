@@ -39,7 +39,77 @@ public class Player extends Sprite{
 		float oldX = getX(), oldY = getY();
 		//tile dimensions
 		float tileWidth = collisionLayer.getTileWidth(), tileHeight = collisionLayer.getTileHeight();
+		//boolean collision
+		boolean collisionX = false, collisionY = false;
 		
+		//moving on both axis
+		setY(getY()+velocity.y*deltaTime);
+		setX(getX()+velocity.x*deltaTime);
+		
+		
+		
+		if(velocity.y > 0){
+			//top left
+			collisionY = collisionLayer.getCell((int)(getX() / tileWidth),(int)((getY()+getHeight()) / tileHeight)).getTile().getProperties().containsKey("blocked");
+			
+			if(!collisionY){
+			//top middle
+				collisionY = collisionLayer.getCell((int)((getX()+getWidth() / 2) / tileWidth),(int)((getY()+getHeight()) / tileHeight)).getTile().getProperties().containsKey("blocked");
+			}
+			
+			if(!collisionY){
+			//top right
+				collisionY = collisionLayer.getCell((int)((getX()+getWidth()) / tileWidth),(int)((getY()+getHeight()) / tileHeight)).getTile().getProperties().containsKey("blocked");
+			}
+			
+		}else if(velocity.y < 0){
+			//bottom left
+			collisionY = collisionLayer.getCell((int)(getX() / tileWidth),(int)(getY() / tileHeight)).getTile().getProperties().containsKey("blocked");
+			
+			if(!collisionY){
+			//bottom middle
+				collisionY = collisionLayer.getCell((int)((getX()+getWidth() / 2) / tileWidth),(int)(getY() / tileHeight)).getTile().getProperties().containsKey("blocked");
+			}
+			
+			if(!collisionY){
+			//bottom right
+				collisionY = collisionLayer.getCell((int)((getX()+getWidth()) / tileWidth),(int)(getY() / tileHeight)).getTile().getProperties().containsKey("blocked");
+			}
+		}
+		
+		
+		
+		if(velocity.x > 0){
+			//right top
+			
+			//right middle
+			
+			//right bottom
+			
+		}else if(velocity.x < 0){
+			//left top
+			
+			//left middle
+			
+			//left bottom
+			
+		}
+		
+		
+		//reaction to collision
+		if(collisionY){
+			setY(oldY);
+			velocity.y = 0;
+		}
+		
+		if(collisionX){
+			setX(oldX);
+			velocity.x = 0;
+		}
+	}
+	
+	public TiledMapTileLayer getCollisionLayer(){
+		return collisionLayer;
 	}
 	
 }

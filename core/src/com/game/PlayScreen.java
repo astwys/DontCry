@@ -26,10 +26,12 @@ public class PlayScreen implements Screen {
 	public PlayScreen(final DontCry dontcry){
 		game = dontcry;
 		map = new TmxMapLoader().load("../core/assets/maps/map1/map1.tmx");
-		renderer = new OrthogonalTiledMapRenderer(map, 1.0f, game.batch);
+		renderer = new OrthogonalTiledMapRenderer(map, 1.5f, game.batch);
 		camera = new OrthographicCamera();
 		
 		player = new Player(new Sprite(new Texture("../core/assets/player/p_back.png")), (TiledMapTileLayer) map.getLayers().get("blocking"));
+		player.setPosition(200, 10);
+		player.set(new Sprite(new Texture("../core/assets/player/p_left.png")));
 	}
 	
 	@Override
