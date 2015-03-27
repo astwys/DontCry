@@ -25,19 +25,25 @@ public class PlayScreen implements Screen {
 	
 	public PlayScreen(final DontCry dontcry){
 		game = dontcry;
+		
+		//stuff for rendering the tiledmap
 		map = new TmxMapLoader().load("../core/assets/maps/map1/map1.tmx");
 		renderer = new OrthogonalTiledMapRenderer(map, 1.5f, game.batch);
 		camera = new OrthographicCamera();
 		
-		player = new Player(new Sprite(new Texture("../core/assets/player/p_back.png")), (TiledMapTileLayer) map.getLayers().get("blocking"));
+		//create and initialise the player with the collisionlayer
+		player = new Player(new Sprite(new Texture("../core/assets/player/p_back.png")), (TiledMapTileLayer) map.getLayers().get(1));
 		player.setPosition(200, 10);
-		player.set(new Sprite(new Texture("../core/assets/player/p_left.png")));
+		
+		//set the player to the InputProcessor
+		Gdx.input.setInputProcessor(player);
 	}
 	
 	@Override
 	public void show() {
 		camera.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 		camera.update();
+		game.font.setColor(1, 1, 1, 1);
 	}
 
 	@Override
@@ -45,11 +51,13 @@ public class PlayScreen implements Screen {
 		Gdx.gl.glClearColor(0, 1, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
+		//set the renderer for the map
 		renderer.setView(camera);
 		renderer.render();
 		
 		game.batch.begin();
 		player.draw(game.batch);
+		game.font.draw(game.batch, player.getName(), player.getX()-5, player.getY()+player.getHeight()+20);
 		game.batch.end();
 		
 		
@@ -60,25 +68,21 @@ public class PlayScreen implements Screen {
 		camera.viewportHeight = height;
 		camera.viewportWidth = width;
 		camera.update();
-
 	}
 
 	@Override
 	public void pause() {
-		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
 	public void resume() {
-		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
 	public void hide() {
-		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
