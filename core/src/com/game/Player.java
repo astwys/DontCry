@@ -156,13 +156,13 @@ public class Player extends Sprite implements InputProcessor{
 	@Override
 	public boolean keyDown(int keycode) {
 		
-		if(keycode == Keys.W){
+		if(keycode == Keys.W || keycode == Keys.UP){
 			velocity.y = speed;
-		}else if(keycode == Keys.S){
+		}else if(keycode == Keys.S || keycode == Keys.DOWN){
 			velocity.y = -speed;
-		}else if(keycode == Keys.A){
+		}else if(keycode == Keys.A || keycode == Keys.LEFT){
 			velocity.x = -speed;
-		}else if(keycode == Keys.D){
+		}else if(keycode == Keys.D || keycode == Keys.RIGHT){
 			velocity.x = speed;
 		}
 		
@@ -177,13 +177,13 @@ public class Player extends Sprite implements InputProcessor{
 	@Override
 	public boolean keyUp(int keycode) {
 		
-		if(keycode == Keys.W){
+		if(keycode == Keys.W || keycode == Keys.UP){
 			velocity.y = 0;
-		}else if(keycode == Keys.S){
+		}else if(keycode == Keys.S || keycode == Keys.DOWN){
 			velocity.y = 0;
-		}else if(keycode == Keys.A){
+		}else if(keycode == Keys.A || keycode == Keys.LEFT){
 			velocity.x = 0;
-		}else if(keycode == Keys.D){
+		}else if(keycode == Keys.D || keycode == Keys.RIGHT){
 			velocity.x = 0;
 		}
 		
