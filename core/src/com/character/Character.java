@@ -4,6 +4,7 @@
 package com.character;
 
 import com.craft.Craftingbook;
+import com.resources.Resource;
 import com.slot.Bag;
 import com.sun.xml.internal.bind.v2.TODO;
 
@@ -40,7 +41,7 @@ public class Character {
 	 * @return 
 	 */
 	public int decreaseHungerDef() {
-		setHunger(getHunger()-1);
+		setHunger(getHunger() - 1);
 		return getHunger();
 	}
 	
@@ -50,7 +51,7 @@ public class Character {
 	 * @return
 	 */
 	public int decreaseHunger (int dec) {
-		setHunger(getHunger()-dec);
+		setHunger(getHunger() - dec);
 		return getHunger();
 	}
 	
@@ -60,7 +61,7 @@ public class Character {
 	 * @return
 	 */
 	public int increaseHunger (int inc) {
-		setHunger(getHunger()+inc);
+		setHunger(getHunger() + inc);
 		return getHealth();
 	}
 	
@@ -94,6 +95,24 @@ public class Character {
 	public int increaseHealth (int inc) {
 		setHealth(getHealth()+inc);
 		return getHealth();
+	}
+
+
+//---------------------------------------------------Methods---------------------------------------------------
+
+	/**
+	 * returns the Bag with all the resources stored in it
+	 * @return
+	 */
+	public Bag showInventory() {
+		Bag bag1=new Bag();
+
+		for (int i=0; i<bag.getResources().length; i++) {
+			if (bag.getResources()[i] != null) {
+				bag1.add(bag.getResources()[i].getResource(), bag.getResources()[i].getAmount());
+			}
+		}
+		return bag1;
 	}
 	
 	

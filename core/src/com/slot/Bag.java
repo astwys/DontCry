@@ -100,4 +100,8 @@ public class Bag {
 			}
 		}
 	}
+
+	public Slot[] getResources() {
+		return resources;
+	}
 }
