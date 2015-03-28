@@ -18,8 +18,14 @@ public class Player extends Sprite implements InputProcessor{
 	//movement velocity
 	private Vector2 velocity;
 	
-	//speed of the player
-	private float speed = 60*2;
+	//spped of player when walking
+	private float normalSpeed = 60*2;
+	
+	//speed of player when running
+	private float runSpeed = 60*3;
+	
+	// current speed of the player
+		private float speed = normalSpeed;
 	
 	//reference to the collisionlayer
 	private TiledMapTileLayer collisionLayer;
@@ -164,7 +170,8 @@ public class Player extends Sprite implements InputProcessor{
 			velocity.x = -speed;
 		}else if(keycode == Keys.D || keycode == Keys.RIGHT){
 			velocity.x = speed;
-		}
+		}else if(keycode == Keys.SHIFT_LEFT)
+			speed = runSpeed;
 		
 		if(keycode == Keys.SPACE){
 			//method for collecting
@@ -185,7 +192,8 @@ public class Player extends Sprite implements InputProcessor{
 			velocity.x = 0;
 		}else if(keycode == Keys.D || keycode == Keys.RIGHT){
 			velocity.x = 0;
-		}
+		}else if(keycode == Keys.SHIFT_LEFT)
+			speed = normalSpeed;
 		
 		return true;
 	}
