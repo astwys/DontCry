@@ -51,31 +51,41 @@ public class Bag {
 	 */
 	/**
 	 * deletes certain type of resources and
-	 * returns true if sth is deleted
-	 * 		(5 wood and you want to delete 6, it doesn't care and deletes all 5)
-	 * returns false if resource is not existent
+	 * returns the amount which couldn't be deleted
+	 * 		(5 wood and you want to delete 6, it return 1)
+	 * 
 	 *
 	 * checks if
+	 * 		the input is valid
 	 * 		the SLOT contains the resource
+	 * 		and if the amount is greater or smaller than the amount in the SLOT
+	 * 		
 	 * 
 	 * @param index
 	 * @return
 	 */
-/*
-	public boolean dispose(Resource r, int amount) {
+
+	public int dispose(Resource r, int amount) {
 		
 		if(r != null || amount != 0) {
 			for(int i = 0; i < resources.length; i++) {
 				if(resources[i].getResource() == r) {
 					if(resources[i].getAmount() < amount) {
-						
+						amount -= resources[i].getAmount();
+						resources[i].setAmount(0);
+						resources[i].setResource(null);
+					}
+					else {
+						resources[i].setAmount(resources[i].getAmount() - amount);
+						amount = 0;
+						return amount;
 					}
 				}
 			}
 		}
-		return false;//only if resource doesn't exist
+		return amount;//only if resource doesn't exist or invalid input
 	}
-*/
+
 
 	/**
 	 * deletes all resources in a specified SLOT
@@ -84,6 +94,7 @@ public class Bag {
 	 */
 	public boolean clearSlot(int index) {
 		if(!resources[index].isEmpty()) {
+			resources[index].setResource(null);
 			resources[index].setAmount(0);
 			return true;
 		}
@@ -96,6 +107,7 @@ public class Bag {
 	public void clearBackpack() {
 		for(int i = 0; i<resources.length; i++) {
 			if(!resources[i].isEmpty()) {
+				resources[i].setResource(null);
 				resources[i].setAmount(0);
 			}
 		}
