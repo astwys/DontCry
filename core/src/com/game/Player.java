@@ -18,7 +18,7 @@ public class Player extends Sprite implements InputProcessor{
 	//movement velocity
 	private Vector2 velocity;
 	
-	//spped of player when walking
+	//speed of player when walking
 	private float normalSpeed = 60*2;
 	
 	//speed of player when running
@@ -36,6 +36,7 @@ public class Player extends Sprite implements InputProcessor{
 		velocity = new Vector2();
 		collisionLayer = tiledMapLayer;
 		character = new Character("Frank");
+//		character = new Character(character.getName());
 	}
 	
 	public void draw(SpriteBatch spriteBatch){
