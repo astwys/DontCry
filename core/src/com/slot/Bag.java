@@ -20,9 +20,11 @@ public class Bag {
 	 * returns the resources, which couldn't be added
 	 * 
 	 * checks if
-	 *  	you add the same resource
+	 * 		you add a valid resource OR amount
+	 *  	you add the same resource OR the SLOT is empty
 	 *  	it has enough free space
-	 *  	if you add a valid resource OR amount
+	 *  	
+	 *  returns how many objects couldn't be added
 	 *  
 	 * @param r
 	 * @param plus
@@ -31,14 +33,14 @@ public class Bag {
 	public int add(Resource r, int plus) {
 		if(r != null || plus > 0) {
 			for(int i = 0; i < resources.length || plus==0; i++) {
-				if(resources[i].getResource() == r) {
+				if(resources[i].getResource() == r || resources[i].isEmpty()) {
 					if(resources[i].resourcesToAdd() < plus) {
 						plus -= resources[i].resourcesToAdd();
 						resources[i].setAmount(resources[i].getSize());
 					}
 					else {
 						plus = 0;
-						resources[i].setAmount(resources[i].getAmount()+plus);
+						resources[i].setAmount(resources[i].getAmount() + plus);
 					}
 				}
 			}
