@@ -31,7 +31,7 @@ public class Bag {
 	 * @return
 	 */
 	public int add(Resource r, int plus) {
-		if(r != null || plus > 0) {
+		if(r != null && plus > 0) {
 			for(int i = 0; i < resources.length || plus==0; i++) {
 				if(resources[i].getResource() == r || resources[i].isEmpty()) {
 					if(resources[i].resourcesToAdd() < plus) {
@@ -69,7 +69,7 @@ public class Bag {
 
 	public int dispose(Resource r, int amount) {
 		
-		if(r != null || amount != 0) {
+		if(r != null && amount > 0) {
 			for(int i = 0; i < resources.length; i++) {
 				if(resources[i].getResource() == r) {
 					if(resources[i].getAmount() < amount) {
