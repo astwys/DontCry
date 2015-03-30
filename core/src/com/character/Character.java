@@ -121,6 +121,21 @@ public class Character {
 	public boolean canRun() {
 		return (getHunger() >= 30);
 	}
+
+	/**
+	 * only returns true if a minimum of one of the specified resource could be added
+	 * returns false if not
+	 * @param r
+	 * @param plus
+	 * @return if a resource with a specified amount could be added
+	 */
+	public boolean addResource(Resource r, int plus) {
+		if (bag.add(r, plus) < plus) {
+			bag.add(r, plus);
+			return true;
+		}
+		return false;
+	}
 	
 	
 //---------------------------------------------------Getters/Setters---------------------------------------------------
