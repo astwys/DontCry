@@ -6,7 +6,7 @@ import java.util.Set;
 
 import com.resources.*;
 import com.resources.craftable.*;
-import com.resources.natural.*;
+import com.resources.craftable.tools.*;
 
 public class Craftingbook{
 

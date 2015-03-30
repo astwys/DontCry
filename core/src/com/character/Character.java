@@ -101,8 +101,7 @@ public class Character {
 //---------------------------------------------------Methods---------------------------------------------------
 
 	/**
-	 * returns the Bag with all the resources stored in it
-	 * @return
+	 * @return Bag with all the resources stored in it
 	 */
 	public Bag showInventory() {
 		Bag bag1=new Bag();

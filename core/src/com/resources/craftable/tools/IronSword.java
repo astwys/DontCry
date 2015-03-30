@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.resources.craftable;
+package com.resources.craftable.tools;
 
 import java.util.ArrayList;
 
@@ -11,18 +11,18 @@ import com.resources.Resource;
  * @author michael
  *
  */
-public class GoldSword extends Resource {
+public class IronSword extends Resource {
 
 	/**
 	 * @param name
 	 */
-	public GoldSword() {
-		super("GoldSword", 1);
+	public IronSword() {
+		super("IronSword", 1);
 		// assign the resources needed
 		resourcesNeeded.add("Stick");
-		resourcesNeeded.add("GoldPlate");
-		resourcesNeeded.add("GoldPlate");
-		resourcesNeeded.add("GoldPlate");
+		resourcesNeeded.add("IronPlate");
+		resourcesNeeded.add("IronPlate");
+		resourcesNeeded.add("IronPlate");
 	}
 
 	/* (non-Javadoc)

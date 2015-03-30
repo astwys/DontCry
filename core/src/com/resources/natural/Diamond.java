@@ -13,9 +13,6 @@ import com.resources.Resource;
  */
 public class Diamond extends Resource {
 
-	/**
-	 * @param name
-	 */
 	public Diamond() {
 		super("Diamond", 1);
 		// no resources needed

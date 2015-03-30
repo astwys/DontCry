@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.resources.craftable;
+package com.resources.craftable.tools;
 
 import java.util.ArrayList;
 
@@ -9,17 +9,19 @@ import com.resources.Resource;
 
 /**
  * @author michael
+ * used to cut down trees
  * 
- * Used to mine stone
  */
-public class StoneAxe extends Resource{
-	
-	public StoneAxe() {
-		super("StoneAxe", 1);
+public class WoodAxe extends Resource{
+	/**
+	 * @param name
+	 */
+	public WoodAxe() {
+		super("WoodAxe", 1);
 		// assign the resources needed
 		resourcesNeeded.add("Stick");
-		resourcesNeeded.add("StonePlate");
-		resourcesNeeded.add("StonePlate");
+		resourcesNeeded.add("WoodPlate");
+		resourcesNeeded.add("WoodPlate");
 	}
 
 	/* (non-Javadoc)
@@ -27,6 +29,7 @@ public class StoneAxe extends Resource{
 	 */
 	@Override
 	public ArrayList<String> neededToCraft() {
+		// TODO Auto-generated method stub
 		return resourcesNeeded;
 	}
 }
