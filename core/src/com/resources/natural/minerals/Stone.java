@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.resources.natural;
+package com.resources.natural.minerals;
 
 import java.util.ArrayList;
 
@@ -11,9 +11,12 @@ import com.resources.Resource;
  * @author michael
  *
  */
-public class Wood extends Resource{
-	public Wood() {
-		super("Wood", 1);
+public class Stone extends Resource {
+	/**
+	 * @param name
+	 */
+	public Stone() {
+		super("Stone", 1);
 		// no resources needed
 	}
 
@@ -25,4 +28,5 @@ public class Wood extends Resource{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 }

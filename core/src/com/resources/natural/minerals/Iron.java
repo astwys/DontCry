@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.resources.natural;
+package com.resources.natural.minerals;
 
 import java.util.ArrayList;
 
@@ -11,13 +11,13 @@ import com.resources.Resource;
  * @author michael
  *
  */
-public class Gold extends Resource {
+public class Iron extends Resource{
 
 	/**
 	 * @param name
 	 */
-	public Gold() {
-		super("Gold", 1);
+	public Iron() {
+		super("Iron", 1);
 		// no resources needed
 	}
 

@@ -1,4 +1,4 @@
-package com.resources.natural;
+package com.resources.natural.minerals;
 
 import com.resources.Resource;
 
