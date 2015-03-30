@@ -14,8 +14,11 @@ import com.sun.xml.internal.bind.v2.TODO;
  */
 public class Character {
 	private String name;
-	private int hunger = 100, health = 100; //default starting values
-	
+
+	private int hunger;
+	private int health;
+	private int strength;
+
 	private Bag bag;
 	private Craftingbook craftingbook;
 	
@@ -24,6 +27,14 @@ public class Character {
 
 	public Character(String name) {
 		setName(name);
+
+		/**
+		 * default starting values
+		 */
+		setHunger(100);
+		setHealth(100);
+		setStrength(3);
+
 		bag=new Bag();
 		craftingbook=new Craftingbook();
 	}
@@ -93,7 +104,7 @@ public class Character {
 	 * @return
 	 */
 	public int increaseHealth (int inc) {
-		setHealth(getHealth()+inc);
+		setHealth(getHealth() + inc);
 		return getHealth();
 	}
 
@@ -211,5 +222,16 @@ public class Character {
 		else {
 			// method to "die" / restart the game if health = 0
 		}
+	}
+
+
+//-------------------------------Strength-------------------------------
+
+	public int getStrength() {
+		return strength;
+	}
+
+	public void setStrength(int strength) {
+		this.strength = strength;
 	}
 }

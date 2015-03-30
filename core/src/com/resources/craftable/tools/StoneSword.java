@@ -5,13 +5,14 @@ package com.resources.craftable.tools;
 
 import java.util.ArrayList;
 
+import com.resources.Damage;
 import com.resources.Resource;
 
 /**
  * @author michael
  *
  */
-public class StoneSword extends Resource {
+public class StoneSword extends Resource implements Damage {
 
 	/**
 	 * @param name
@@ -34,4 +35,8 @@ public class StoneSword extends Resource {
 		return resourcesNeeded;
 	}
 
+	@Override
+	public int dealsDamage() {
+		return 10;
+	}
 }
