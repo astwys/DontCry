@@ -15,9 +15,12 @@ import com.sun.xml.internal.bind.v2.TODO;
 public class Character {
 	private String name;
 
-	private int hunger;
-	private int health;
-	private int strength;
+	/**
+	 * default starting values
+	 */
+	private int hunger=100;
+	private int health=100;
+	private int strength=3;
 
 	private Bag bag;
 	private Craftingbook craftingbook;
@@ -27,13 +30,6 @@ public class Character {
 
 	public Character(String name) {
 		setName(name);
-
-		/**
-		 * default starting values
-		 */
-		setHunger(100);
-		setHealth(100);
-		setStrength(3);
 
 		bag=new Bag();
 		craftingbook=new Craftingbook();
