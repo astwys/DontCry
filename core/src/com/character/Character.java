@@ -73,7 +73,7 @@ public class Character {
 	 * @return
 	 */
 	public int decreaseHealthDef() {
-		setHealth(getHealth()-1);
+		setHealth(getHealth() - 1);
 		return getHealth();
 	} 
 	
@@ -83,7 +83,7 @@ public class Character {
 	 * @return
 	 */
 	public int decreaseHealth (int dec) {
-		setHealth(getHealth()-dec);
+		setHealth(getHealth() - dec);
 		return getHealth();
 	}
 	
@@ -113,6 +113,14 @@ public class Character {
 			}
 		}
 		return bag1;
+	}
+
+	/**
+	 * the character is only able to run if his hunger is >= 30
+	 * @return
+	 */
+	public boolean canRun() {
+		return (getHunger() >= 30);
 	}
 	
 	

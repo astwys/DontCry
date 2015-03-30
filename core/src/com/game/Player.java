@@ -10,6 +10,8 @@ import com.badlogic.gdx.maps.tiled.TiledMapTileLayer.Cell;
 import com.badlogic.gdx.math.Vector2;
 import com.character.Character;
 
+import java.security.Key;
+
 public class Player extends Sprite implements InputProcessor{
 
 	//character reference
@@ -169,16 +171,17 @@ public class Player extends Sprite implements InputProcessor{
 			velocity.y = -speed;
 		}else if(keycode == Keys.A || keycode == Keys.LEFT){
 			velocity.x = -speed;
-		}else if(keycode == Keys.D || keycode == Keys.RIGHT){
+		}else if(keycode == Keys.D || keycode == Keys.RIGHT) {
 			velocity.x = speed;
-		}else if(keycode == Keys.SHIFT_LEFT)
-			speed = runSpeed;
-		
+		}else if(keycode == Keys.SHIFT_LEFT){
+			if (character.canRun())
+				speed = runSpeed;
+		}
+
 		if(keycode == Keys.SPACE){
 			//method for collecting
 		}
-		
-		
+
 		return true;
 	}
 
@@ -193,8 +196,9 @@ public class Player extends Sprite implements InputProcessor{
 			velocity.x = 0;
 		}else if(keycode == Keys.D || keycode == Keys.RIGHT){
 			velocity.x = 0;
-		}else if(keycode == Keys.SHIFT_LEFT)
+		}else if(keycode == Keys.SHIFT_LEFT){
 			speed = normalSpeed;
+		}
 		
 		return true;
 	}
