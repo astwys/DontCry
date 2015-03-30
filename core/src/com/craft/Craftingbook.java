@@ -6,6 +6,9 @@ import java.util.Set;
 
 import com.resources.*;
 import com.resources.craftable.*;
+import com.resources.craftable.edible.Chips;
+import com.resources.craftable.potions.HealthPotionBig;
+import com.resources.craftable.potions.HealthPotionSmall;
 import com.resources.craftable.tools.*;
 
 public class Craftingbook{
@@ -105,6 +108,10 @@ public class Craftingbook{
 		listOfCraftables.add(new WoodPlate());
 		listOfCraftables.add(new WoodStick());
 		listOfCraftables.add(new WoodSword());
+		listOfCraftables.add(new Fire());
+		listOfCraftables.add(new Chips());
+		listOfCraftables.add(new HealthPotionBig());
+		listOfCraftables.add(new HealthPotionSmall());
 
 		
 		//initialising the actual craftMap
