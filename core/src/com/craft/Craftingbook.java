@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 
-import com.resources.*;
-import com.resources.craftable.*;
-import com.resources.craftable.edible.Chips;
-import com.resources.craftable.potions.HealthPotionBig;
-import com.resources.craftable.potions.HealthPotionSmall;
-import com.resources.craftable.tools.*;
+import com.resources.Craftable;
+import com.resources.Resource;
+import com.resources.craftable.DiamondPlate;
+import com.resources.craftable.GoldPlate;
+import com.resources.craftable.IronPlate;
+import com.resources.craftable.StonePlate;
+import com.resources.craftable.WoodPlate;
+import com.resources.craftable.WoodStick;
 
 public class Craftingbook{
 
@@ -92,26 +94,26 @@ public class Craftingbook{
 		ArrayList<Resource> listOfCraftables = new ArrayList<Resource>();
 		
 		//Initialising listOfCraftables
-		listOfCraftables.add(new DiamondAxe());
+//		listOfCraftables.add(new DiamondAxe());
 		listOfCraftables.add(new DiamondPlate());
-		listOfCraftables.add(new DiamondSword());
-		listOfCraftables.add(new GoldAxe());
+//		listOfCraftables.add(new DiamondSword());
+//		listOfCraftables.add(new GoldAxe());
 		listOfCraftables.add(new GoldPlate());
-		listOfCraftables.add(new GoldSword());
-		listOfCraftables.add(new IronAxe());
+//		listOfCraftables.add(new GoldSword());
+//		listOfCraftables.add(new IronAxe());
 		listOfCraftables.add(new IronPlate());
-		listOfCraftables.add(new IronSword());
-		listOfCraftables.add(new StoneAxe());
+//		listOfCraftables.add(new IronSword());
+//		listOfCraftables.add(new StoneAxe());
 		listOfCraftables.add(new StonePlate());
-		listOfCraftables.add(new StoneSword());
-		listOfCraftables.add(new WoodAxe());
+//		listOfCraftables.add(new StoneSword());
+//		listOfCraftables.add(new WoodAxe());
 		listOfCraftables.add(new WoodPlate());
 		listOfCraftables.add(new WoodStick());
-		listOfCraftables.add(new WoodSword());
-		listOfCraftables.add(new Fire());
-		listOfCraftables.add(new Chips());
-		listOfCraftables.add(new HealthPotionBig());
-		listOfCraftables.add(new HealthPotionSmall());
+//		listOfCraftables.add(new WoodSword());
+//		listOfCraftables.add(new Fire());
+//		listOfCraftables.add(new Chips());
+//		listOfCraftables.add(new HealthPotionBig());
+//		listOfCraftables.add(new HealthPotionSmall());
 
 		
 		//initialising the actual craftMap
