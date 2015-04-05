@@ -17,6 +17,8 @@ public class PlayScreen implements Screen {
 	
 	//for the map
 	private TiledMap map;
+	private float tileWidth, tileHeight;
+	private int width = 900, height = 600;
 	private OrthogonalTiledMapRenderer renderer;
 	private OrthographicCamera camera;
 	
@@ -34,6 +36,10 @@ public class PlayScreen implements Screen {
 		//create and initialise the player with the collisionlayer
 		player = new Player(new Sprite(new Texture("../core/assets/player/p_back.png")), (TiledMapTileLayer) map.getLayers().get(1));
 		player.setPosition(200, 10);
+		
+		//saving important map properties
+		tileWidth = ((TiledMapTileLayer) map.getLayers().get(1)).getTileWidth(); 
+		tileHeight = ((TiledMapTileLayer) map.getLayers().get(1)).getTileHeight();
 		
 		//set the player to the InputProcessor
 		Gdx.input.setInputProcessor(player);
@@ -57,10 +63,41 @@ public class PlayScreen implements Screen {
 		
 		game.batch.begin();
 		player.draw(game.batch);
+		
+		updateCamera();
+		
 		game.font.draw(game.batch, player.getName(), player.getX()-5, player.getY()+player.getHeight()+20);
 		game.batch.end();
 		
 		
+	}
+	
+	private void updateCamera(){
+		// scroll so that the player is in the center
+		camera.position.x = player.getX()-player.getWidth()/2;
+		camera.position.y = player.getY()-player.getHeight()/2;
+		
+		// do not let the camera show places, where there is no map
+		if(camera.position.x < 450){
+			camera.position.x = 450;
+		}else if(camera.position.x > width*tileWidth - 450){
+			camera.position.x = width*tileWidth - 450;
+		}
+				
+//		if(camera.position.y < 300){
+//			camera.position.y = 300;
+//		}else if(camera.position.y > height*tileHeight - 300){
+//			camera.position.y = height*tileHeight - 300;
+//		}
+		
+		if(camera.position.y < 300){
+			camera.position.y = 300;
+		}else if(camera.position.y > (tileHeight) * 255 - 300){
+			camera.position.y = (tileHeight) * 255 - 300;
+		}
+
+		
+		camera.update();
 	}
 
 	@Override

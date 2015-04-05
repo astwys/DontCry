@@ -173,9 +173,11 @@ public class Player extends Sprite implements InputProcessor{
 			velocity.x = -speed;
 		}else if(keycode == Keys.D || keycode == Keys.RIGHT) {
 			velocity.x = speed;
-		}else if(keycode == Keys.SHIFT_LEFT){
+		}
+		
+		if(keycode == Keys.SHIFT_LEFT || keycode == Keys.SHIFT_RIGHT){
 			if (character.canRun())
-				speed = runSpeed;
+				speed = speed*5;
 		}
 
 		if(keycode == Keys.SPACE){
@@ -188,6 +190,10 @@ public class Player extends Sprite implements InputProcessor{
 	@Override
 	public boolean keyUp(int keycode) {
 		
+		if(keycode == Keys.SHIFT_LEFT){
+			speed = normalSpeed;
+		}
+		
 		if(keycode == Keys.W || keycode == Keys.UP){
 			velocity.y = 0;
 		}else if(keycode == Keys.S || keycode == Keys.DOWN){
@@ -196,8 +202,6 @@ public class Player extends Sprite implements InputProcessor{
 			velocity.x = 0;
 		}else if(keycode == Keys.D || keycode == Keys.RIGHT){
 			velocity.x = 0;
-		}else if(keycode == Keys.SHIFT_LEFT){
-			speed = normalSpeed;
 		}
 		
 		return true;
