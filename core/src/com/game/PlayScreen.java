@@ -34,6 +34,7 @@ public class PlayScreen implements Screen {
 		camera = new OrthographicCamera();
 		
 		//create and initialise the player with the collisionlayer
+		TiledMapTileLayer x = (TiledMapTileLayer) map.getLayers().get(1);
 		player = new Player(new Sprite(new Texture("../core/assets/player/p_back.png")), (TiledMapTileLayer) map.getLayers().get(1));
 		player.setPosition(200, 10);
 		

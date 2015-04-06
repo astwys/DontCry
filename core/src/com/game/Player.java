@@ -5,12 +5,11 @@ import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.maps.tiled.TiledMapTile;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer.Cell;
 import com.badlogic.gdx.math.Vector2;
 import com.character.Character;
-
-import java.security.Key;
 
 public class Player extends Sprite implements InputProcessor{
 
@@ -27,10 +26,14 @@ public class Player extends Sprite implements InputProcessor{
 	private float runSpeed = 60*3;
 	
 	// current speed of the player
-		private float speed = normalSpeed;
+	private float speed = normalSpeed;
 	
 	//reference to the collisionlayer
 	private TiledMapTileLayer collisionLayer;
+	
+	//important variables regarding the map for collision detection
+	private int mapWidth = 256, mapHeight = 256;
+	private float tileWidth, tileHeight;
 	
 	
 	public Player(Sprite sprite, TiledMapTileLayer tiledMapLayer){
@@ -38,7 +41,8 @@ public class Player extends Sprite implements InputProcessor{
 		velocity = new Vector2();
 		collisionLayer = tiledMapLayer;
 		character = new Character("Frank");
-//		character = new Character(character.getName());
+		tileWidth = collisionLayer.getTileWidth();
+		tileHeight = collisionLayer.getTileHeight();
 	}
 	
 	public void draw(SpriteBatch spriteBatch){
@@ -51,8 +55,7 @@ public class Player extends Sprite implements InputProcessor{
 		//collision detection
 		//old positions
 		float oldX = getX(), oldY = getY();
-		//tile dimensions
-		float tileWidth = collisionLayer.getTileWidth(), tileHeight = collisionLayer.getTileHeight();
+		
 		//boolean collision
 		boolean collisionX = false, collisionY = false;
 		
@@ -63,21 +66,30 @@ public class Player extends Sprite implements InputProcessor{
 		//when moving up
 		//Cell for checking if a "blocking" tile is in our way
 		Cell cell;
-		if(velocity.y > 0){
+		if(velocity.y >= 0){
+			
+			int x = (int)((getX() / tileWidth - getWidth() / tileWidth));
+			int y = transformHeight((getY()+getHeight()) / tileHeight);
+			
+			float playerX = getX();
+			float playerY = getY();
+			
+			float width = getWidth();
+			float height = getHeight();
 			
 			//top left
-			cell = collisionLayer.getCell((int)(getX() / tileWidth),(int)((getY()+getHeight()) / tileHeight));
+			cell = collisionLayer.getCell((int)((getX() / tileWidth - getWidth() / tileWidth)), transformHeight((getY()+getHeight()) / tileHeight));
 			collisionY = checkForCollision(cell);
 			
 			if(!collisionY){
 				//top middle
-				cell = collisionLayer.getCell((int)((getX()+getWidth() / 2) / tileWidth),(int)((getY()+getHeight()) / tileHeight));
+				cell = collisionLayer.getCell((int)(getX() / tileWidth), transformHeight((getY()+getHeight() / 2) / tileHeight));
 				collisionY = checkForCollision(cell);
 			}
 			
 			if(!collisionY){
 			//top right
-				cell = collisionLayer.getCell((int)((getX()+getWidth()) / tileWidth),(int)((getY()+getHeight()) / tileHeight));
+				cell = collisionLayer.getCell((int)((getX()+getWidth() / 2) / tileWidth), transformHeight((getY()+getHeight()) / tileHeight));
 				collisionY = checkForCollision(cell);
 			}
 			
@@ -142,6 +154,10 @@ public class Player extends Sprite implements InputProcessor{
 			velocity.x = 0;
 		}
 		
+	}
+	
+	private int transformHeight(float coordinate){
+		return (mapHeight - (int)coordinate);
 	}
 	
 	private boolean checkForCollision(Cell cell){
