@@ -154,6 +154,25 @@ public class Player extends Sprite implements InputProcessor{
 			velocity.x = 0;
 		}
 		
+		//if player walks out of the screen
+		//left
+		if((getX()) <= 0){
+			setX(0);
+		}
+		//right
+		else if((getX()+getWidth()) >= 6141.75f){
+			setX(6141.75f-getWidth());
+		}
+		//bottom
+		else if((getY()-getHeight()) <= 0){
+			setY(getHeight());
+		}
+		//top
+		else if((getY()+getHeight()) >= 600){
+			setX(600-getHeight());
+		}
+		
+		
 	}
 	
 	private int transformHeight(float coordinate){
@@ -225,8 +244,12 @@ public class Player extends Sprite implements InputProcessor{
 
 	@Override
 	public boolean keyTyped(char character) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		if(character == ' '){
+			collectStuff();
+		}
+		
+		return true;
 	}
 
 	@Override
@@ -257,6 +280,10 @@ public class Player extends Sprite implements InputProcessor{
 	public boolean scrolled(int amount) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+	
+	public void collectStuff(){
+		
 	}
 	
 	//-------------------------------------------- Miscellaneous -----------------------------------

@@ -35,8 +35,8 @@ public class PlayScreen implements Screen {
 		
 		//create and initialise the player with the collisionlayer
 		TiledMapTileLayer x = (TiledMapTileLayer) map.getLayers().get(1);
-		player = new Player(new Sprite(new Texture("../core/assets/player/p_back.png")), (TiledMapTileLayer) map.getLayers().get(1));
-		player.setPosition(200, 10);
+		player = new Player(new Sprite(new Texture("../core/assets/player/p_back.gif")), (TiledMapTileLayer) map.getLayers().get(1));
+		player.setPosition(6000, 10);
 		
 		//saving important map properties
 		tileWidth = ((TiledMapTileLayer) map.getLayers().get(1)).getTileWidth(); 
