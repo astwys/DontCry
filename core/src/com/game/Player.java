@@ -37,6 +37,9 @@ public class Player extends Sprite implements InputProcessor{
 	private int mapWidth = 256, mapHeight = 256;
 	private float tileWidth = 20.8f, tileHeight = 20.8f;
 	
+	//the array of different textures
+	private Texture[] skins = {new Texture(new FileHandle("../core/assets/player/p_back.png")), new Texture(new FileHandle("../core/assets/player/p_front.png")), new Texture(new FileHandle("../core/assets/player/p_right.png")), new Texture(new FileHandle("../core/assets/player/p_left.png"))};
+	
 	
 	public Player(Sprite sprite, TiledMapTileLayer tiledMapLayer){
 		super(sprite);
@@ -72,6 +75,10 @@ public class Player extends Sprite implements InputProcessor{
 			//top left
 			collisionY = collides(getX(), getY()+getHeight());
 			
+			if(!collisionY){
+				//top middle
+				collisionY = collides(getX()+getWidth()/2, getY()+getHeight());
+			}
 			
 			if(!collisionY){
 			//top right
@@ -82,6 +89,11 @@ public class Player extends Sprite implements InputProcessor{
 		}else if(velocity.y < 0){
 			//bottom left
 			collisionY = collides(getX(), getY());
+			
+			if(!collisionY){
+				//bottom middle
+				collisionY = collides(getX()+getWidth()/2, getY());
+			}
 			
 			if(!collisionY){
 			//bottom right
@@ -95,6 +107,11 @@ public class Player extends Sprite implements InputProcessor{
 			//right top
 			collisionX = collides(getX()+getWidth(), getY()+getHeight());
 			
+			if(!collisionX){
+				//right middle
+				collisionX = collides(getX()+getWidth(), getY()+getHeight()/2);
+			}
+			
 			//right bottom
 			if(!collisionX){
 				collisionX = collides(getX()+getWidth(), getY());
@@ -104,6 +121,10 @@ public class Player extends Sprite implements InputProcessor{
 		}else if(velocity.x < 0){
 			//left top
 			collisionX = collides(getX(), getY()+getHeight());
+			
+			if(!collisionX){
+				collisionX = collides(getX(), getY()+getHeight()/2);
+			}
 			
 			if(!collisionX){
 			//left bottom	
@@ -167,18 +188,29 @@ public class Player extends Sprite implements InputProcessor{
 	@Override
 	public boolean keyDown(int keycode) {
 		
+		float x = getX();
+		float y = getY();
+		
 		if(keycode == Keys.W || keycode == Keys.UP){
 			velocity.y = speed;
-			set(new Sprite(new Texture(new FileHandle("../core/assets/player/p_back.png"))));
+			set(new Sprite(skins[0]));
+			setX(x);
+			setY(y);
 		}else if(keycode == Keys.S || keycode == Keys.DOWN){
 			velocity.y = -speed;
-			set(new Sprite(new Texture(new FileHandle("../core/assets/player/p_front.png"))));
+			set(new Sprite(skins[1]));
+			setX(x);
+			setY(y);
 		}else if(keycode == Keys.A || keycode == Keys.LEFT){
 			velocity.x = -speed;
-			set(new Sprite(new Texture(new FileHandle("../core/assets/player/p_left.png"))));
+			set(new Sprite(skins[3]));
+			setX(x);
+			setY(y);
 		}else if(keycode == Keys.D || keycode == Keys.RIGHT) {
 			velocity.x = speed;
-			set(new Sprite(new Texture(new FileHandle("../core/assets/player/p_right.png"))));
+			set(new Sprite(skins[2]));
+			setX(x);
+			setY(y);
 		}
 		
 		if(keycode == Keys.SHIFT_LEFT || keycode == Keys.SHIFT_RIGHT){

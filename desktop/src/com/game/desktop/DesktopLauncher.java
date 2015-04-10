@@ -20,7 +20,7 @@ public class DesktopLauncher {
 	}
 	
 	//SOME NOTES FOR BETTER UNDERSTANDING
-	/*
+	/*s
 	 * 1 tile = 20.803711f units
 	 * 
 	 * 
