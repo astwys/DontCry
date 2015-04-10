@@ -1,6 +1,7 @@
 package com.game;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Buttons;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.files.FileHandle;
@@ -175,6 +176,10 @@ public class Player extends Sprite implements InputProcessor{
 		return cell == null ? false : true;
 	}
 	
+	public Character getCharacter(){
+		return this.character;
+	}
+	
 	public TiledMapTileLayer getCollisionLayer(){
 		return collisionLayer;
 	}
@@ -218,10 +223,6 @@ public class Player extends Sprite implements InputProcessor{
 				speed = speed*5;
 		}
 
-		if(keycode == Keys.SPACE){
-			//method for collecting
-		}
-
 		return true;
 	}
 
@@ -242,6 +243,10 @@ public class Player extends Sprite implements InputProcessor{
 			velocity.x = 0;
 		}
 		
+		if(keycode == Keys.TAB){
+			craftingMode();
+		}
+		
 		return true;
 	}
 
@@ -250,15 +255,18 @@ public class Player extends Sprite implements InputProcessor{
 		
 		if(character == ' '){
 			collectStuff();
-		}
+			System.out.println("Space pressed");
+		}		
 		
 		return true;
 	}
 
 	@Override
 	public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-
-		return false;
+		
+		collectStuff();
+		
+		return true;
 	}
 
 	@Override
@@ -286,6 +294,13 @@ public class Player extends Sprite implements InputProcessor{
 	}
 	
 	public void collectStuff(){
+		//check around player
+		
+		//collect and delete stuff
+		
+	}
+	
+	private void craftingMode(){
 		
 	}
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-down" width="256" height="256" tilewidth="16" tileheight="16" nextobjectid="1">
+<map version="1.0" orientation="orthogonal" renderorder="left-down" width="256" height="256" tilewidth="16" tileheight="16" nextobjectid="4">
  <tileset firstgid="1" name="tilesetPokemon" tilewidth="16" tileheight="16" spacing="1" margin="1">
   <image source="tilesetPokemon.png" trans="ffffff" width="2738" height="2262"/>
   <tile id="2">
@@ -299,4 +299,7 @@
    eJztzkENwCAABMFzBzJojQLOQEVpwkyy/00AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA2/WSjN0sp0+Ar7WaPLu3nj4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+ZgHbJQUR
   </data>
  </layer>
+ <objectgroup name="items">
+  <object id="3" gid="2906" x="160" y="4032"/>
+ </objectgroup>
 </map>

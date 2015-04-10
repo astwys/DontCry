@@ -2,6 +2,7 @@ package com.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -24,6 +25,8 @@ public class PlayScreen implements Screen {
 	
 	//player
 	private Player player;
+	private Sprite[] fullhearts = new Sprite[10];
+	private Sprite halfheart;
 	
 	public PlayScreen(final DontCry dontcry){
 		game = dontcry;
@@ -34,7 +37,6 @@ public class PlayScreen implements Screen {
 		camera = new OrthographicCamera();
 		
 		//create and initialise the player with the collisionlayer
-		TiledMapTileLayer x = (TiledMapTileLayer) map.getLayers().get(1);
 		player = new Player(new Sprite(new Texture("../core/assets/player/p_back.png")), (TiledMapTileLayer) map.getLayers().get(1));
 		player.setPosition(208, 20.8f);
 		
@@ -44,6 +46,17 @@ public class PlayScreen implements Screen {
 		
 		//set the player to the InputProcessor
 		Gdx.input.setInputProcessor(player);
+		
+		//assign files for hearts
+		Texture heart = new Texture(new FileHandle("../core/assets/icons/hearts/fullheart.png"));
+		int x = 10;
+		int y = 200;
+		for(int i=0; i<fullhearts.length; i++){
+			fullhearts[i] = new Sprite(heart);
+			fullhearts[i].setPosition(x, y);
+			x += 40;
+		}
+		
 	}
 	
 	@Override
@@ -64,6 +77,10 @@ public class PlayScreen implements Screen {
 		
 		game.batch.begin();
 		player.draw(game.batch);
+		
+		for(int i=0; i*10<player.getCharacter().getHealth(); i++){
+			fullhearts[i].draw(game.batch);
+		}
 		
 		updateCamera();
 		

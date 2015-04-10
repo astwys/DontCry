@@ -111,14 +111,7 @@ public class Character {
 	 * @return Bag with all the resources stored in it
 	 */
 	public Bag showInventory() {
-		Bag bag1=new Bag();
-
-		for (int i=0; i<bag.getResources().length; i++) {
-			if (bag.getResources()[i] != null) {
-				bag1.add(bag.getResources()[i].getResource(), bag.getResources()[i].getAmount());
-			}
-		}
-		return bag1;
+		return bag;
 	}
 
 	/**
