@@ -3,6 +3,8 @@ package com.game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputProcessor;
+import com.badlogic.gdx.files.FileHandle;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.tiled.TiledMapTile;
@@ -167,12 +169,16 @@ public class Player extends Sprite implements InputProcessor{
 		
 		if(keycode == Keys.W || keycode == Keys.UP){
 			velocity.y = speed;
+			set(new Sprite(new Texture(new FileHandle("../core/assets/player/p_back.png"))));
 		}else if(keycode == Keys.S || keycode == Keys.DOWN){
 			velocity.y = -speed;
+			set(new Sprite(new Texture(new FileHandle("../core/assets/player/p_front.png"))));
 		}else if(keycode == Keys.A || keycode == Keys.LEFT){
 			velocity.x = -speed;
+			set(new Sprite(new Texture(new FileHandle("../core/assets/player/p_left.png"))));
 		}else if(keycode == Keys.D || keycode == Keys.RIGHT) {
 			velocity.x = speed;
+			set(new Sprite(new Texture(new FileHandle("../core/assets/player/p_right.png"))));
 		}
 		
 		if(keycode == Keys.SHIFT_LEFT || keycode == Keys.SHIFT_RIGHT){
