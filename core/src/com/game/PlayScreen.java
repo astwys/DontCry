@@ -30,13 +30,13 @@ public class PlayScreen implements Screen {
 		
 		//stuff for rendering the tiledmap
 		map = new TmxMapLoader().load("../core/assets/maps/map1/map1.tmx");
-		renderer = new OrthogonalTiledMapRenderer(map, 1.5f, game.batch);
+		renderer = new OrthogonalTiledMapRenderer(map, 1.3f, game.batch);
 		camera = new OrthographicCamera();
 		
 		//create and initialise the player with the collisionlayer
 		TiledMapTileLayer x = (TiledMapTileLayer) map.getLayers().get(1);
-		player = new Player(new Sprite(new Texture("../core/assets/player/p_back.gif")), (TiledMapTileLayer) map.getLayers().get(1));
-		player.setPosition(6000, 10);
+		player = new Player(new Sprite(new Texture("../core/assets/player/p_back.png")), (TiledMapTileLayer) map.getLayers().get(1));
+		player.setPosition(208, 20.8f);
 		
 		//saving important map properties
 		tileWidth = ((TiledMapTileLayer) map.getLayers().get(1)).getTileWidth(); 
@@ -75,26 +75,20 @@ public class PlayScreen implements Screen {
 	
 	private void updateCamera(){
 		// scroll so that the player is in the center
-		camera.position.x = player.getX()-player.getWidth()/2;
-		camera.position.y = player.getY()-player.getHeight()/2;
+		camera.position.x = player.getX()+player.getWidth()/2;
+		camera.position.y = player.getY()+player.getHeight();
 		
 		// do not let the camera show places, where there is no map
 		if(camera.position.x < 450){
 			camera.position.x = 450;
-		}else if(camera.position.x > width*tileWidth - 450){
-			camera.position.x = width*tileWidth - 450;
+		}else if(camera.position.x > 5325 - 450){
+			camera.position.x = 5325 - 450;
 		}
-				
-//		if(camera.position.y < 300){
-//			camera.position.y = 300;
-//		}else if(camera.position.y > height*tileHeight - 300){
-//			camera.position.y = height*tileHeight - 300;
-//		}
 		
 		if(camera.position.y < 300){
 			camera.position.y = 300;
-		}else if(camera.position.y > (tileHeight) * 255 - 300){
-			camera.position.y = (tileHeight) * 255 - 300;
+		}else if(camera.position.y > 5325 - 300){
+			camera.position.y = 5325 - 300;
 		}
 
 		

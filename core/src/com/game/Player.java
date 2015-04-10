@@ -33,7 +33,7 @@ public class Player extends Sprite implements InputProcessor{
 	
 	//important variables regarding the map for collision detection
 	private int mapWidth = 256, mapHeight = 256;
-	private float tileWidth, tileHeight;
+	private float tileWidth = 20.8f, tileHeight = 20.8f;
 	
 	
 	public Player(Sprite sprite, TiledMapTileLayer tiledMapLayer){
@@ -41,8 +41,6 @@ public class Player extends Sprite implements InputProcessor{
 		velocity = new Vector2();
 		collisionLayer = tiledMapLayer;
 		character = new Character("Frank");
-		tileWidth = collisionLayer.getTileWidth();
-		tileHeight = collisionLayer.getTileHeight();
 	}
 	
 	public void draw(SpriteBatch spriteBatch){
@@ -66,49 +64,26 @@ public class Player extends Sprite implements InputProcessor{
 		//when moving up
 		//Cell for checking if a "blocking" tile is in our way
 		Cell cell;
+		
 		if(velocity.y >= 0){
 			
-			int x = (int)((getX() / tileWidth - getWidth() / tileWidth));
-			int y = transformHeight((getY()+getHeight()) / tileHeight);
-			
-			float playerX = getX();
-			float playerY = getY();
-			
-			float width = getWidth();
-			float height = getHeight();
-			
 			//top left
-			cell = collisionLayer.getCell((int)((getX() / tileWidth - getWidth() / tileWidth)), transformHeight((getY()+getHeight()) / tileHeight));
-			collisionY = checkForCollision(cell);
+			collisionY = collides(getX(), getY()+getHeight());
 			
-			if(!collisionY){
-				//top middle
-				cell = collisionLayer.getCell((int)(getX() / tileWidth), transformHeight((getY()+getHeight() / 2) / tileHeight));
-				collisionY = checkForCollision(cell);
-			}
 			
 			if(!collisionY){
 			//top right
-				cell = collisionLayer.getCell((int)((getX()+getWidth() / 2) / tileWidth), transformHeight((getY()+getHeight()) / tileHeight));
-				collisionY = checkForCollision(cell);
+				collisionY = collides(getX()+getWidth(), getY()+getHeight());
 			}
 			
 		//when moving down
 		}else if(velocity.y < 0){
 			//bottom left
-			cell = collisionLayer.getCell((int)(getX() / tileWidth),(int)(getY() / tileHeight));
-			collisionY = checkForCollision(cell);
-			
-			if(!collisionY){
-			//bottom middle
-				cell = collisionLayer.getCell((int)((getX()+getWidth() / 2) / tileWidth),(int)(getY() / tileHeight));
-				collisionY = checkForCollision(cell);
-			}
+			collisionY = collides(getX(), getY());
 			
 			if(!collisionY){
 			//bottom right
-				cell = collisionLayer.getCell((int)((getX()+getWidth()) / tileWidth),(int)(getY() / tileHeight));
-				collisionY = checkForCollision(cell);
+				collisionY = collides(getX()+getWidth(), getY());
 			}
 		}
 		
@@ -116,32 +91,41 @@ public class Player extends Sprite implements InputProcessor{
 		//when moving right
 		if(velocity.x > 0){
 			//right top
+			collisionX = collides(getX()+getWidth(), getY()+getHeight());
 			
-			
-			if(!collisionX){
-				//right middle
-				
-			}
 			//right bottom
 			if(!collisionX){
-				
+				collisionX = collides(getX()+getWidth(), getY());
 			}
 		
 		//when moving left
 		}else if(velocity.x < 0){
 			//left top
+			collisionX = collides(getX(), getY()+getHeight());
 			
 			if(!collisionX){
-			//left middle
-				
-			}
-			
-			if(!collisionX){
-			//right bottom	
-				
+			//left bottom	
+				collisionX = collides(getX(), getY());
 			}
 		}
 		
+		//if player walks out of the screen
+		//left
+		if((getX()) <= 0){
+			collisionX = true;
+		}
+		//right
+		else if((getX()+getWidth()) >= 5325.75f){
+			collisionX = true;
+		}
+		//bottom
+		else if(getY() <= 0){
+			collisionY = true;
+		}
+		//top
+		else if((getY()+getHeight()) >= 5325.75f){
+			collisionY = true;
+		}
 		
 		//reaction to collision
 		if(collisionY){
@@ -154,37 +138,18 @@ public class Player extends Sprite implements InputProcessor{
 			velocity.x = 0;
 		}
 		
-		//if player walks out of the screen
-		//left
-		if((getX()) <= 0){
-			setX(0);
-		}
-		//right
-		else if((getX()+getWidth()) >= 6141.75f){
-			setX(6141.75f-getWidth());
-		}
-		//bottom
-		else if((getY()-getHeight()) <= 0){
-			setY(getHeight());
-		}
-		//top
-		else if((getY()+getHeight()) >= 600){
-			setX(600-getHeight());
-		}
-		
-		
 	}
 	
 	private int transformHeight(float coordinate){
 		return (mapHeight - (int)coordinate);
 	}
 	
-	private boolean checkForCollision(Cell cell){
-		if(cell == null){
-			return false;
-		}else{
-			return true;
-		}
+	private boolean collides(float x, float y){
+		Cell cell;
+		
+		cell = collisionLayer.getCell((int)(x/tileWidth),(int)(y/tileHeight));
+		
+		return cell == null ? false : true;
 	}
 	
 	public TiledMapTileLayer getCollisionLayer(){
@@ -254,86 +219,36 @@ public class Player extends Sprite implements InputProcessor{
 
 	@Override
 	public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-		// TODO Auto-generated method stub
+
 		return false;
 	}
 
 	@Override
 	public boolean touchUp(int screenX, int screenY, int pointer, int button) {
-		// TODO Auto-generated method stub
+
 		return false;
 	}
 
 	@Override
 	public boolean touchDragged(int screenX, int screenY, int pointer) {
-		// TODO Auto-generated method stub
+
 		return false;
 	}
 
 	@Override
 	public boolean mouseMoved(int screenX, int screenY) {
-		// TODO Auto-generated method stub
+
 		return false;
 	}
 
 	@Override
 	public boolean scrolled(int amount) {
-		// TODO Auto-generated method stub
+
 		return false;
 	}
 	
 	public void collectStuff(){
 		
 	}
-	
-	//-------------------------------------------- Miscellaneous -----------------------------------
-	
-	
-	//another method for collision detection --> not working with this settings but if we change something it might get usefull and i am to lazy to write it again	
-//	if(velocity.y > 0){
-//		//top left
-//		collisionY = collisionLayer.getCell((int)(getX() / tileWidth),(int)((getY()+getHeight()) / tileHeight)).getTile().getProperties().containsKey("blocked");
-//		
-//		if(!collisionY){
-//		//top middle
-//			collisionY = collisionLayer.getCell((int)((getX()+getWidth() / 2) / tileWidth),(int)((getY()+getHeight()) / tileHeight)).getTile().getProperties().containsKey("blocked");
-//		}
-//		
-//		if(!collisionY){
-//		//top right
-//			collisionY = collisionLayer.getCell((int)((getX()+getWidth()) / tileWidth),(int)((getY()+getHeight()) / tileHeight)).getTile().getProperties().containsKey("blocked");
-//		}
-//		
-//	}else if(velocity.y < 0){
-//		//bottom left
-//		collisionY = collisionLayer.getCell((int)(getX() / tileWidth),(int)(getY() / tileHeight)).getTile().getProperties().containsKey("blocked");
-//		
-//		if(!collisionY){
-//		//bottom middle
-//			collisionY = collisionLayer.getCell((int)((getX()+getWidth() / 2) / tileWidth),(int)(getY() / tileHeight)).getTile().getProperties().containsKey("blocked");
-//		}
-//		
-//		if(!collisionY){
-//		//bottom right
-//			collisionY = collisionLayer.getCell((int)((getX()+getWidth()) / tileWidth),(int)(getY() / tileHeight)).getTile().getProperties().containsKey("blocked");
-//		}
-//	}
-//	
-//	
-//	
-//	if(velocity.x > 0){
-//		//right top
-//		
-//		//right middle
-//		
-//		//right bottom
-//		
-//	}else if(velocity.x < 0){
-//		//left top
-//		
-//		//left middle
-//		
-//		//left bottom
-//		
-//	}
+
 }

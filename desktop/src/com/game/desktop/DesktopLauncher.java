@@ -18,4 +18,18 @@ public class DesktopLauncher {
 		config.fullscreen = false;
 		new LwjglApplication(new DontCry(), config);
 	}
+	
+	//SOME NOTES FOR BETTER UNDERSTANDING
+	/*
+	 * 1 tile = 20.803711f units
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 */
+	
 }
