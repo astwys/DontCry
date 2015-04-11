@@ -26,7 +26,7 @@ public class Player extends Sprite implements InputProcessor{
 	private float normalSpeed = 60*2;
 	
 	//speed of player when running
-	private float runSpeed = 60*3;
+	private float runSpeed = 60*4;
 	
 	// current speed of the player
 	private float speed = normalSpeed;
@@ -54,6 +54,8 @@ public class Player extends Sprite implements InputProcessor{
 		super.draw(spriteBatch);
 	}
 	
+	
+// -------------------------------------------------- graphical stuff (collision detection and stuff) -----------------------------------------------------------	
 	public void update(float deltaTime){
 		
 		//collision detection
@@ -74,16 +76,16 @@ public class Player extends Sprite implements InputProcessor{
 		if(velocity.y >= 0){
 			
 			//top left
-			collisionY = collides(getX(), getY()+getHeight());
+			collisionY = collides(getX(), getY()+getHeight()/2);
 			
 			if(!collisionY){
 				//top middle
-				collisionY = collides(getX()+getWidth()/2, getY()+getHeight());
+				collisionY = collides(getX()+getWidth()/2, getY()+getHeight()/2);
 			}
 			
 			if(!collisionY){
 			//top right
-				collisionY = collides(getX()+getWidth(), getY()+getHeight());
+				collisionY = collides(getX()+getWidth(), getY()+getHeight()/2);
 			}
 			
 		//when moving down
@@ -97,7 +99,7 @@ public class Player extends Sprite implements InputProcessor{
 			}
 			
 			if(!collisionY){
-			//bottom right
+				//bottom right
 				collisionY = collides(getX()+getWidth(), getY());
 			}
 		}
@@ -106,12 +108,7 @@ public class Player extends Sprite implements InputProcessor{
 		//when moving right
 		if(velocity.x > 0){
 			//right top
-			collisionX = collides(getX()+getWidth(), getY()+getHeight());
-			
-			if(!collisionX){
-				//right middle
-				collisionX = collides(getX()+getWidth(), getY()+getHeight()/2);
-			}
+			collisionX = collides(getX()+getWidth(), getY()+getHeight()/2);
 			
 			//right bottom
 			if(!collisionX){
@@ -121,11 +118,7 @@ public class Player extends Sprite implements InputProcessor{
 		//when moving left
 		}else if(velocity.x < 0){
 			//left top
-			collisionX = collides(getX(), getY()+getHeight());
-			
-			if(!collisionX){
-				collisionX = collides(getX(), getY()+getHeight()/2);
-			}
+			collisionX = collides(getX(), getY()+getHeight()/2);
 			
 			if(!collisionX){
 			//left bottom	
@@ -162,10 +155,6 @@ public class Player extends Sprite implements InputProcessor{
 			velocity.x = 0;
 		}
 		
-	}
-	
-	private int transformHeight(float coordinate){
-		return (mapHeight - (int)coordinate);
 	}
 	
 	private boolean collides(float x, float y){
@@ -220,7 +209,7 @@ public class Player extends Sprite implements InputProcessor{
 		
 		if(keycode == Keys.SHIFT_LEFT || keycode == Keys.SHIFT_RIGHT){
 			if (character.canRun())
-				speed = speed*5;
+				speed = runSpeed;
 		}
 
 		return true;
