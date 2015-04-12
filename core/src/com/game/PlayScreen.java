@@ -40,7 +40,7 @@ public class PlayScreen implements Screen {
 	
 	//for the HUD
 	private Stage stage;
-	private Skin skin;
+	public static Skin skin;
 	private Image[] fullhearts = new Image[10];
 	private Image halfheart;
 	private Image[] fullchickenlegs = new Image[10];
@@ -63,7 +63,7 @@ public class PlayScreen implements Screen {
 		camera = new OrthographicCamera();
 		
 		//create and initialise the player with the collisionlayer
-		player = new Player(new Sprite(new Texture("../core/assets/player/p_back.png")), (TiledMapTileLayer) map.getLayers().get(1));
+		player = new Player(game, new Sprite(new Texture("../core/assets/player/p_back.png")), (TiledMapTileLayer) map.getLayers().get(1));
 		player.setPosition(208, 20.8f);
 		
 		//saving important map properties
@@ -78,8 +78,7 @@ public class PlayScreen implements Screen {
 		txtbtn_inventory.addListener(new ClickListener(){
 
 			public void clicked(InputEvent input, float x, float y){
-				//TODO set screen to crafting
-				txtbtn_inventory.setText("Hello");
+				player.craftingMode();
 			}
 			
 		});

@@ -33,13 +33,20 @@ public class Slot {
 		setAmount(a);
 		// TODO Auto-generated constructor stub
 	}
+	
+	/**
+	 * constructor without parameter
+	 */
+	public Slot(){
+		super();
+	}
 
 	/**
 	 * checks if the SLOT is empty or not
 	 * @return
 	 */
 	public boolean isEmpty() {
-		if(getAmount()==0) {
+		if(getAmount()==0 || resource == null) {
 			return true;
 		}
 		return false;

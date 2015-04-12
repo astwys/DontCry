@@ -13,9 +13,13 @@ import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer.Cell;
 import com.badlogic.gdx.math.Vector2;
 import com.character.Character;
+import com.resources.craftable.edible.Chips;
+import com.resources.craftable.tools.WoodAxe;
 
 public class Player extends Sprite implements InputProcessor{
 
+	private DontCry game;
+	
 	//character reference
 	private Character character;
 	
@@ -42,11 +46,14 @@ public class Player extends Sprite implements InputProcessor{
 	private Texture[] skins = {new Texture(new FileHandle("../core/assets/player/p_back.png")), new Texture(new FileHandle("../core/assets/player/p_front.png")), new Texture(new FileHandle("../core/assets/player/p_right.png")), new Texture(new FileHandle("../core/assets/player/p_left.png"))};
 	
 	
-	public Player(Sprite sprite, TiledMapTileLayer tiledMapLayer){
+	public Player(final DontCry dontcry, Sprite sprite, TiledMapTileLayer tiledMapLayer){
 		super(sprite);
+		game = dontcry;
 		velocity = new Vector2();
 		collisionLayer = tiledMapLayer;
 		character = new Character("Frank");
+		character.addResource(new Chips(), 10);
+		character.addResource(new WoodAxe(), 1);
 	}
 	
 	public void draw(SpriteBatch spriteBatch){
@@ -289,8 +296,8 @@ public class Player extends Sprite implements InputProcessor{
 		
 	}
 	
-	private void craftingMode(){
-		
+	public void craftingMode(){
+		game.setScreen(new CraftingScreen(this, game));
 	}
 
 }

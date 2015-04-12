@@ -209,4 +209,21 @@ public class Character {
 	public void setStrength(int strength) {
 		this.strength = strength;
 	}
+	
+//---------------------------- Bag ------------------------------------
+
+	public Bag getBag(){
+		return this.bag;
+	}
+
+	public boolean setBag(Bag bag){
+		if(bag != null){
+			return false;
+		}else{
+			this.bag = bag;
+			return true;
+		}
+	}
+	
+
 }

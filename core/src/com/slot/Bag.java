@@ -9,10 +9,17 @@ import com.resources.*;
 public class Bag {
 
 	private Slot[] resources;
+	private int lastIndex; //last index that was filled (lastIndex++ -> next free slot)
 	
 	public Bag() {
 		super();
 		resources = new Slot[12];
+		
+		for(int i=0; i<resources.length; i++){
+			resources[i] = new Slot();
+		}
+		
+		lastIndex = -1;
 	}
 	
 	/**
@@ -32,7 +39,14 @@ public class Bag {
 	 */
 	public int add(Resource r, int plus) {
 		if(r != null && plus > 0) {
-			for(int i = 0; i < resources.length || plus==0; i++) {
+			
+			if(lastIndex == -1){
+				resources[lastIndex+1].setResource(r);
+				resources[lastIndex+1].setAmount(plus);
+				lastIndex++;
+			}
+			
+			for(int i = 0; i < lastIndex || plus==0; i++) {
 				if(resources[i].getResource() == r || resources[i].isEmpty()) {
 					if(resources[i].resourcesToAdd() < plus) {
 						plus -= resources[i].resourcesToAdd();
@@ -41,6 +55,7 @@ public class Bag {
 					else {
 						plus = 0;
 						resources[i].setAmount(resources[i].getAmount() + plus);
+						lastIndex++;
 					}
 				}
 			}
