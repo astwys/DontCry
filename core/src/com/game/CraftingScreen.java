@@ -12,6 +12,7 @@ import com.slot.Bag;
 public class CraftingScreen implements Screen {
 
 	private DontCry game;
+	private PlayScreen screen;
 	private Player player;
 	private Bag bag;
 	
@@ -21,8 +22,9 @@ public class CraftingScreen implements Screen {
 	private TextButton txtbtn_cancle;
 	private TextButton txtbtn_returnToGame;
 	
-	public CraftingScreen(Player player, final DontCry dontcry){
+	public CraftingScreen(Player player, PlayScreen playscreen, final DontCry dontcry){
 		game = dontcry;
+		screen = playscreen;
 		this.player = player;
 		this.bag = player.getCharacter().getBag();
 	}
@@ -48,7 +50,7 @@ public class CraftingScreen implements Screen {
 		txtbtn_cancle.addListener(new ClickListener(){
 			
 			public void clicked(InputEvent input, float x, float y){
-				txtbtn_cancle.setText("Canceled");
+				cancle();
 			}
 			
 		});
@@ -59,7 +61,7 @@ public class CraftingScreen implements Screen {
 		txtbtn_returnToGame.addListener(new ClickListener(){
 			
 			public void clicked(InputEvent input, float x, float y){
-				txtbtn_returnToGame.setText("Returned");
+				returnToGame();
 			}
 			
 		});
@@ -84,11 +86,21 @@ public class CraftingScreen implements Screen {
 		game.batch.end();
 		
 	}
+	
+	public void cancle(){
+		this.dispose();
+		game.setScreen(screen);
+	}
+	
+	public void returnToGame(){
+		this.dispose();
+		screen.getPLayer().getCharacter().setBag(this.bag);
+		game.setScreen(screen);
+	}
 
 	@Override
 	public void resize(int width, int height) {
-		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
@@ -111,8 +123,7 @@ public class CraftingScreen implements Screen {
 
 	@Override
 	public void dispose() {
-		// TODO Auto-generated method stub
-
+		stage.dispose();
 	}
 
 }

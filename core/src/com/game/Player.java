@@ -19,6 +19,7 @@ import com.resources.craftable.tools.WoodAxe;
 public class Player extends Sprite implements InputProcessor{
 
 	private DontCry game;
+	private PlayScreen screen;
 	
 	//character reference
 	private Character character;
@@ -46,9 +47,10 @@ public class Player extends Sprite implements InputProcessor{
 	private Texture[] skins = {new Texture(new FileHandle("../core/assets/player/p_back.png")), new Texture(new FileHandle("../core/assets/player/p_front.png")), new Texture(new FileHandle("../core/assets/player/p_right.png")), new Texture(new FileHandle("../core/assets/player/p_left.png"))};
 	
 	
-	public Player(final DontCry dontcry, Sprite sprite, TiledMapTileLayer tiledMapLayer){
+	public Player(final DontCry dontcry, PlayScreen playscreen, Sprite sprite, TiledMapTileLayer tiledMapLayer){
 		super(sprite);
 		game = dontcry;
+		screen = playscreen;
 		velocity = new Vector2();
 		collisionLayer = tiledMapLayer;
 		character = new Character("Frank");
@@ -251,7 +253,6 @@ public class Player extends Sprite implements InputProcessor{
 		
 		if(character == ' '){
 			collectStuff();
-			System.out.println("Space pressed");
 		}		
 		
 		return true;
@@ -297,7 +298,7 @@ public class Player extends Sprite implements InputProcessor{
 	}
 	
 	public void craftingMode(){
-		game.setScreen(new CraftingScreen(this, game));
+		game.setScreen(new CraftingScreen(this, screen, game));
 	}
 
 }

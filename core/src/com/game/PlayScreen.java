@@ -33,8 +33,6 @@ public class PlayScreen implements Screen {
 	
 	//for the map
 	private TiledMap map;
-	private float tileWidth, tileHeight;
-	private int width = 900, height = 600;
 	private OrthogonalTiledMapRenderer renderer;
 	private OrthographicCamera camera;
 	
@@ -63,12 +61,8 @@ public class PlayScreen implements Screen {
 		camera = new OrthographicCamera();
 		
 		//create and initialise the player with the collisionlayer
-		player = new Player(game, new Sprite(new Texture("../core/assets/player/p_back.png")), (TiledMapTileLayer) map.getLayers().get(1));
+		player = new Player(game, this, new Sprite(new Texture("../core/assets/player/p_back.png")), (TiledMapTileLayer) map.getLayers().get(1));
 		player.setPosition(208, 20.8f);
-		
-		//saving important map properties
-		tileWidth = ((TiledMapTileLayer) map.getLayers().get(1)).getTileWidth(); 
-		tileHeight = ((TiledMapTileLayer) map.getLayers().get(1)).getTileHeight();
 		
 		//assigning the stage
 		skin = new Skin(new FileHandle("../core/assets/skins/HUD/uiskin.json"));
@@ -131,6 +125,13 @@ public class PlayScreen implements Screen {
 		camera.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 		camera.update();
 		game.font.setColor(1, 1, 1, 1);
+		
+		//assign InputMultiplexer for several InputProcessors
+		InputMultiplexer ipmulti = new InputMultiplexer();
+		ipmulti.addProcessor(stage);
+		ipmulti.addProcessor(player);
+		Gdx.input.setInputProcessor(ipmulti);
+		
 	}
 
 	@Override
@@ -213,6 +214,9 @@ public class PlayScreen implements Screen {
 		map.dispose();
 		player.getTexture().dispose();
 		stage.dispose();
+	}
+	public Player getPLayer(){
+		return this.player;
 	}
 	
 	private void deleteHeartsAndLegs(Array<Actor> actors){
