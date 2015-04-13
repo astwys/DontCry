@@ -1,12 +1,14 @@
 package com.slot;
 
-import com.resources.*;
+import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.resources.Resource;
 
 /*
  * author jonas
  */
 
-public class Slot {
+public class Slot extends Actor {
 
 	//the type of resource in the SLOT
 	private Resource resource;
@@ -112,6 +114,24 @@ public class Slot {
 	@Override
 	public String toString() {
 		return "Slot [resource=" + this.resource + ", amount=" + this.amount + "size=" + Slot.size +"]";
+	}
+	
+	// --------------------------------------- graphical stuff -------------------------------------------
+	
+	public void act(float delta){
+		//TODO
+	}
+	
+	public void draw(Batch batch, float parentAlpha){
+		//TODO
+	}
+	
+	public void setPosition(float x, float y){
+		//TODO
+	}
+	
+	public void setColor(float r, float g, float b, float a){
+		//TODO
 	}
 	
 	

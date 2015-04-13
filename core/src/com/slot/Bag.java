@@ -1,12 +1,14 @@
 package com.slot;
 
-import com.resources.*;
+import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.resources.Resource;
 
 /*
  * author jonas
  */
 
-public class Bag {
+public class Bag extends Actor {
 
 	private Slot[] resources;
 	private int lastIndex; //last index that was filled (lastIndex++ -> next free slot)
@@ -133,4 +135,27 @@ public class Bag {
 	public Slot[] getResources() {
 		return resources;
 	}
+	
+	//------------------------------------------------- stuff for actor ---------------------------------------------------
+	
+	public void act(float delta){
+		//TODO
+	}
+	
+	public void draw(Batch batch, float parentAlpha){
+		//TODO
+	}
+	
+	public void setPosition(float x, float y){
+		//TODO
+	}
+	
+	public void setColor(float r, float g, float b, float a){
+		//TODO
+	}
+	
+	
+	
+	
+	
 }
