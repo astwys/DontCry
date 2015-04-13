@@ -79,37 +79,16 @@ public class PlayScreen implements Screen {
 		
 		stage.addActor(txtbtn_inventory);
 		
-		//assign files for hearts
-		Texture heart = new Texture(new FileHandle("../core/assets/icons/hearts/fullheart.png"));
-		int x = 10;
-		int y = 530;
-		for(int i=0; i<fullhearts.length; i++){
-			fullhearts[i] = new Image(heart);
-			fullhearts[i].setPosition(x, y);
-			stage.addActor(fullhearts[i]);
-			x += 40;
-		}
-		//asign files for chickenlegs
-		Texture leg = new Texture(new FileHandle("../core/assets/icons/chickenlegs/fullchickenleg.png"));
-		x = 10;
-		y = 470;
-		for(int i=0; i<fullchickenlegs.length; i++){
-			fullchickenlegs[i] = new Image(leg);
-			fullchickenlegs[i].setPosition(x, y);
-			stage.addActor(fullchickenlegs[i]);
-			x += 40;
-		}
-		
 		//assign healtstatus
-		healthStatus = new StatusIndicator(100, 100, skin);
+		healthStatus = new StatusIndicator(100, 100, skin, "../core/assets/icons/hearts/fullheart.png", "../core/assets/icons/hearts/halfheart.png");
 		healthStatus.setColor(1, 0, 0, 1);
-		healthStatus.setPosition(20, 555);
+		healthStatus.setPosition(20, 535);
 		stage.addActor(healthStatus);
 		
 		//assign hungerstatus
-		hungerStatus = new StatusIndicator(100, 100, skin);
+		hungerStatus = new StatusIndicator(100, 100, skin, "../core/assets/icons/chickenlegs/fullchickenleg.png", "../core/assets/icons/chickenlegs/halfchickenleg.png");
 		hungerStatus.setColor(1, 0.4f, 0, 1);
-		hungerStatus.setPosition(20, 500);
+		hungerStatus.setPosition(20, 480);
 		stage.addActor(hungerStatus);
 		
 		//assign InputMultiplexer for several InputProcessors
@@ -144,7 +123,7 @@ public class PlayScreen implements Screen {
 		renderer.render();
 		
 		hunger += delta;
-		if(hunger >= 10.0f){
+		if(hunger >= 0.5f){
 			hungerStatus.setStatus(player.getCharacter().decreaseHungerDef());
 			healthStatus.setStatus(player.getCharacter().getHealth());
 			hunger = 0;
