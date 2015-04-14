@@ -123,7 +123,7 @@ public class PlayScreen implements Screen {
 		renderer.render();
 		
 		hunger += delta;
-		if(hunger >= 0.5f){
+		if(hunger >= 9.0f){
 			hungerStatus.setStatus(player.getCharacter().decreaseHungerDef());
 			healthStatus.setStatus(player.getCharacter().getHealth());
 			hunger = 0;
