@@ -136,6 +136,13 @@ public class Character {
 		}
 		return false;
 	}
+
+	/**
+	 * set the strength of the character according to the resource that is selected
+	 */
+	public void setStrength() {
+		// selected slot method needed
+	}
 	
 	
 //---------------------------------------------------Getters/Setters---------------------------------------------------
@@ -224,6 +231,4 @@ public class Character {
 			return true;
 		}
 	}
-	
-
 }
