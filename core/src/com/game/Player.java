@@ -13,6 +13,9 @@ import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer.Cell;
 import com.badlogic.gdx.math.Vector2;
 import com.character.Character;
+import com.resources.Edible;
+import com.resources.Potions;
+import com.resources.Resource;
 import com.resources.craftable.edible.Chips;
 import com.resources.craftable.tools.WoodAxe;
 
@@ -194,6 +197,7 @@ public class Player extends Sprite implements InputProcessor{
 		float x = getX();
 		float y = getY();
 		
+		//moving
 		if(keycode == Keys.W || keycode == Keys.UP){
 			velocity.y = speed;
 			set(new Sprite(skins[0]));
@@ -215,12 +219,12 @@ public class Player extends Sprite implements InputProcessor{
 			setX(x);
 			setY(y);
 		}
-		
+		//running
 		if(keycode == Keys.SHIFT_LEFT || keycode == Keys.SHIFT_RIGHT){
 			if (character.canRun())
 				speed = runSpeed;
 		}
-
+		
 		return true;
 	}
 
@@ -261,7 +265,7 @@ public class Player extends Sprite implements InputProcessor{
 	@Override
 	public boolean touchDown(int screenX, int screenY, int pointer, int button) {
 		
-		collectStuff();
+		useItem();
 		
 		return true;
 	}
@@ -290,11 +294,15 @@ public class Player extends Sprite implements InputProcessor{
 		return false;
 	}
 	
-	public void collectStuff(){
+	private void collectStuff(){
 		//check around player
 		
 		//collect and delete stuff
 		
+	}
+	
+	private void useItem(){
+		character.getBag().useItem();
 	}
 	
 	public void craftingMode(){

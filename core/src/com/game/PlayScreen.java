@@ -91,12 +91,14 @@ public class PlayScreen implements Screen {
 		hungerStatus.setPosition(20, 480);
 		stage.addActor(hungerStatus);
 		
+		//assign the bag to the stage
+		
+		
 		//assign InputMultiplexer for several InputProcessors
 		InputMultiplexer ipmulti = new InputMultiplexer();
 		ipmulti.addProcessor(stage);
 		ipmulti.addProcessor(player);
 		Gdx.input.setInputProcessor(ipmulti);
-		
 	}
 	
 	@Override

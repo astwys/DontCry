@@ -16,6 +16,9 @@ public class Slot extends Actor {
 	//amount = how much the SLOT contains
 	private int amount;
 	
+	//is set to true if selected (via scrolling)
+	private boolean selected;
+	
 	//size = the max size of the SLOT
 	private static int size = 32;
 	
@@ -84,6 +87,14 @@ public class Slot extends Actor {
 	 */
 	public void setAmount(int amount) {
 		this.amount = amount;
+	}
+	
+	public boolean isSelected(){
+		return this.selected;
+	}
+	
+	public void setSelected(boolean b){
+		this.selected = b;
 	}
 
 	/**

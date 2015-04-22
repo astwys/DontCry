@@ -2,6 +2,8 @@ package com.slot;
 
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.resources.Edible;
+import com.resources.Potions;
 import com.resources.Resource;
 
 /*
@@ -11,7 +13,8 @@ import com.resources.Resource;
 public class Bag extends Actor {
 
 	private Slot[] resources;
-	private int lastIndex; //last index that was filled (lastIndex++ -> next free slot)
+	private int lastIndex; //last index that was filled (lastIndex++ -> next free slot) //TODO needs to be changed ... my bad
+	private int selectedIndex = 0;
 	
 	public Bag() {
 		super();
@@ -65,9 +68,21 @@ public class Bag extends Actor {
 		return plus;
 	}
 	
-	/*
-	 * 
-	 */
+	public void useItem(){
+		Resource touse = resources[selectedIndex].getResource();
+		if(!(resources[selectedIndex].getResource() instanceof Tool)){
+			if(touse instanceof Edible){
+				
+			}else if(touse instanceof Potions){
+				//TODO make make interface edible, and make two subclasses: food & potion --> food (apple, ...), potion(big and small) --> already contains the method heal
+				//by so it is easier to use 
+			}
+		}else{
+			//TODO tools interface and the item shall be used without decreasing the slots amount
+		}
+		return;
+	}
+	
 	/**
 	 * deletes certain type of resources and
 	 * returns the amount which couldn't be deleted
@@ -130,6 +145,10 @@ public class Bag extends Actor {
 				resources[i].setAmount(0);
 			}
 		}
+	}
+	
+	public Resource getSelectedItem(){
+		return resources[selectedIndex].getResource();
 	}
 
 	public Slot[] getResources() {
