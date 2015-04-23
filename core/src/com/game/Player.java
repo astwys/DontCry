@@ -1,21 +1,16 @@
 package com.game;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input.Buttons;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.maps.tiled.TiledMapTile;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer.Cell;
 import com.badlogic.gdx.math.Vector2;
 import com.character.Character;
-import com.resources.Edible;
-import com.resources.Potions;
-import com.resources.Resource;
 import com.resources.craftable.edible.Chips;
 import com.resources.craftable.tools.WoodAxe;
 
@@ -43,7 +38,6 @@ public class Player extends Sprite implements InputProcessor{
 	private TiledMapTileLayer collisionLayer;
 	
 	//important variables regarding the map for collision detection
-	private int mapWidth = 256, mapHeight = 256;
 	private float tileWidth = 20.8f, tileHeight = 20.8f;
 	
 	//the array of different textures
@@ -80,10 +74,6 @@ public class Player extends Sprite implements InputProcessor{
 		//moving on both axis
 		setY(getY()+velocity.y*deltaTime);
 		setX(getX()+velocity.x*deltaTime);
-		
-		//when moving up
-		//Cell for checking if a "blocking" tile is in our way
-		Cell cell;
 		
 		if(velocity.y >= 0){
 			
@@ -290,13 +280,15 @@ public class Player extends Sprite implements InputProcessor{
 
 	@Override
 	public boolean scrolled(int amount) {
-
-		return false;
+		System.out.println(amount);
+		character.getBag().setSelected(amount);
+		
+		return true;
 	}
 	
 	private void collectStuff(){
 		//check around player
-		
+		//TODO
 		//collect and delete stuff
 		
 	}

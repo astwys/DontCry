@@ -1,7 +1,5 @@
 package com.game;
 
-import java.awt.Label;
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
@@ -14,20 +12,13 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
-import com.badlogic.gdx.math.Vector;
-import com.badlogic.gdx.math.Vector3;
-import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.badlogic.gdx.utils.Array;
 
 public class PlayScreen implements Screen {
-
-	int x = 0;
 	
 	private DontCry game;
 	
@@ -38,11 +29,7 @@ public class PlayScreen implements Screen {
 	
 	//for the HUD
 	private Stage stage;
-	public static Skin skin;
-	private Image[] fullhearts = new Image[10];
-	private Image halfheart;
-	private Image[] fullchickenlegs = new Image[10];
-	private Image halfchickenleg;
+	public static Skin skin = new Skin(new FileHandle("../core/assets/skins/mainmenu/uiskin.json"));
 	private TextButton txtbtn_inventory;
 	private StatusIndicator healthStatus;
 	private StatusIndicator hungerStatus;
@@ -65,7 +52,6 @@ public class PlayScreen implements Screen {
 		player.setPosition(208, 20.8f);
 		
 		//assigning the stage
-		skin = new Skin(new FileHandle("../core/assets/skins/HUD/uiskin.json"));
 		stage = new Stage();
 		txtbtn_inventory = new TextButton("Inventory", skin);
 		txtbtn_inventory.setPosition(10, 10);
@@ -92,7 +78,7 @@ public class PlayScreen implements Screen {
 		stage.addActor(hungerStatus);
 		
 		//assign the bag to the stage
-		
+		stage.addActor(player.getCharacter().getBag());
 		
 		//assign InputMultiplexer for several InputProcessors
 		InputMultiplexer ipmulti = new InputMultiplexer();
@@ -199,13 +185,6 @@ public class PlayScreen implements Screen {
 	public Player getPLayer(){
 		return this.player;
 	}
-	
-	private void deleteHeartsAndLegs(Array<Actor> actors){
-		for(int i=0; i<actors.size; i++){
-			if(actors.get(i) instanceof Object){
-				
-			}
-		}
-	}
+
 
 }

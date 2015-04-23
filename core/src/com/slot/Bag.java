@@ -5,6 +5,7 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.resources.Edible;
 import com.resources.Potions;
 import com.resources.Resource;
+import com.resources.Tool;
 
 /*
  * author jonas
@@ -69,17 +70,22 @@ public class Bag extends Actor {
 	}
 	
 	public void useItem(){
-		Resource touse = resources[selectedIndex].getResource();
-		if(!(resources[selectedIndex].getResource() instanceof Tool)){
-			if(touse instanceof Edible){
-				
-			}else if(touse instanceof Potions){
-				//TODO make make interface edible, and make two subclasses: food & potion --> food (apple, ...), potion(big and small) --> already contains the method heal
-				//by so it is easier to use 
+		try{
+			Resource touse = resources[selectedIndex].getResource();
+			if(!(resources[selectedIndex].getResource() instanceof Tool)){
+				if(touse instanceof Edible){
+					System.out.println(touse.toString()+" - Edible");
+				}else if(touse instanceof Potions){
+					System.out.println(touse.toString()+" - Potion");
+				}
+			}else{
+				System.out.println(touse.toString()+" - Tool");
 			}
-		}else{
-			//TODO tools interface and the item shall be used without decreasing the slots amount
+		}catch(ArrayIndexOutOfBoundsException aioobe){
+			System.out.println("OUT OF BOUNDS");
+			return;
 		}
+		
 		return;
 	}
 	
@@ -147,6 +153,17 @@ public class Bag extends Actor {
 		}
 	}
 	
+	public void setSelected(int plus){
+		int index = selectedIndex + plus;
+		if(index >= resources.length){
+			selectedIndex = resources.length-1;
+		}else if(index < 0){
+			selectedIndex = 0;
+		}else{
+			selectedIndex = index;
+		}
+	}
+	
 	public Resource getSelectedItem(){
 		return resources[selectedIndex].getResource();
 	}
@@ -158,7 +175,9 @@ public class Bag extends Actor {
 	//------------------------------------------------- stuff for actor ---------------------------------------------------
 	
 	public void act(float delta){
-		//TODO
+		for(int i=0; i<lastIndex; i++){
+			resources[i].act(delta);
+		}
 	}
 	
 	public void draw(Batch batch, float parentAlpha){
@@ -166,7 +185,10 @@ public class Bag extends Actor {
 	}
 	
 	public void setPosition(float x, float y){
-		//TODO
+		super.setPosition(x, y);
+		for(int i=0; i<resources.length; i++){
+			resources[i].setPosition(x, y+15*i);
+		}
 	}
 	
 	public void setColor(float r, float g, float b, float a){

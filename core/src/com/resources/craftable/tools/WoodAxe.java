@@ -6,13 +6,14 @@ package com.resources.craftable.tools;
 import java.util.ArrayList;
 
 import com.resources.Resource;
+import com.resources.Tool;
 
 /**
  * @author michael
  * used to cut down trees
  * 
  */
-public class WoodAxe extends Resource{
+public class WoodAxe extends Resource implements Tool{
 	/**
 	 * @param name
 	 */

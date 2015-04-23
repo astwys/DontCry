@@ -6,12 +6,13 @@ package com.resources.craftable.tools;
 import java.util.ArrayList;
 
 import com.resources.Resource;
+import com.resources.Tool;
 
 /**
  * @author michael
  *
  */
-public class IronAxe extends Resource {
+public class IronAxe extends Resource implements Tool{
 
 	/**
 	 * @param name

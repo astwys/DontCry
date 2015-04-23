@@ -130,7 +130,8 @@ public class Slot extends Actor {
 	// --------------------------------------- graphical stuff -------------------------------------------
 	
 	public void act(float delta){
-		//TODO
+		super.act(delta);
+		resource.act(delta);
 	}
 	
 	public void draw(Batch batch, float parentAlpha){
@@ -138,7 +139,8 @@ public class Slot extends Actor {
 	}
 	
 	public void setPosition(float x, float y){
-		//TODO
+		super.setPosition(x, y);
+		resource.setPosition(x, y);
 	}
 	
 	public void setColor(float r, float g, float b, float a){
