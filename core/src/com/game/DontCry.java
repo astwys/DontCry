@@ -12,6 +12,7 @@ public class DontCry extends Game implements Disposable {
 	
 	@Override
 	public void create () {
+		System.out.println("passed");
 		batch = new SpriteBatch();
 		font = new BitmapFont();
 		this.setScreen(new OpeningScreen(this));

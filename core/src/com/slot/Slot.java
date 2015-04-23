@@ -36,7 +36,6 @@ public class Slot extends Actor {
 		setSize(Slot.size);
 		setResource(r);
 		setAmount(a);
-		// TODO Auto-generated constructor stub
 	}
 	
 	/**
@@ -86,6 +85,9 @@ public class Slot extends Actor {
 	 * @param amount
 	 */
 	public void setAmount(int amount) {
+		if(amount == 0){
+			this.setResource(null);
+		}
 		this.amount = amount;
 	}
 	
@@ -128,14 +130,16 @@ public class Slot extends Actor {
 	}
 	
 	// --------------------------------------- graphical stuff -------------------------------------------
-	
+	//TODO the actor for the amount of the resource --> Apple  	x4
+	//													WoodAxe x1
+	//													...
 	public void act(float delta){
 		super.act(delta);
 		resource.act(delta);
 	}
 	
 	public void draw(Batch batch, float parentAlpha){
-		//TODO
+		resource.draw(batch, parentAlpha);
 	}
 	
 	public void setPosition(float x, float y){
@@ -144,7 +148,7 @@ public class Slot extends Actor {
 	}
 	
 	public void setColor(float r, float g, float b, float a){
-		//TODO
+		this.resource.setColor(r, g, b, a);
 	}
 	
 	

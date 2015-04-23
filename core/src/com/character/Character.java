@@ -6,7 +6,6 @@ package com.character;
 import com.craft.Craftingbook;
 import com.resources.Resource;
 import com.slot.Bag;
-import com.sun.xml.internal.bind.v2.TODO;
 
 /**
  * @author michael

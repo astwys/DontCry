@@ -13,14 +13,14 @@ public class DesktopLauncher {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		config.width = WIDTH;
 		config.height = HEIGHT;
-		config.vSyncEnabled = false;
+		config.vSyncEnabled = true;
 		config.resizable = false;
 		config.fullscreen = false;
 		new LwjglApplication(new DontCry(), config);
 	}
 	
 	//SOME NOTES FOR BETTER UNDERSTANDING
-	/*s
+	/*
 	 * 1 tile = 20.803711f units
 	 * 
 	 * 

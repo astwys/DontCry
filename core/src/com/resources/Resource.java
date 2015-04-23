@@ -5,6 +5,7 @@ package com.resources;
 
 import java.util.ArrayList;
 
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.game.PlayScreen;
@@ -30,7 +31,7 @@ public abstract class Resource extends Actor implements Craftable{
 		this.amount=amount;
 		resourcesNeeded=new ArrayList<String>();
 	}
-	
+	//TODO TODO TODO TODO TODO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! every time a new resource is created the position needs to be set TODO TODO TODO TODO
 	/*
 	 * get name of current resource
 	 */
@@ -45,15 +46,26 @@ public abstract class Resource extends Actor implements Craftable{
 		return this.amount;
 	}
 	
+	//----------------------------------- graphical stuff -------------------------------------------
 	public void act(float delta){
 		super.act(delta);
 		l_name.act(delta);
+	}
+	
+	public void draw(Batch batch, float parentAlpha){
+		super.draw(batch, parentAlpha);
 	}
 	
 	public void setPosition(float x, float y){
 		super.setPosition(x, y);
 	}
 	
+	public void setColor(float r, float g, float b, float a){
+		super.setColor(r, g, b, a);
+	}
+	//-----------------------------------------------------------------------------------------------
+	
+	// ---------------------------------- 0815 methods ----------------------------------------------
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
@@ -62,4 +74,10 @@ public abstract class Resource extends Actor implements Craftable{
 		// TODO Auto-generated method stub
 		return getName();
 	}
+	
+	public boolean equals(Object obj){
+		Resource r = (Resource)obj;
+		return this.getName().equals(r.getName()) ? true : false;
+	}
+	
 }

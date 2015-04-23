@@ -45,23 +45,15 @@ public class Bag extends Actor {
 	 */
 	public int add(Resource r, int plus) {
 		if(r != null && plus > 0) {
-			
-			if(lastIndex == -1){
-				resources[lastIndex+1].setResource(r);
-				resources[lastIndex+1].setAmount(plus);
-				lastIndex++;
-			}
-			
-			for(int i = 0; i < lastIndex || plus==0; i++) {
-				if(resources[i].getResource() == r || resources[i].isEmpty()) {
+			//TODO write a equals
+			for(int i = 0; i < resources.length && plus > 0; i++) {
+				if(resources[i].getResource().equals(r) || resources[i].isEmpty()) {
 					if(resources[i].resourcesToAdd() < plus) {
 						plus -= resources[i].resourcesToAdd();
 						resources[i].setAmount(resources[i].getSize());
-					}
-					else {
+					}else {
 						plus = 0;
 						resources[i].setAmount(resources[i].getAmount() + plus);
-						lastIndex++;
 					}
 				}
 			}
@@ -154,7 +146,9 @@ public class Bag extends Actor {
 	}
 	
 	public void setSelected(int plus){
+		resources[selectedIndex].setColor(1, 1, 1, 1);
 		int index = selectedIndex + plus;
+		
 		if(index >= resources.length){
 			selectedIndex = resources.length-1;
 		}else if(index < 0){
@@ -162,6 +156,8 @@ public class Bag extends Actor {
 		}else{
 			selectedIndex = index;
 		}
+		
+		resources[selectedIndex].setColor(0.32f, 0.11f, 0.11f, 1);
 	}
 	
 	public Resource getSelectedItem(){
@@ -181,13 +177,19 @@ public class Bag extends Actor {
 	}
 	
 	public void draw(Batch batch, float parentAlpha){
-		//TODO
+		for(int i=0; i<resources.length; i++){
+			if(resources[i].getResource() != null){
+				resources[i].draw(batch, parentAlpha);
+			}
+		}
 	}
 	
 	public void setPosition(float x, float y){
 		super.setPosition(x, y);
 		for(int i=0; i<resources.length; i++){
-			resources[i].setPosition(x, y+15*i);
+			if(resources[i].getResource() != null){
+				resources[i].setPosition(x, y+15*i);
+			}
 		}
 	}
 	
