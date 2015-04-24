@@ -13,19 +13,20 @@ import com.resources.Tool;
 
 public class Bag extends Actor {
 
+	private com.character.Character player; //the player the bag referes to
 	private Slot[] resources;
-	private int lastIndex; //last index that was filled (lastIndex++ -> next free slot) //TODO needs to be changed ... my bad
 	private int selectedIndex = 0;
 	
-	public Bag() {
+	public Bag(com.character.Character character) {
 		super();
 		resources = new Slot[12];
-		
+		player = character;
 		for(int i=0; i<resources.length; i++){
 			resources[i] = new Slot();
 		}
 		
-		lastIndex = -1;
+		setPosition(730, 550);
+		setSelected(0);
 	}
 	
 	/**
@@ -44,10 +45,16 @@ public class Bag extends Actor {
 	 * @return
 	 */
 	public int add(Resource r, int plus) {
+		if(plus > Slot.size) plus = Slot.size;
+		
 		if(r != null && plus > 0) {
-			//TODO write a equals
+			
 			for(int i = 0; i < resources.length && plus > 0; i++) {
-				if(resources[i].getResource().equals(r) || resources[i].isEmpty()) {
+				if(resources[i].isEmpty()) {
+					resources[i].setResource(r);
+					resources[i].setAmount(plus);
+					plus = 0;
+				}else if(resources[i].getResource().equals(r)){
 					if(resources[i].resourcesToAdd() < plus) {
 						plus -= resources[i].resourcesToAdd();
 						resources[i].setAmount(resources[i].getSize());
@@ -66,13 +73,17 @@ public class Bag extends Actor {
 			Resource touse = resources[selectedIndex].getResource();
 			if(!(resources[selectedIndex].getResource() instanceof Tool)){
 				if(touse instanceof Edible){
-					System.out.println(touse.toString()+" - Edible");
+					Edible e = (Edible)touse;
+					player.increaseHunger(e.restoreHungerBy());
 				}else if(touse instanceof Potions){
-					System.out.println(touse.toString()+" - Potion");
+					Potions p = (Potions)touse;
+					player.increaseHealth(p.restoreHealthBy());
 				}
 			}else{
-				System.out.println(touse.toString()+" - Tool");
+				//TODO a tool can increase the amount of resources u get from farming, ... whatever --> number is not decreased
+				return;
 			}
+			resources[selectedIndex].setAmount(resources[selectedIndex].getAmount()-1);
 		}catch(ArrayIndexOutOfBoundsException aioobe){
 			System.out.println("OUT OF BOUNDS");
 			return;
@@ -168,28 +179,36 @@ public class Bag extends Actor {
 		return resources;
 	}
 	
+	public String toString(){
+		StringBuilder strb = new StringBuilder();
+		for(int i=0; i<resources.length; i++){
+			if(!resources[i].isEmpty()){
+				strb.append(resources[i].getResource().toString());
+			}
+		}
+		return strb.toString();
+	}
+	
 	//------------------------------------------------- stuff for actor ---------------------------------------------------
 	
 	public void act(float delta){
-		for(int i=0; i<lastIndex; i++){
-			resources[i].act(delta);
+		for(int i=0; i<resources.length; i++){
+			if(resources[i].getResource() != null){
+				resources[i].act(delta);
+			}
 		}
 	}
 	
 	public void draw(Batch batch, float parentAlpha){
 		for(int i=0; i<resources.length; i++){
-			if(resources[i].getResource() != null){
-				resources[i].draw(batch, parentAlpha);
-			}
+			resources[i].draw(batch, parentAlpha);
 		}
 	}
 	
 	public void setPosition(float x, float y){
 		super.setPosition(x, y);
 		for(int i=0; i<resources.length; i++){
-			if(resources[i].getResource() != null){
-				resources[i].setPosition(x, y+15*i);
-			}
+			resources[i].setPosition(x, y-20*i);
 		}
 	}
 	

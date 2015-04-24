@@ -10,6 +10,10 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
 public class StatusIndicator extends Actor {
 	
+	//the player the status referes to
+	private Player player;
+	private boolean hunger; //defines if the status is used for hunger (true) or health (false)
+	
 	//Labels
 	private Label indicator;
 	private int currentAmount;
@@ -19,8 +23,10 @@ public class StatusIndicator extends Actor {
 	private Image[] full = new Image[10];
 	private Image half;
 	
-	public StatusIndicator(int currentAmount, int maxAmount, Skin skin, String pathForFullImage, String pathForHalfImage){
+	public StatusIndicator(Player p, boolean hunger, int currentAmount, int maxAmount, Skin skin, String pathForFullImage, String pathForHalfImage){
 		indicator = new Label(currentAmount+"/"+maxAmount, skin);
+		player = p;
+		this.hunger = hunger;
 		this.currentAmount = currentAmount;
 		this.maxAmount = maxAmount;
 		
@@ -39,6 +45,9 @@ public class StatusIndicator extends Actor {
 	}
 	
 	public void act(float delta){
+		if(hunger) currentAmount = player.getCharacter().getHunger();
+		else currentAmount = player.getCharacter().getHealth();
+		
 		super.act(delta);
 		indicator.act(delta);
 		

@@ -2,6 +2,8 @@ package com.slot;
 
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.game.PlayScreen;
 import com.resources.Resource;
 
 /*
@@ -12,6 +14,8 @@ public class Slot extends Actor {
 
 	//the type of resource in the SLOT
 	private Resource resource;
+	//the name of the resource
+	private Label label;
 	
 	//amount = how much the SLOT contains
 	private int amount;
@@ -20,7 +24,7 @@ public class Slot extends Actor {
 	private boolean selected;
 	
 	//size = the max size of the SLOT
-	private static int size = 32;
+	public static int size = 32;
 	
 	
 	/**
@@ -36,6 +40,7 @@ public class Slot extends Actor {
 		setSize(Slot.size);
 		setResource(r);
 		setAmount(a);
+		label = new Label(r.getName()+" x"+getAmount(), PlayScreen.skin);
 	}
 	
 	/**
@@ -43,6 +48,7 @@ public class Slot extends Actor {
 	 */
 	public Slot(){
 		super();
+		label = new Label("- - -", PlayScreen.skin);
 	}
 
 	/**
@@ -86,9 +92,12 @@ public class Slot extends Actor {
 	 */
 	public void setAmount(int amount) {
 		if(amount == 0){
-			this.setResource(null);
+			resource = null;
+			label.setText("- - -");
+			return;
 		}
 		this.amount = amount;
+		label.setText(getResource().getName()+" x"+getAmount());
 	}
 	
 	public boolean isSelected(){
@@ -122,6 +131,7 @@ public class Slot extends Actor {
 	 */
 	public void setResource(Resource r) {
 		this.resource = r;
+		label.setText(r.getName()+" x"+getAmount());
 	}
 
 	@Override
@@ -132,24 +142,27 @@ public class Slot extends Actor {
 	// --------------------------------------- graphical stuff -------------------------------------------
 	//TODO the actor for the amount of the resource --> Apple  	x4
 	//													WoodAxe x1
-	//													...
+
 	public void act(float delta){
 		super.act(delta);
-		resource.act(delta);
+		label.act(delta);
 	}
 	
 	public void draw(Batch batch, float parentAlpha){
-		resource.draw(batch, parentAlpha);
+		super.draw(batch, parentAlpha);
+		label.draw(batch, parentAlpha);
 	}
 	
 	public void setPosition(float x, float y){
 		super.setPosition(x, y);
-		resource.setPosition(x, y);
+		label.setPosition(x, y);
 	}
 	
 	public void setColor(float r, float g, float b, float a){
-		this.resource.setColor(r, g, b, a);
+		super.setColor(r, g, b, a);
+		label.setColor(r, g, b, a);
 	}
+	//-----------------------------------------------------------------------------------------------
 	
 	
 }

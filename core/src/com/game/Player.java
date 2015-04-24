@@ -280,17 +280,18 @@ public class Player extends Sprite implements InputProcessor{
 
 	@Override
 	public boolean scrolled(int amount) {
-		System.out.println(amount);
 		character.getBag().setSelected(amount);
 		
 		return true;
 	}
 	
+	//--------------------------------------- interacting methods for bag -----------------------------------------
 	private void collectStuff(){
 		//check around player
 		//TODO
 		//collect and delete stuff
 		
+		//update the bag
 	}
 	
 	private void useItem(){

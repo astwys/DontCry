@@ -66,25 +66,20 @@ public class PlayScreen implements Screen {
 		stage.addActor(txtbtn_inventory);
 		
 		//assign healtstatus
-		healthStatus = new StatusIndicator(100, 100, skin, "../core/assets/icons/hearts/fullheart.png", "../core/assets/icons/hearts/halfheart.png");
+		healthStatus = new StatusIndicator(player, false, 100, 100, skin, "../core/assets/icons/hearts/fullheart.png", "../core/assets/icons/hearts/halfheart.png");
 		healthStatus.setColor(1, 0, 0, 1);
-		healthStatus.setPosition(20, 535);
+		healthStatus.setPosition(20, 520);
 		stage.addActor(healthStatus);
 		
 		//assign hungerstatus
-		hungerStatus = new StatusIndicator(100, 100, skin, "../core/assets/icons/chickenlegs/fullchickenleg.png", "../core/assets/icons/chickenlegs/halfchickenleg.png");
+		hungerStatus = new StatusIndicator(player, true, 100, 100, skin, "../core/assets/icons/chickenlegs/fullchickenleg.png", "../core/assets/icons/chickenlegs/halfchickenleg.png");
 		hungerStatus.setColor(1, 0.4f, 0, 1);
-		hungerStatus.setPosition(20, 480);
+		hungerStatus.setPosition(20, 465);
 		stage.addActor(hungerStatus);
 		
 		//assign the bag to the stage
 		stage.addActor(player.getCharacter().getBag());
-		
-		//assign InputMultiplexer for several InputProcessors
-		InputMultiplexer ipmulti = new InputMultiplexer();
-		ipmulti.addProcessor(stage);
-		ipmulti.addProcessor(player);
-		Gdx.input.setInputProcessor(ipmulti);
+
 	}
 	
 	@Override

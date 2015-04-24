@@ -30,7 +30,7 @@ public class Character {
 	public Character(String name) {
 		setName(name);
 
-		bag=new Bag();
+		bag=new Bag(this);
 		craftingbook=new Craftingbook();
 	}
 	
@@ -129,11 +129,9 @@ public class Character {
 	 * @return if a resource with a specified amount could be added
 	 */
 	public boolean addResource(Resource r, int plus) {
-		if (bag.add(r, plus) < plus) {
-			bag.add(r, plus);
-			return true;
-		}
-		return false;
+		int remainder = bag.add(r, plus);
+		if(remainder > 0) return false;
+		return true;
 	}
 
 	/**
