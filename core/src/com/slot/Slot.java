@@ -148,8 +148,6 @@ public class Slot extends Actor {
 	}
 	
 	// --------------------------------------- graphical stuff -------------------------------------------
-	//TODO the actor for the amount of the resource --> Apple  	x4
-	//													WoodAxe x1
 
 	public void act(float delta){
 		super.act(delta);

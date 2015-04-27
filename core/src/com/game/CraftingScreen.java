@@ -1,5 +1,7 @@
 package com.game;
 
+import java.util.ArrayList;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.InputProcessor;
@@ -11,6 +13,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.resources.Resource;
 import com.slot.Bag;
 
 public class CraftingScreen implements Screen {
@@ -19,19 +22,16 @@ public class CraftingScreen implements Screen {
 
 		@Override
 		public boolean keyDown(int keycode) {
-			// TODO Auto-generated method stub
 			return false;
 		}
 
 		@Override
 		public boolean keyUp(int keycode) {
-			// TODO Auto-generated method stub
 			return false;
 		}
 
 		@Override
 		public boolean keyTyped(char character) {
-			// TODO Auto-generated method stub
 			return false;
 		}
 
@@ -45,19 +45,16 @@ public class CraftingScreen implements Screen {
 
 		@Override
 		public boolean touchUp(int screenX, int screenY, int pointer, int button) {
-			// TODO Auto-generated method stub
 			return false;
 		}
 
 		@Override
 		public boolean touchDragged(int screenX, int screenY, int pointer) {
-			// TODO Auto-generated method stub
 			return false;
 		}
 
 		@Override
 		public boolean mouseMoved(int screenX, int screenY) {
-			// TODO Auto-generated method stub
 			return false;
 		}
 
@@ -92,12 +89,30 @@ public class CraftingScreen implements Screen {
 	}
 	
 	public void addResourceToCraft(){
-		craftTo.add(bag.getSelectedItem(), 1);
-		bag.addSelectedItemToCraft();
+		Resource r = bag.getSelectedItem();
+		if(r != null){
+			craftTo.add(bag.getSelectedItem(), 1);
+			bag.addSelectedItemToCraft();
+			ArrayList<String> craftFrom = new ArrayList<String>();
+			for(int i=0; i<craftTo.getResources().length; i++){
+				if(!craftTo.getResources()[i].isEmpty()){
+					for(int j=0; j<craftTo.getResources()[i].getAmount(); j++){
+						craftFrom.add(craftTo.getResources()[i].getResource().getName());
+					}
+				}
+			}
+			String result = player.getCharacter().craftsInto(craftFrom);
+			txtbtn_craft.setText(result);
+		}else{
+			txtbtn_craft.setText("Craft");
+		}
 	}
 	
 	public void cancle(){
-		//TODO cancle the craft and return stuff to the bag
+		for(int i=0; i<craftTo.getResources().length; i++){
+			bag.add(craftTo.getResources()[i].getResource(), craftTo.getResources()[i].getAmount());
+			craftTo.getResources()[i].setAmount(0);
+		}
 	}
 	
 	public void returnToGame(){
@@ -122,18 +137,18 @@ public class CraftingScreen implements Screen {
 		inputp = new CSInputProcessor();
 		
 		txtbtn_craft = new TextButton("Craft", PlayScreen.skin);
-		txtbtn_craft.setPosition(650, 200);
+		txtbtn_craft.setPosition(550, 310);
 		txtbtn_craft.setSize(120, 40);
 		txtbtn_craft.addListener(new ClickListener(){
 			
 			public void clicked(InputEvent input, float x, float y){
-				txtbtn_craft.setText("Crafted");
+				//TODO craft
 			}
 			
 		});
 		
 		txtbtn_cancle = new TextButton("Cancle", PlayScreen.skin);
-		txtbtn_cancle.setPosition(150, 10);
+		txtbtn_cancle.setPosition(550, 250);
 		txtbtn_cancle.setSize(120, 40);
 		txtbtn_cancle.addListener(new ClickListener(){
 			
@@ -144,7 +159,7 @@ public class CraftingScreen implements Screen {
 		});
 		
 		txtbtn_returnToGame = new TextButton("Return to game", PlayScreen.skin);
-		txtbtn_returnToGame.setPosition(10, 10);
+		txtbtn_returnToGame.setPosition(375, 50);
 		txtbtn_returnToGame.setSize(120, 40);
 		txtbtn_returnToGame.addListener(new ClickListener(){
 			
@@ -165,7 +180,7 @@ public class CraftingScreen implements Screen {
 			craftTo.getResources()[i].getLabel().setColor(new Color(1, 1, 1, 1));
 		}
 		craftTo.setSize(4);
-		craftTo.setPosition(200, 300);
+		craftTo.setPosition(350, 350);
 		
 		stage.addActor(txtbtn_craft);
 		stage.addActor(txtbtn_cancle);
@@ -200,19 +215,17 @@ public class CraftingScreen implements Screen {
 
 	@Override
 	public void pause() {
-		// TODO Auto-generated method stub
+		
 
 	}
 
 	@Override
 	public void resume() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void hide() {
-		// TODO Auto-generated method stub
 
 	}
 

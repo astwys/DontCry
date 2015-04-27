@@ -33,12 +33,17 @@ public class Craftingbook{
 	//special class for returning the craft (out of some resources) and the amount that is crafted
 	public class ReturnForCraft{
 		int amount;
-		Craftable craftable;
+		Resource craftable;
 		
 		public ReturnForCraft(int amount, Resource craftable){
 			this.amount = amount;
 			this.craftable = craftable;
 		}
+		
+		public String toString(){
+			return craftable.toString()+" x"+amount;
+		}
+		
 	}
 	
 	
@@ -55,7 +60,7 @@ public class Craftingbook{
 	//checking for a possible crafting
 	private Resource craftsInto(ArrayList<String> resources){
 		
-		Set keySet = craftMap.keySet();
+		Set<Resource> keySet = craftMap.keySet();
 		Object[] keys = keySet.toArray();
 		
 		// go through possible crafts

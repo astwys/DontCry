@@ -34,7 +34,7 @@ public class WoodSword extends Resource implements Damage {
 	@Override
 	public ArrayList<String> neededToCraft() {
 		// TODO Auto-generated method stub
-		return null;
+		return resourcesNeeded;
 	}
 
 	@Override

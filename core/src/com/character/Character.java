@@ -3,7 +3,10 @@
  */
 package com.character;
 
+import java.util.ArrayList;
+
 import com.craft.Craftingbook;
+import com.craft.Craftingbook.ReturnForCraft;
 import com.resources.Resource;
 import com.slot.Bag;
 
@@ -230,5 +233,12 @@ public class Character {
 			this.bag = bag;
 			return true;
 		}
+	}
+	
+//------------------------- CraftingBook ----------------------------
+	public String craftsInto(ArrayList<String> from){
+		ReturnForCraft rfc = craftingbook.craft(from);
+		if(rfc != null) return rfc.toString();
+		else return "Nothing :(";
 	}
 }

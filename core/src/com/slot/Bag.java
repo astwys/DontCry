@@ -60,13 +60,14 @@ public class Bag extends Actor {
 					resources[i].setResource(r);
 					resources[i].setAmount(plus);
 					plus = 0;
+					return plus;
 				}else if(resources[i].getResource().equals(r)){
 					if(resources[i].resourcesToAdd() < plus) {
 						plus -= resources[i].resourcesToAdd();
 						resources[i].setAmount(resources[i].getSize());
 					}else {
-						plus = 0;
 						resources[i].setAmount(resources[i].getAmount() + plus);
+						plus = 0;
 					}
 				}
 			}
@@ -262,10 +263,6 @@ public class Bag extends Actor {
 		for(int i=0; i<resources.length; i++){
 			resources[i].setPosition(x, y-20*i);
 		}
-	}
-	
-	public void setColor(float r, float g, float b, float a){
-		//TODO
 	}
 	
 	

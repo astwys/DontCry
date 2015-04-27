@@ -29,7 +29,6 @@ public class WoodPlate extends Resource {
 	 */
 	@Override
 	public ArrayList<String> neededToCraft() {
-		// TODO Auto-generated method stub
 		return resourcesNeeded;
 	}
 
