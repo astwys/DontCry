@@ -24,7 +24,7 @@ public abstract class Resource implements Craftable{
 		this.amount=amount;
 		resourcesNeeded=new ArrayList<String>();
 	}
-	//TODO TODO TODO TODO TODO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! every time a new resource is created the position needs to be set TODO TODO TODO TODO
+	
 	/*
 	 * get name of current resource
 	 */

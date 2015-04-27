@@ -131,7 +131,15 @@ public class Slot extends Actor {
 	 */
 	public void setResource(Resource r) {
 		this.resource = r;
+		if(this.resource == null){
+			label.setText("- - -");
+			return;
+		}
 		label.setText(r.getName()+" x"+getAmount());
+	}
+	
+	public Label getLabel(){
+		return this.label;
 	}
 
 	@Override

@@ -32,7 +32,6 @@ public class Bag extends Actor {
 			resources[i] = new Slot();
 		}
 		
-		setPosition(730, 550);
 		setSelected(0);
 	}
 	
@@ -96,6 +95,10 @@ public class Bag extends Actor {
 		}
 		
 		return;
+	}
+	
+	public void addSelectedItemToCraft(){
+		resources[selectedIndex].setAmount(resources[selectedIndex].getAmount()-1);
 	}
 	
 	private int getSelectedItemValue(String name){
@@ -185,6 +188,15 @@ public class Bag extends Actor {
 		}
 	}
 	
+	public boolean isEmpty(){
+		for(int i=0; i<resources.length; i++){
+			if(!resources[i].isEmpty()){
+				return false;
+			}
+		}
+		return true;
+	}
+	
 	public void setSelected(int plus){
 		resources[selectedIndex].setColor(1, 1, 1, 1);
 		int index = selectedIndex + plus;
@@ -206,6 +218,17 @@ public class Bag extends Actor {
 
 	public Slot[] getResources() {
 		return resources;
+	}
+	
+	public void setSize(int size){
+		Slot[] copy = resources;
+		clearBackpack();
+		resources = new Slot[size];
+		for(int i=0; i<resources.length; i++){
+			resources[i] = new Slot();
+			resources[i].setResource(copy[i].getResource());
+			resources[i].setAmount(copy[i].getAmount());
+		}
 	}
 	
 	public String toString(){

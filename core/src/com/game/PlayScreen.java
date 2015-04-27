@@ -12,11 +12,14 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.badlogic.gdx.utils.Array;
+import com.slot.Bag;
 
 public class PlayScreen implements Screen {
 	
@@ -78,8 +81,23 @@ public class PlayScreen implements Screen {
 		stage.addActor(hungerStatus);
 		
 		//assign the bag to the stage
+		player.getCharacter().getBag().setPosition(730, 550);
 		stage.addActor(player.getCharacter().getBag());
 
+	}
+	
+	public void reinitialiseBag(Bag bag){
+		
+		bag.setPosition(730, 550);
+		
+		Array<Actor> actors = stage.getActors();
+		for(int i=0; i<actors.size; i++){
+			if(actors.get(i) instanceof Bag){
+				actors.removeIndex(i);
+				break;
+			}
+		}
+		stage.addActor(bag);
 	}
 	
 	@Override
@@ -106,7 +124,7 @@ public class PlayScreen implements Screen {
 		renderer.render();
 		
 		hunger += delta;
-		if(hunger >= 0.5f){
+		if(hunger >= 9.0f){
 			hungerStatus.setStatus(player.getCharacter().decreaseHungerDef());
 			healthStatus.setStatus(player.getCharacter().getHealth());
 			hunger = 0;
