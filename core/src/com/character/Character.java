@@ -173,10 +173,11 @@ public class Character {
 	 * @param hunger the hunger to set
 	 */
 	public void setHunger(int hunger) {
-		if (hunger<=100 && hunger>=0) {
+		if (hunger>=0 && hunger <= 100) {
 			this.hunger = hunger;
-		}
-		else {
+		}else if(hunger > 100){
+			this.hunger = 100;
+		}else {
 			decreaseHealthDef();
 		}
 	}
@@ -195,11 +196,13 @@ public class Character {
 	 * @param health the health to set
 	 */
 	public void setHealth(int health) {
-		if (health <= 100 && health >= 0) {
+		if (health >= 0 && health <= 100) {
 			this.health = health;
-		}
-		else {
+		}else if(health > 100){
+			this.health = 100;
+		}else{
 			// method to "die" / restart the game if health = 0
+			this.health = 0;
 		}
 	}
 

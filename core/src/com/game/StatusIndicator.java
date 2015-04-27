@@ -63,6 +63,9 @@ public class StatusIndicator extends Actor {
 	}
 	
 	public void draw(Batch batch, float parentAlpha){
+		if(hunger) currentAmount = player.getCharacter().getHunger();
+		else currentAmount = player.getCharacter().getHealth();
+		
 		super.draw(batch, parentAlpha);
 		indicator.draw(batch, parentAlpha);
 		

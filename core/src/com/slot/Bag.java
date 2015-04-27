@@ -6,6 +6,13 @@ import com.resources.Edible;
 import com.resources.Potions;
 import com.resources.Resource;
 import com.resources.Tool;
+import com.resources.craftable.edible.Chips;
+import com.resources.craftable.potions.HealthPotionBig;
+import com.resources.craftable.potions.HealthPotionSmall;
+import com.resources.natural.edible.Apple;
+import com.resources.natural.edible.Potato;
+import com.resources.natural.edible.RedFlower;
+import com.resources.natural.edible.YellowFlower;
 
 /*
  * author jonas
@@ -70,26 +77,48 @@ public class Bag extends Actor {
 	
 	public void useItem(){
 		try{
-			Resource touse = resources[selectedIndex].getResource();
+			
+			Resource touse = getSelectedItem();
 			if(!(resources[selectedIndex].getResource() instanceof Tool)){
 				if(touse instanceof Edible){
-					Edible e = (Edible)touse;
-					player.increaseHunger(e.restoreHungerBy());
+					int plus = getSelectedItemValue(touse.getName());
+					player.increaseHunger(plus);
 				}else if(touse instanceof Potions){
-					Potions p = (Potions)touse;
-					player.increaseHealth(p.restoreHealthBy());
+					int plus = getSelectedItemValue(touse.getName());
+					player.increaseHealth(plus);
 				}
-			}else{
-				//TODO a tool can increase the amount of resources u get from farming, ... whatever --> number is not decreased
-				return;
+				resources[selectedIndex].setAmount(resources[selectedIndex].getAmount()-1);
 			}
-			resources[selectedIndex].setAmount(resources[selectedIndex].getAmount()-1);
+
 		}catch(ArrayIndexOutOfBoundsException aioobe){
 			System.out.println("OUT OF BOUNDS");
 			return;
 		}
 		
 		return;
+	}
+	
+	private int getSelectedItemValue(String name){
+		switch(name){
+			//for hunger
+			case "Chips"		: 	return new Chips().restoreHungerBy();
+			
+			case "Apple"		: 	return new Apple().restoreHungerBy();
+			
+			case "Potato"		: 	return new Potato().restoreHungerBy();
+			
+			case "RedFlower"	: 	return new RedFlower().restoreHungerBy();
+			
+			case "YellowFlower"	: 	return new YellowFlower().restoreHungerBy();
+			
+			//for health
+			case "HealthPotionSmall":	return new HealthPotionSmall().restoreHealthBy();
+			
+			case "HealthPotionBig"	:	return new HealthPotionBig().restoreHealthBy();
+			
+			//deafult
+			default				: 	return 0;
+		}
 	}
 	
 	/**

@@ -91,7 +91,7 @@ public class Slot extends Actor {
 	 * @param amount
 	 */
 	public void setAmount(int amount) {
-		if(amount == 0){
+		if(amount <= 0){
 			resource = null;
 			label.setText("- - -");
 			return;
