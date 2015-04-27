@@ -104,7 +104,9 @@ public class CraftingScreen implements Screen {
 			String result = player.getCharacter().craftsInto(craftFrom);
 			txtbtn_craft.setText(result);
 		}else{
-			txtbtn_craft.setText("Craft");
+			if(craftTo.isEmpty()) {
+				txtbtn_craft.setText("Craft");
+			}
 		}
 	}
 	
