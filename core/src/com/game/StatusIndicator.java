@@ -66,6 +66,8 @@ public class StatusIndicator extends Actor {
 		if(hunger) currentAmount = player.getCharacter().getHunger();
 		else currentAmount = player.getCharacter().getHealth();
 		
+		indicator.setText(currentAmount+"/"+maxAmount);
+		
 		super.draw(batch, parentAlpha);
 		indicator.draw(batch, parentAlpha);
 		

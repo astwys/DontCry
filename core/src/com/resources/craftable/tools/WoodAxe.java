@@ -20,7 +20,7 @@ public class WoodAxe extends Resource implements Tool{
 	public WoodAxe() {
 		super("WoodAxe", 1);
 		// assign the resources needed
-		resourcesNeeded.add("Stick");
+		resourcesNeeded.add("WoodStick");
 		resourcesNeeded.add("WoodPlate");
 		resourcesNeeded.add("WoodPlate");
 	}

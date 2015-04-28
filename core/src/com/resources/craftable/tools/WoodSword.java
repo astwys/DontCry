@@ -21,7 +21,7 @@ public class WoodSword extends Resource implements Damage {
 	public WoodSword() {
 		super("WoodSword", 1);
 		// assign the resources needed
-		resourcesNeeded.add("Stick");
+		resourcesNeeded.add("WoodStick");
 		resourcesNeeded.add("WoodPlate");
 		resourcesNeeded.add("WoodPlate");
 		resourcesNeeded.add("WoodPlate");

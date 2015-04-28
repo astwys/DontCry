@@ -11,8 +11,10 @@ import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer.Cell;
 import com.badlogic.gdx.math.Vector2;
 import com.character.Character;
+import com.resources.craftable.GoldPlate;
 import com.resources.craftable.edible.Chips;
 import com.resources.craftable.tools.WoodAxe;
+import com.resources.natural.minerals.Wood;
 
 public class Player extends Sprite implements InputProcessor{
 
@@ -53,6 +55,8 @@ public class Player extends Sprite implements InputProcessor{
 		character = new Character("Frank");
 		character.addResource(new Chips(), 10);
 		character.addResource(new WoodAxe(), 1);
+		character.addResource(new Wood(), 10);
+		character.addResource(new GoldPlate(), 10);
 	}
 	
 	public void draw(SpriteBatch spriteBatch){

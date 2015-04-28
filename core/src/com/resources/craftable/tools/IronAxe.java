@@ -20,7 +20,7 @@ public class IronAxe extends Resource implements Tool{
 	public IronAxe() {
 		super("IronAxe", 1);
 		// assign the resources needed
-		resourcesNeeded.add("Stick");
+		resourcesNeeded.add("WoodStick");
 		resourcesNeeded.add("IronPlate");
 		resourcesNeeded.add("IronPlate");
 	}

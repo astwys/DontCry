@@ -20,7 +20,7 @@ public class GoldSword extends Resource implements Damage {
 	public GoldSword() {
 		super("GoldSword", 1);
 		// assign the resources needed
-		resourcesNeeded.add("Stick");
+		resourcesNeeded.add("WoodStick");
 		resourcesNeeded.add("GoldPlate");
 		resourcesNeeded.add("GoldPlate");
 		resourcesNeeded.add("GoldPlate");

@@ -20,7 +20,7 @@ public class StoneSword extends Resource implements Damage {
 	public StoneSword() {
 		super("StoneSword", 1);
 		// assign the resources needed
-		resourcesNeeded.add("Stick");
+		resourcesNeeded.add("WoodStick");
 		resourcesNeeded.add("StonePlate");
 		resourcesNeeded.add("StonePlate");
 		resourcesNeeded.add("StonePlate");

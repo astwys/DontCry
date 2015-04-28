@@ -20,7 +20,7 @@ public class IronSword extends Resource implements Damage {
 	public IronSword() {
 		super("IronSword", 1);
 		// assign the resources needed
-		resourcesNeeded.add("Stick");
+		resourcesNeeded.add("WoodStick");
 		resourcesNeeded.add("IronPlate");
 		resourcesNeeded.add("IronPlate");
 		resourcesNeeded.add("IronPlate");

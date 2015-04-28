@@ -40,6 +40,14 @@ public class Craftingbook{
 			this.craftable = craftable;
 		}
 		
+		public Resource getResource(){
+			return craftable;
+		}
+		
+		public int getAmount(){
+			return amount;
+		}
+		
 		public String toString(){
 			return craftable.toString()+" x"+amount;
 		}
@@ -69,7 +77,7 @@ public class Craftingbook{
 			ArrayList<String> comparedWithArr = crafting.neededToCraft();
 			
 			Object[] required = resources.toArray();
-			int checkIfNull = required.length;
+			int checkIfNull = comparedWithArr.size();
 			
 			// go through the resources needed for crafting
 			for(int j=0; j<comparedWithArr.size(); j++){
@@ -105,6 +113,9 @@ public class Craftingbook{
 		return new ReturnForCraft(craft.getAmount(), craft);
 	}
 	
+	public HashMap<Resource, ArrayList<String>> getCraftingMap(){
+		return this.craftMap;
+	}
 	
 	private void initialiseCraftMap(){
 		

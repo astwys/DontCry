@@ -39,6 +39,10 @@ public abstract class Resource implements Craftable{
 		return this.amount;
 	}
 	
+	public ArrayList<String> getResourcesNeeded(){
+		return resourcesNeeded;
+	}
+	
 	// ---------------------------------- 0815 methods ----------------------------------------------
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()

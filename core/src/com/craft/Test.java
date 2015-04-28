@@ -15,10 +15,10 @@ public class Test {
 		ArrayList<String> arrayL = new ArrayList<String>();
 		arrayL.add("GoldPlate");
 		arrayL.add("GoldPlate");
-		arrayL.add("Stick");
+		arrayL.add("WoodStick");
 		arrayL.add("GoldPlate");
 		ReturnForCraft rfc = craft.craft(arrayL);
-		System.out.println(rfc.amount+"\n"+rfc.craftable.toString());
+		System.out.println(rfc.getResource()+" "+rfc.getAmount());
 	}
 
 }

@@ -20,7 +20,7 @@ public class GoldAxe extends Resource implements Tool{
 	public GoldAxe() {
 		super("GoldAxe", 1);
 		// assign the resources needed
-		resourcesNeeded.add("Stick");
+		resourcesNeeded.add("WoodStick");
 		resourcesNeeded.add("GoldPlate");
 		resourcesNeeded.add("GoldPlate");
 	}

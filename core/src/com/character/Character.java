@@ -238,7 +238,11 @@ public class Character {
 //------------------------- CraftingBook ----------------------------
 	public String craftsInto(ArrayList<String> from){
 		ReturnForCraft rfc = craftingbook.craft(from);
-		if(rfc != null) return rfc.toString();
+		if(rfc != null) return rfc.getResource().toString();
 		else return "Nothing :(";
+	}
+	
+	public Craftingbook getCraftingBook(){
+		return this.craftingbook;
 	}
 }

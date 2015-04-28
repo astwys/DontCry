@@ -20,7 +20,7 @@ public class DiamondAxe extends Resource implements Tool{
 	public DiamondAxe() {
 		super("DiamondAxe", 1);
 		// assign the resources needed
-		resourcesNeeded.add("Stick");
+		resourcesNeeded.add("WoodStick");
 		resourcesNeeded.add("DiamondPlate");
 		resourcesNeeded.add("DiamondPlate");
 	}

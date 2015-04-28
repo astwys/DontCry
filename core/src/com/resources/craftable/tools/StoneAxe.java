@@ -18,7 +18,7 @@ public class StoneAxe extends Resource implements Tool{
 	public StoneAxe() {
 		super("StoneAxe", 1);
 		// assign the resources needed
-		resourcesNeeded.add("Stick");
+		resourcesNeeded.add("WoodStick");
 		resourcesNeeded.add("StonePlate");
 		resourcesNeeded.add("StonePlate");
 	}
