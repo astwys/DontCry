@@ -131,7 +131,9 @@ public class CraftingScreen implements Screen {
 			}
 			
 		}else{
-			txtbtn_craft.setText("Craft");
+			if(craftTo.isEmpty()) {
+				txtbtn_craft.setText("Craft");
+			}
 		}
 	}
 	
