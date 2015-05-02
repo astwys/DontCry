@@ -24,6 +24,6 @@ public class Chips extends Resource implements Edible{
 
     @Override
     public int restoreHungerBy() {
-        return 7;
+        return 2;
     }
 }

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class HealthPotionSmall extends Resource implements Potions {
 
     public HealthPotionSmall() {
-        super("HealthPotionSmall", 1);
+        super("HealthPotion", 1);
         resourcesNeeded.add("RedFlower");
         resourcesNeeded.add("RedFlower");
         resourcesNeeded.add("YellowFlower");

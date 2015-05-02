@@ -51,7 +51,7 @@ public class PlayScreen implements Screen {
 		camera = new OrthographicCamera();
 		
 		//create and initialise the player with the collisionlayer
-		player = new Player(game, this, new Sprite(new Texture("../core/assets/player/p_back.png")), (TiledMapTileLayer) map.getLayers().get(1));
+		player = new Player(game, this, new Sprite(new Texture("../core/assets/player/p_back.png")), (TiledMapTileLayer) map.getLayers().get(1), (TiledMapTileLayer) map.getLayers().get(2));
 		player.setPosition(208, 20.8f);
 		
 		//assigning the stage

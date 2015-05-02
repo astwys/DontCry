@@ -24,6 +24,9 @@ public class Player extends Sprite implements InputProcessor{
 	//character reference
 	private Character character;
 	
+	//the collector to compute the items we collect
+	private Collector collector;
+	
 	//movement velocity
 	private Vector2 velocity;
 	
@@ -46,17 +49,16 @@ public class Player extends Sprite implements InputProcessor{
 	private Texture[] skins = {new Texture(new FileHandle("../core/assets/player/p_back.png")), new Texture(new FileHandle("../core/assets/player/p_front.png")), new Texture(new FileHandle("../core/assets/player/p_right.png")), new Texture(new FileHandle("../core/assets/player/p_left.png"))};
 	
 	
-	public Player(final DontCry dontcry, PlayScreen playscreen, Sprite sprite, TiledMapTileLayer tiledMapLayer){
+	public Player(final DontCry dontcry, PlayScreen playscreen, Sprite sprite, TiledMapTileLayer blocking, TiledMapTileLayer ground){
 		super(sprite);
 		game = dontcry;
+		collector = new Collector(this, blocking, ground);
 		screen = playscreen;
 		velocity = new Vector2();
-		collisionLayer = tiledMapLayer;
+		collisionLayer = blocking;
 		character = new Character("Frank");
 		character.addResource(new Chips(), 10);
 		character.addResource(new WoodAxe(), 1);
-		character.addResource(new Wood(), 10);
-		character.addResource(new GoldPlate(), 10);
 	}
 	
 	public void draw(SpriteBatch spriteBatch){
@@ -79,7 +81,7 @@ public class Player extends Sprite implements InputProcessor{
 		setY(getY()+velocity.y*deltaTime);
 		setX(getX()+velocity.x*deltaTime);
 		
-		if(velocity.y >= 0){
+		if(velocity.y > 0){
 			
 			//top left
 			collisionY = collides(getX(), getY()+getHeight()/2);
@@ -164,9 +166,7 @@ public class Player extends Sprite implements InputProcessor{
 	}
 	
 	private boolean collides(float x, float y){
-		Cell cell;
-		
-		cell = collisionLayer.getCell((int)(x/tileWidth),(int)(y/tileHeight));
+		Cell cell = collisionLayer.getCell((int)(x/tileWidth),(int)(y/tileHeight));
 		
 		return cell == null ? false : true;
 	}
@@ -255,7 +255,7 @@ public class Player extends Sprite implements InputProcessor{
 	public boolean keyTyped(char character) {
 		
 		if(character == ' '){
-			collectStuff();
+			collector.collect();
 		}		
 		
 		return true;
@@ -296,13 +296,6 @@ public class Player extends Sprite implements InputProcessor{
 	}
 	
 	//--------------------------------------- interacting methods for bag -----------------------------------------
-	private void collectStuff(){
-		//check around player
-		//TODO
-		//collect and delete stuff
-		
-		//update the bag
-	}
 	
 	private void useItem(){
 		character.getBag().useItem();
