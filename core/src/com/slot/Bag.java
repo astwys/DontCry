@@ -79,14 +79,13 @@ public class Bag extends Actor {
 		try{
 			
 			Resource touse = getSelectedItem();
-			if(!(resources[selectedIndex].getResource() instanceof Tool)){
-				if(touse instanceof Edible){
-					int plus = getSelectedItemValue(touse.getName());
-					player.increaseHunger(plus);
-				}else if(touse instanceof Potions){
-					int plus = getSelectedItemValue(touse.getName());
-					player.increaseHealth(plus);
-				}
+			if(touse instanceof Edible){
+				int plus = getSelectedItemValue(touse.getName());
+				player.increaseHunger(plus);
+				resources[selectedIndex].setAmount(resources[selectedIndex].getAmount()-1);
+			}else if(touse instanceof Potions){
+				int plus = getSelectedItemValue(touse.getName());
+				player.increaseHealth(plus);
 				resources[selectedIndex].setAmount(resources[selectedIndex].getAmount()-1);
 			}
 
@@ -215,6 +214,10 @@ public class Bag extends Actor {
 	
 	public Resource getSelectedItem(){
 		return resources[selectedIndex].getResource();
+	}
+	
+	public int getSelectedIndex(){
+		return this.selectedIndex;
 	}
 
 	public Slot[] getResources() {

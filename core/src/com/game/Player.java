@@ -28,10 +28,10 @@ public class Player extends Sprite implements InputProcessor{
 	private Vector2 velocity;
 	
 	//speed of player when walking
-	private float normalSpeed = 60*2;
+	private float normalSpeed = 50*2;
 	
 	//speed of player when running
-	private float runSpeed = 60*4;
+	private float runSpeed = 50*4;
 	
 	// current speed of the player
 	private float speed = normalSpeed;
@@ -219,6 +219,10 @@ public class Player extends Sprite implements InputProcessor{
 			if (character.canRun())
 				speed = runSpeed;
 		}
+		//dump stuff
+		if(keycode == Keys.Q){
+			character.getBag().clearSlot(character.getBag().getSelectedIndex());
+		}
 		
 		return true;
 	}
@@ -285,6 +289,7 @@ public class Player extends Sprite implements InputProcessor{
 
 	@Override
 	public boolean scrolled(int amount) {
+		
 		character.getBag().setSelected(amount);
 		
 		return true;

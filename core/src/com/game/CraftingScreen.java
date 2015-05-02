@@ -205,6 +205,7 @@ public class CraftingScreen implements Screen {
 			
 			public void clicked(InputEvent input, float x, float y){
 				craftStuff();
+				txtbtn_craft.setText("Craft");
 			}
 			
 		});
