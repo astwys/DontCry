@@ -24,12 +24,12 @@ public class MainMenuScreen implements Screen {
 		game = dontcry;
 		stage = new Stage(new ExtendViewport(900, 600));
 		skin = new Skin(new FileHandle("../core/assets/skins/mainmenu/uiskin.json"));
-		Gdx.input.setInputProcessor(stage);
+		initialiseButtons();
 	}
 	
 	@Override
 	public void show() {
-		initialiseButtons();
+		Gdx.input.setInputProcessor(stage);
 	}
 
 	@Override
@@ -94,7 +94,7 @@ public class MainMenuScreen implements Screen {
 		txtbtn_options.addListener(new ClickListener(){
 			
 			public void clicked(InputEvent input, float x, float y){
-				txtbtn_options.setText("I was pressed");
+				game.setScreen(new OptionScreen(game, getScreen()));
 			}
 			
 		});
@@ -112,6 +112,10 @@ public class MainMenuScreen implements Screen {
 		stage.addActor(txtbtn_play);
 		stage.addActor(txtbtn_options);
 		stage.addActor(txtbtn_exit);
+	}
+	
+	public MainMenuScreen getScreen(){
+		return this;
 	}
 
 }

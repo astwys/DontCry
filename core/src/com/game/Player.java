@@ -171,6 +171,7 @@ public class Player extends Sprite implements InputProcessor{
 		return cell == null ? false : true;
 	}
 	
+	// ------------------------- some getters -------------------------------------
 	public Character getCharacter(){
 		return this.character;
 	}
