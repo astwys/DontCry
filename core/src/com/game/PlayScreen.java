@@ -43,7 +43,7 @@ public class PlayScreen implements Screen {
 	private float hunger;
 	
 	
-	public PlayScreen(final DontCry dontcry){
+	public PlayScreen(final DontCry dontcry, String name){
 		game = dontcry;
 		
 		//stuff for rendering the tiledmap
@@ -52,7 +52,7 @@ public class PlayScreen implements Screen {
 		camera = new OrthographicCamera();
 		
 		//create and initialise the player with the collisionlayer
-		player = new Player(game, this, new Sprite(Settings.playerBack), (TiledMapTileLayer) map.getLayers().get(1), (TiledMapTileLayer) map.getLayers().get(2));
+		player = new Player(game, name, this, new Sprite(Settings.playerBack), (TiledMapTileLayer) map.getLayers().get(1), (TiledMapTileLayer) map.getLayers().get(2));
 		player.setPosition(208, 20.8f);
 		
 		//assigning the stage
@@ -140,7 +140,7 @@ public class PlayScreen implements Screen {
 		
 		updateCamera();
 		
-		game.font.draw(game.batch, player.getName(), player.getX()-5, player.getY()+player.getHeight()+20);
+		game.font.draw(game.batch, player.getName(), player.getX()-player.getName().length()*(int)(player.getName().length()/3.5), player.getY()+player.getHeight()+20);
 		game.batch.end();
 		
 	}

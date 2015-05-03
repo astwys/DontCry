@@ -16,13 +16,29 @@ public class Settings {
 	public static Texture halfchickenleg 	= new Texture("../core/assets/icons/chickenlegs/halfchickenleg.png");
 	public static Texture fullchickenleg 	= new Texture("../core/assets/icons/chickenlegs/fullchickenleg.png");
 	
-	public static Texture playerBack 		= new Texture(new FileHandle("../core/assets/player/p_back.png"));
-	public static Texture playerFront 		= new Texture(new FileHandle("../core/assets/player/p_front.png"));
-	public static Texture playerLeft 		= new Texture(new FileHandle("../core/assets/player/p_left.png"));
-	public static Texture playerRight 		= new Texture(new FileHandle("../core/assets/player/p_right.png"));
+	public static String maleFemale 		= "male";
+	public static Texture playerBack 		= new Texture(new FileHandle("../core/assets/player/"+maleFemale+"/"+maleFemale+"Back.png"));
+	public static Texture playerFront 		= new Texture(new FileHandle("../core/assets/player/"+maleFemale+"/"+maleFemale+"Front.png"));
+	public static Texture playerLeft 		= new Texture(new FileHandle("../core/assets/player/"+maleFemale+"/"+maleFemale+"Left.png"));
+	public static Texture playerRight 		= new Texture(new FileHandle("../core/assets/player/"+maleFemale+"/"+maleFemale+"Right.png"));
 	
 	public static void setVolume(float vol){
 		volume = vol;
+	}
+	
+	public static void setMaleFemale(String maleFemale){
+		Settings.maleFemale = maleFemale;
+		
+		playerBack.dispose();
+		playerFront.dispose();
+		playerLeft.dispose();
+		playerRight.dispose();
+		
+		playerBack = new Texture(new FileHandle("../core/assets/player/"+maleFemale+"/"+maleFemale+"Back.png"));
+		playerFront = new Texture(new FileHandle("../core/assets/player/"+maleFemale+"/"+maleFemale+"Front.png"));
+		playerLeft = new Texture(new FileHandle("../core/assets/player/"+maleFemale+"/"+maleFemale+"Left.png"));
+		playerRight = new Texture(new FileHandle("../core/assets/player/"+maleFemale+"/"+maleFemale+"Right.png"));
+		
 	}
 	
 }

@@ -23,6 +23,9 @@ public class Slot extends Actor {
 	//is set to true if selected (via scrolling)
 	private boolean selected;
 	
+	//used if the item is taken for replacing
+	private boolean taken;
+	
 	//size = the max size of the SLOT
 	public static int size = 32;
 	
@@ -40,6 +43,7 @@ public class Slot extends Actor {
 		setSize(Slot.size);
 		setResource(r);
 		setAmount(a);
+		
 		label = new Label(r.getName()+" x"+getAmount(), Settings.skin);
 	}
 	
@@ -90,7 +94,23 @@ public class Slot extends Actor {
 	 * sets the amount of the resource in the SLOT
 	 * @param amount
 	 */
-	public void setAmount(int amount) {
+	public int setAmountPrecise(int amount) {
+		if(amount <= 0){
+			resource = null;
+			label.setText("- - -");
+			return 0;
+		}else if(getAmount()+amount > 32){
+			amount -= resourcesToAdd();
+			this.amount = 32;
+			label.setText(getResource().getName()+" x"+getAmount());
+			return amount;
+		}
+		this.amount = amount;
+		label.setText(getResource().getName()+" x"+getAmount());
+		return 0;
+	}
+	
+	public void setAmount(int amount){
 		if(amount <= 0){
 			resource = null;
 			label.setText("- - -");
@@ -98,6 +118,7 @@ public class Slot extends Actor {
 		}
 		this.amount = amount;
 		label.setText(getResource().getName()+" x"+getAmount());
+		return;
 	}
 	
 	public boolean isSelected(){
@@ -141,6 +162,21 @@ public class Slot extends Actor {
 	public Label getLabel(){
 		return this.label;
 	}
+	
+	public void setTaken(boolean taken){
+		this.taken = taken;
+		
+		if(taken){
+			label.setColor(0, 0, 1, 1);
+		}else{
+			label.setColor(0, 0, 0, 1);
+		}
+		
+	}
+	
+	public boolean isTaken(){
+		return this.taken;
+	}
 
 	@Override
 	public String toString() {
@@ -165,6 +201,7 @@ public class Slot extends Actor {
 	}
 	
 	public void setColor(float r, float g, float b, float a){
+		if(taken) return;
 		super.setColor(r, g, b, a);
 		label.setColor(r, g, b, a);
 	}

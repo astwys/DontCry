@@ -14,6 +14,7 @@ import com.badlogic.gdx.utils.viewport.ExtendViewport;
 public class MainMenuScreen implements Screen {
 
 	private DontCry game;
+	private MainMenuScreen thisScreen;
 	
 	//fields for main menu
 	private Skin skin;
@@ -22,6 +23,7 @@ public class MainMenuScreen implements Screen {
 	
 	public MainMenuScreen(final DontCry dontcry){
 		game = dontcry;
+		thisScreen = this;
 		stage = new Stage(new ExtendViewport(900, 600));
 		skin = new Skin(new FileHandle("../core/assets/skins/mainmenu/uiskin.json"));
 		initialiseButtons();
@@ -46,25 +48,21 @@ public class MainMenuScreen implements Screen {
 
 	@Override
 	public void resize(int width, int height) {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void pause() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void resume() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void hide() {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -83,7 +81,7 @@ public class MainMenuScreen implements Screen {
 		txtbtn_play.addListener(new ClickListener(){
 			
 			public void clicked(InputEvent input, float x, float y){
-				game.setScreen(new PlayScreen(game));
+				game.setScreen(new CreationScreen(game, thisScreen));
 			}
 			
 		});

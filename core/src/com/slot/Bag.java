@@ -24,6 +24,10 @@ public class Bag extends Actor {
 	private Slot[] resources;
 	private int selectedIndex = 0;
 	
+	//for moving items
+	private Slot itemTaken;
+	private int indexTaken;
+	
 	public Bag(com.character.Character character) {
 		super();
 		resources = new Slot[12];
@@ -33,6 +37,8 @@ public class Bag extends Actor {
 		}
 		
 		setSelected(0);
+		indexTaken = -1;
+		itemTaken = null;
 	}
 	
 	/**
@@ -73,6 +79,57 @@ public class Bag extends Actor {
 			}
 		}
 		return plus;
+	}
+	
+	public void placeItem(){
+		if(itemTaken != null && itemTaken.getResource() != null && itemTaken.getAmount() > 0){
+			
+			if(selectedIndex == indexTaken){
+				resources[selectedIndex].setTaken(false);
+				itemTaken = null;
+				indexTaken = -1;
+				return;
+			}
+			
+			if(resources[selectedIndex].isEmpty()){
+				
+				resources[selectedIndex].setResource(itemTaken.getResource());
+				resources[selectedIndex].setAmount(itemTaken.getAmount());
+				
+				resources[indexTaken].setResource(null);
+				resources[indexTaken].setAmount(0);
+				resources[indexTaken].setTaken(false);
+				
+				itemTaken = null;
+				indexTaken = -1;
+				
+			}else if(resources[selectedIndex].getResource().equals(itemTaken.getResource())){
+				
+				int rest = resources[selectedIndex].setAmountPrecise(itemTaken.getAmount());
+				if(rest != 0){
+					resources[indexTaken].setAmount(rest);
+					return;
+				}
+				resources[indexTaken].setTaken(false);
+				resources[indexTaken].setColor(0, 0, 0, 1);
+				indexTaken = -1;
+				
+			}
+			
+		}
+		
+	}
+	
+	public void takeItem(){
+		if(resources[selectedIndex].getResource() == null) return;
+		resources[selectedIndex].setColor(0, 0, 1, 1);
+		resources[selectedIndex].setTaken(true);
+		itemTaken = resources[selectedIndex];
+		indexTaken = selectedIndex;
+	}
+	
+	public int getIndexTaken(){
+		return indexTaken;
 	}
 	
 	public void useItem(){
