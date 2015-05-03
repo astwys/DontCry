@@ -3,6 +3,7 @@ package com.game;
 import java.util.ArrayList;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
@@ -48,7 +49,12 @@ public class CraftingScreen implements Screen {
 
 		@Override
 		public boolean keyUp(int keycode) {
-			return false;
+			
+			if(keycode == Keys.TAB){
+				returnToGame();
+			}
+			
+			return true;
 		}
 
 		@Override
@@ -198,7 +204,7 @@ public class CraftingScreen implements Screen {
 		stage = new Stage();
 		inputp = new CSInputProcessor();
 		
-		txtbtn_craft = new TextButton("Craft", PlayScreen.skin);
+		txtbtn_craft = new TextButton("Craft", Settings.skin);
 		txtbtn_craft.setPosition(550, 310);
 		txtbtn_craft.setSize(120, 40);
 		txtbtn_craft.addListener(new ClickListener(){
@@ -210,7 +216,7 @@ public class CraftingScreen implements Screen {
 			
 		});
 		
-		txtbtn_cancle = new TextButton("Cancle", PlayScreen.skin);
+		txtbtn_cancle = new TextButton("Cancle", Settings.skin);
 		txtbtn_cancle.setPosition(550, 250);
 		txtbtn_cancle.setSize(120, 40);
 		txtbtn_cancle.addListener(new ClickListener(){
@@ -221,7 +227,7 @@ public class CraftingScreen implements Screen {
 			
 		});
 		
-		txtbtn_returnToGame = new TextButton("Return to game", PlayScreen.skin);
+		txtbtn_returnToGame = new TextButton("Return to game", Settings.skin);
 		txtbtn_returnToGame.setPosition(375, 50);
 		txtbtn_returnToGame.setSize(120, 40);
 		txtbtn_returnToGame.addListener(new ClickListener(){

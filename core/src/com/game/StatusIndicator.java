@@ -23,14 +23,14 @@ public class StatusIndicator extends Actor {
 	private Image[] full = new Image[10];
 	private Image half;
 	
-	public StatusIndicator(Player p, boolean hunger, int currentAmount, int maxAmount, Skin skin, String pathForFullImage, String pathForHalfImage){
+	public StatusIndicator(Player p, boolean hunger, int currentAmount, int maxAmount, Skin skin, Texture fullImage, Texture halfImage){
 		indicator = new Label(currentAmount+"/"+maxAmount, skin);
 		player = p;
 		this.hunger = hunger;
 		this.currentAmount = currentAmount;
 		this.maxAmount = maxAmount;
 		
-		Texture image = new Texture(new FileHandle(pathForFullImage));
+		Texture image = fullImage;
 		int x = 10;
 		int y = 530;
 		for(int i=0; i<full.length; i++){
@@ -39,7 +39,7 @@ public class StatusIndicator extends Actor {
 			x += 40;
 		}
 		
-		image = new Texture(new FileHandle(pathForHalfImage));
+		image = halfImage;
 		half = new Image(image);
 		
 	}

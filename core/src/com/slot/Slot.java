@@ -3,7 +3,7 @@ package com.slot;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
-import com.game.PlayScreen;
+import com.game.Settings;
 import com.resources.Resource;
 
 /*
@@ -40,7 +40,7 @@ public class Slot extends Actor {
 		setSize(Slot.size);
 		setResource(r);
 		setAmount(a);
-		label = new Label(r.getName()+" x"+getAmount(), PlayScreen.skin);
+		label = new Label(r.getName()+" x"+getAmount(), Settings.skin);
 	}
 	
 	/**
@@ -48,7 +48,7 @@ public class Slot extends Actor {
 	 */
 	public Slot(){
 		super();
-		label = new Label("- - -", PlayScreen.skin);
+		label = new Label("- - -", Settings.skin);
 	}
 
 	/**

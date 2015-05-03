@@ -29,10 +29,11 @@ public class PlayScreen implements Screen {
 	private TiledMap map;
 	private OrthogonalTiledMapRenderer renderer;
 	private OrthographicCamera camera;
+	private int[] background = {0, 1, 2};
+	private int[] foreground = {3};
 	
 	//for the HUD
 	private Stage stage;
-	public static Skin skin = new Skin(new FileHandle("../core/assets/skins/mainmenu/uiskin.json"));
 	private TextButton txtbtn_inventory;
 	private StatusIndicator healthStatus;
 	private StatusIndicator hungerStatus;
@@ -56,7 +57,7 @@ public class PlayScreen implements Screen {
 		
 		//assigning the stage
 		stage = new Stage();
-		txtbtn_inventory = new TextButton("Inventory", skin);
+		txtbtn_inventory = new TextButton("Inventory", Settings.skin);
 		txtbtn_inventory.setPosition(10, 10);
 		txtbtn_inventory.addListener(new ClickListener(){
 
@@ -69,13 +70,13 @@ public class PlayScreen implements Screen {
 		stage.addActor(txtbtn_inventory);
 		
 		//assign healtstatus
-		healthStatus = new StatusIndicator(player, false, 100, 100, skin, "../core/assets/icons/hearts/fullheart.png", "../core/assets/icons/hearts/halfheart.png");
+		healthStatus = new StatusIndicator(player, false, 100, 100, Settings.skin, Settings.fullheart, Settings.halfheart);
 		healthStatus.setColor(1, 0, 0, 1);
 		healthStatus.setPosition(20, 520);
 		stage.addActor(healthStatus);
 		
 		//assign hungerstatus
-		hungerStatus = new StatusIndicator(player, true, 100, 100, skin, "../core/assets/icons/chickenlegs/fullchickenleg.png", "../core/assets/icons/chickenlegs/halfchickenleg.png");
+		hungerStatus = new StatusIndicator(player, true, 100, 100, Settings.skin, Settings.fullchickenleg, Settings.halfchickenleg);
 		hungerStatus.setColor(1, 0.4f, 0, 1);
 		hungerStatus.setPosition(20, 465);
 		stage.addActor(hungerStatus);
@@ -121,7 +122,8 @@ public class PlayScreen implements Screen {
 
 		//set the renderer for the map
 		renderer.setView(camera);
-		renderer.render();
+		renderer.render(background);
+		renderer.render(foreground);
 		
 		hunger += delta;
 		if(hunger >= 9.0f){
@@ -140,7 +142,6 @@ public class PlayScreen implements Screen {
 		
 		game.font.draw(game.batch, player.getName(), player.getX()-5, player.getY()+player.getHeight()+20);
 		game.batch.end();
-		
 		
 	}
 	

@@ -132,11 +132,12 @@ public class Collector {
 			case "c": return; //TODO pickaxe
 			case "d": return;
 			case "e": return;
-		
+			
+			default: categoryAxe = 0; categoryPick = 0;
 		}
 		
 		if(name.equals("Stone")){
-			player.getCharacter().getBag().add(new Stone(), 2);
+			player.getCharacter().getBag().add(new Stone(), 1);
 			
 			//reduce the propability
 			num = r.nextInt();

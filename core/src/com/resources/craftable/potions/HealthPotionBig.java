@@ -13,10 +13,7 @@ public class HealthPotionBig extends Resource implements Potions {
     public HealthPotionBig() {
         super("HealthPotionBig", 1);
         resourcesNeeded.add("RedFlower");
-        resourcesNeeded.add("RedFlower");
-        resourcesNeeded.add("RedFlower");
-        resourcesNeeded.add("YellowFlower");
-        resourcesNeeded.add("YellowFlower");
+        resourcesNeeded.add("HealthPotion");
         resourcesNeeded.add("Apple");
     }
 

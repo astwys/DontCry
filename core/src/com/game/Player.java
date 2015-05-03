@@ -46,7 +46,7 @@ public class Player extends Sprite implements InputProcessor{
 	private float tileWidth = 20.8f, tileHeight = 20.8f;
 	
 	//the array of different textures
-	private Texture[] skins = {new Texture(new FileHandle("../core/assets/player/p_back.png")), new Texture(new FileHandle("../core/assets/player/p_front.png")), new Texture(new FileHandle("../core/assets/player/p_right.png")), new Texture(new FileHandle("../core/assets/player/p_left.png"))};
+	private Texture[] skins = {Settings.playerBack, Settings.playerFront, Settings.playerRight, Settings.playerLeft};
 	
 	
 	public Player(final DontCry dontcry, PlayScreen playscreen, Sprite sprite, TiledMapTileLayer blocking, TiledMapTileLayer ground){
