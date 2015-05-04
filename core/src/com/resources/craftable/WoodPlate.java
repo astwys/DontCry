@@ -21,7 +21,7 @@ public class WoodPlate extends Resource {
 		// assign the resources needed
 		resourcesNeeded.add("Wood");
 		resourcesNeeded.add("Wood");
-		resourcesNeeded.add("Wood");
+		resourcesNeeded.add("WoodStick");
 	}
 
 	/* (non-Javadoc)
