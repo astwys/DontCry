@@ -24,6 +24,7 @@ import com.slot.Bag;
 public class PlayScreen implements Screen {
 	
 	private DontCry game;
+	private MainMenuScreen mainmenu;
 	
 	//for the map
 	private TiledMap map;
@@ -43,8 +44,9 @@ public class PlayScreen implements Screen {
 	private float hunger;
 	
 	
-	public PlayScreen(final DontCry dontcry, String name){
+	public PlayScreen(final DontCry dontcry, MainMenuScreen mainScreen, String name){
 		game = dontcry;
+		mainmenu = mainScreen;
 		
 		//stuff for rendering the tiledmap
 		map = new TmxMapLoader().load("../core/assets/maps/map1/map1.tmx");
@@ -52,7 +54,7 @@ public class PlayScreen implements Screen {
 		camera = new OrthographicCamera();
 		
 		//create and initialise the player with the collisionlayer
-		player = new Player(game, name, this, new Sprite(Settings.playerBack), (TiledMapTileLayer) map.getLayers().get(1), (TiledMapTileLayer) map.getLayers().get(2));
+		player = new Player(game, name, this, new Sprite(Settings.playerBack), (TiledMapTileLayer) map.getLayers().get(1));
 		player.setPosition(208, 20.8f);
 		
 		//assigning the stage

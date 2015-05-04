@@ -49,10 +49,10 @@ public class Player extends Sprite implements InputProcessor{
 	private Texture[] skins = {Settings.playerBack, Settings.playerFront, Settings.playerRight, Settings.playerLeft};
 	
 	
-	public Player(final DontCry dontcry, String name, PlayScreen playscreen, Sprite sprite, TiledMapTileLayer blocking, TiledMapTileLayer ground){
+	public Player(final DontCry dontcry, String name, PlayScreen playscreen, Sprite sprite, TiledMapTileLayer blocking){
 		super(sprite);
 		game = dontcry;
-		collector = new Collector(this, blocking, ground);
+		collector = new Collector(this, blocking);
 		screen = playscreen;
 		velocity = new Vector2();
 		collisionLayer = blocking;
@@ -264,12 +264,12 @@ public class Player extends Sprite implements InputProcessor{
 	@Override
 	public boolean touchDown(int screenX, int screenY, int pointer, int button) {
 		
-		if(button == 0){
+		if(button == 0){ //left mouse button
 			useItem();
 			return true;
 		}
 		
-		if(button == 1){
+		if(button == 1){ //right mouse button
 			
 			if(getCharacter().getBag().getIndexTaken() < 0){
 				getCharacter().getBag().takeItem();

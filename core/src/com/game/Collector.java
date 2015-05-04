@@ -19,18 +19,19 @@ public class Collector {
 	
 	private Player player;
 	private TiledMapTileLayer blockedLayer;
-	private TiledMapTileLayer groundLayer;
 	
+	//defines if the end of the game was found
+	private boolean finishFound = false;
+		
 	//important variables regarding the map for collision detection
 	private float tileWidth = 20.8f, tileHeight = 20.8f;
 	
 	private Random r; //togenerate the random number
 	
-	public Collector(Player p, TiledMapTileLayer blocking, TiledMapTileLayer ground){
+	public Collector(Player p, TiledMapTileLayer blocking){
 		player = p;
 		r = new Random();
 		blockedLayer = blocking;
-		groundLayer = ground;
 	}
 	
 	public void collect(){
@@ -69,13 +70,9 @@ public class Collector {
 		if(collect) return;
 		//bottom right
 		collect = checkForKey(blockedLayer, x+player.getWidth()+2, y-2);
-
-		
-		/**
-		 * check in the ground layer
-		 */
-		collect = checkForKey(groundLayer, x/*+player.getWidth()/2*/, y/*+player.getHeight()/2*/);
 		if(collect) return;
+		
+		//if(finishFound) endGame();
 		
 	}
 	
@@ -84,6 +81,11 @@ public class Collector {
 			
 			TiledMapTile tile = layer.getCell((int)(x/tileWidth),(int)(y/tileHeight)).getTile();
 
+			if(tile.getProperties().containsKey("action")){
+				this.finishFound = true;
+				return true;
+			}
+			
 			if(tile.getProperties().containsKey("Resource")){
 				decideResource(tile);
 				return true;

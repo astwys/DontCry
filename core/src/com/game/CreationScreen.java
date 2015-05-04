@@ -50,7 +50,7 @@ public class CreationScreen implements Screen {
 				else Settings.setMaleFemale("female");
 				
 				dispose();
-				game.setScreen(new PlayScreen(game, name));
+				game.setScreen(new PlayScreen(game, mainmenu, name));
 			}
 			
 		});
