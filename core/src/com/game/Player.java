@@ -255,7 +255,8 @@ public class Player extends Sprite implements InputProcessor{
 	public boolean keyTyped(char character) {
 		
 		if(character == ' '){
-			collector.collect();
+			boolean finish = collector.collect();
+			if(collector.finishFound) screen.endGame(true);
 		}		
 		
 		return true;

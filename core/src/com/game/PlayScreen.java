@@ -198,8 +198,15 @@ public class PlayScreen implements Screen {
 		player.getTexture().dispose();
 		stage.dispose();
 	}
+	
 	public Player getPLayer(){
 		return this.player;
+	}
+	
+	public void endGame(boolean managed){ //sets the screen to the final one --> true: found the end, false: died
+		this.dispose();
+		if(managed) game.setScreen(new FinalScreen(game, mainmenu, "CONGRATULATIONS"));
+		else game.setScreen(new FinalScreen(game, mainmenu, "GAME OVER"));
 	}
 
 

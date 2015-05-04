@@ -21,7 +21,7 @@ public class Collector {
 	private TiledMapTileLayer blockedLayer;
 	
 	//defines if the end of the game was found
-	private boolean finishFound = false;
+	public boolean finishFound = false;
 		
 	//important variables regarding the map for collision detection
 	private float tileWidth = 20.8f, tileHeight = 20.8f;
@@ -34,7 +34,7 @@ public class Collector {
 		blockedLayer = blocking;
 	}
 	
-	public void collect(){
+	public boolean collect(){ //returns true if the end of the game was reached
 		
 		//the position of the player
 		float x = player.getX();
@@ -47,32 +47,34 @@ public class Collector {
 		 */
 		//top left
 		collect = checkForKey(blockedLayer, x-2, y+player.getHeight());
-		if(collect) return;
+		if(collect) return false;
 		//top middle
 		collect = checkForKey(blockedLayer, x+player.getWidth()/2, y+player.getHeight()+2);
-		if(collect) return;
+		if(collect) return false;
 		//top right
 		collect = checkForKey(blockedLayer, x+player.getWidth()+2, y+player.getHeight()+2);
-		if(collect) return;
+		if(collect) return false;
 		
 		//left middle
 		collect = checkForKey(blockedLayer, x+2, y+player.getHeight()/2);
-		if(collect) return;
+		if(collect) return false;
 		//right middle
 		collect = checkForKey(blockedLayer, x+player.getWidth()-2, y+player.getHeight()/2);
-		if(collect) return;
+		if(collect) return false;
 		
 		//bottom left
 		collect = checkForKey(blockedLayer, x-2, y-2);
-		if(collect) return;
+		if(collect) return false;
 		//bottom middle
 		collect = checkForKey(blockedLayer, x+player.getWidth()/2, y-2);
-		if(collect) return;
+		if(collect) return false;
 		//bottom right
 		collect = checkForKey(blockedLayer, x+player.getWidth()+2, y-2);
-		if(collect) return;
+		if(collect) return false;
 		
-		//if(finishFound) endGame();
+		if(finishFound) return true;
+		
+		return false;
 		
 	}
 	
@@ -161,10 +163,7 @@ public class Collector {
 			player.getCharacter().getBag().add(new Wood(), categoryAxe+1);
 		}
 		
-	}
-	
-	
-	
+	}	
 	
 	
 	
