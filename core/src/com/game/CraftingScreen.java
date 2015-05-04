@@ -65,7 +65,7 @@ public class CraftingScreen implements Screen {
 		@Override
 		public boolean touchDown(int screenX, int screenY, int pointer, int button) {
 			
-			if(button == 1) addResourceToCraft();
+			if(button == 0) addResourceToCraft();
 			
 			return true;
 		}

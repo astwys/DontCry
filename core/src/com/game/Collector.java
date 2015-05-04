@@ -139,7 +139,7 @@ public class Collector {
 		if(name.equals("Stone")){
 			player.getCharacter().getBag().add(new Stone(), 1);
 			
-			//reduce the propability
+			//reduce the probability
 			num = r.nextInt();
 			if(num%4 != 0) return;
 			
