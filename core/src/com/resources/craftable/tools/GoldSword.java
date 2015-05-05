@@ -14,9 +14,6 @@ import com.resources.Resource;
  */
 public class GoldSword extends Resource implements Damage {
 
-	/**
-	 * @param name
-	 */
 	public GoldSword() {
 		super("GoldSword", 1);
 		// assign the resources needed
@@ -26,12 +23,8 @@ public class GoldSword extends Resource implements Damage {
 		resourcesNeeded.add("GoldPlate");
 	}
 
-	/* (non-Javadoc)
-	 * @see com.resources.Craftable#neededToCraft()
-	 */
 	@Override
 	public ArrayList<String> neededToCraft() {
-		// TODO Auto-generated method stub
 		return resourcesNeeded;
 	}
 

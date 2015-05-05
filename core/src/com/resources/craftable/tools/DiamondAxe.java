@@ -14,9 +14,6 @@ import com.resources.Tool;
  */
 public class DiamondAxe extends Resource implements Tool{
 
-	/**
-	 * @param name
-	 */
 	public DiamondAxe() {
 		super("DiamondAxe", 1);
 		// assign the resources needed
@@ -25,12 +22,8 @@ public class DiamondAxe extends Resource implements Tool{
 		resourcesNeeded.add("DiamondPlate");
 	}
 
-	/* (non-Javadoc)
-	 * @see com.resources.Craftable#neededToCraft()
-	 */
 	@Override
 	public ArrayList<String> neededToCraft() {
-		// TODO Auto-generated method stub
 		return resourcesNeeded;
 	}
 

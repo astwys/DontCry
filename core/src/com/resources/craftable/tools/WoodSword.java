@@ -14,10 +14,6 @@ import com.resources.Resource;
  */
 public class WoodSword extends Resource implements Damage {
 
-	/**
-	 * @param name
-	 * @param amount
-	 */
 	public WoodSword() {
 		super("WoodSword", 1);
 		// assign the resources needed
@@ -28,12 +24,8 @@ public class WoodSword extends Resource implements Damage {
 		
 	}
 
-	/* (non-Javadoc)
-	 * @see com.resources.Craftable#neededToCraft()
-	 */
 	@Override
 	public ArrayList<String> neededToCraft() {
-		// TODO Auto-generated method stub
 		return resourcesNeeded;
 	}
 

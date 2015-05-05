@@ -12,20 +12,14 @@ import com.resources.Resource;
  *
  */
 public class Stone extends Resource {
-	/**
-	 * @param name
-	 */
+	
 	public Stone() {
 		super("Stone", 1);
 		// no resources needed
 	}
 
-	/* (non-Javadoc)
-	 * @see com.resources.IfCraftable#neededToCraft()
-	 */
 	@Override
 	public ArrayList<String> neededToCraft() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
