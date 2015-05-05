@@ -8,7 +8,7 @@ public class Settings {
 	
 	private static DontCry game;
 	
-	public static Texture logo				= new Texture("../core/assets/openingscreen/DontCry.png");
+	public static Texture logo				= new Texture("../core/assets/openingscreen/badlogic.jpg");
 	
 	public static float volume 				= 1.0f;
 	
