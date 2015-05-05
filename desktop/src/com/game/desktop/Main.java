@@ -17,7 +17,7 @@ public class Main {
 		config.resizable = false;
 		config.fullscreen = false;
 		new LwjglApplication(new DontCry(), config);
-	}
+	} 
 	
 	//SOME NOTES FOR BETTER UNDERSTANDING
 	/*

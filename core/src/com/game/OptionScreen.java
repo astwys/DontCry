@@ -37,7 +37,7 @@ public class OptionScreen implements Screen {
 		s_volume.setValue(Settings.volume*100);
 		s_volume.setPosition(460, 375);
 		
-		txtbtn_ok = new TextButton("Return to menu", Settings.skin);
+		txtbtn_ok = new TextButton("Save and\nreturn to menu", Settings.skin);
 		txtbtn_ok.addListener(new ClickListener(){
 			
 			public void clicked(InputEvent input, float x, float y){

@@ -6,9 +6,15 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
 public class Settings {
 	
+	private static DontCry game;
+	
+	public static Texture logo				= new Texture("../core/assets/openingscreen/DontCry.png");
+	
 	public static float volume 				= 1.0f;
 	
 	public static Skin skin 				= new Skin(new FileHandle("../core/assets/skins/mainmenu/uiskin.json"));
+	
+	public static FileHandle music			= new FileHandle("../core/assets/music/01.mp3");
 	
 	public static Texture halfheart			= new Texture("../core/assets/icons/hearts/halfheart.png");
 	public static Texture fullheart 		= new Texture("../core/assets/icons/hearts/fullheart.png");
@@ -22,8 +28,13 @@ public class Settings {
 	public static Texture playerLeft 		= new Texture(new FileHandle("../core/assets/player/"+maleFemale+"/"+maleFemale+"Left.png"));
 	public static Texture playerRight 		= new Texture(new FileHandle("../core/assets/player/"+maleFemale+"/"+maleFemale+"Right.png"));
 	
+	public void setGame(final DontCry dontcry){
+		game = dontcry;
+	}
+	
 	public static void setVolume(float vol){
 		volume = vol;
+		game.setVolume();
 	}
 	
 	public static void setMaleFemale(String maleFemale){
