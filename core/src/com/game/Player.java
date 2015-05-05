@@ -140,7 +140,7 @@ public class Player extends Sprite implements InputProcessor{
 			collisionX = true;
 		}
 		//right
-		else if((getX()+getWidth()) >= 5325.75f){
+		else if((getX()+getWidth()) >= 5325.75f*2){
 			collisionX = true;
 		}
 		//bottom
@@ -148,7 +148,7 @@ public class Player extends Sprite implements InputProcessor{
 			collisionY = true;
 		}
 		//top
-		else if((getY()+getHeight()) >= 5325.75f){
+		else if((getY()+getHeight()) >= 5325.75f*2){
 			collisionY = true;
 		}
 		

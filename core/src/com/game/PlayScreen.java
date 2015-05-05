@@ -3,7 +3,6 @@ package com.game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -29,7 +28,6 @@ public class PlayScreen implements Screen {
 	private OrthogonalTiledMapRenderer renderer;
 	private OrthographicCamera camera;
 	private int[] background = {0, 1, 2};
-	private int[] foreground = {3};
 	
 	//for the HUD
 	private Stage stage;
@@ -52,7 +50,7 @@ public class PlayScreen implements Screen {
 		
 		//create and initialise the player with the collisionlayer
 		player = new Player(game, name, this, new Sprite(Settings.playerBack), (TiledMapTileLayer) map.getLayers().get(1));
-		player.setPosition(208, 20.8f);
+		player.setPosition(108, 60.0f);
 		
 		//assigning the stage
 		stage = new Stage();
@@ -122,7 +120,6 @@ public class PlayScreen implements Screen {
 		//set the renderer for the map
 		renderer.setView(camera);
 		renderer.render(background);
-		renderer.render(foreground);
 		
 		hunger += delta;
 		if(hunger >= 9.0f){
@@ -152,14 +149,14 @@ public class PlayScreen implements Screen {
 		// do not let the camera show places, where there is no map
 		if(camera.position.x < 450){
 			camera.position.x = 450;
-		}else if(camera.position.x > 5325 - 450){
-			camera.position.x = 5325 - 450;
+		}else if(camera.position.x > (5325*2)-450){
+			camera.position.x = (5325*2)-450;
 		}
 		
 		if(camera.position.y < 300){
 			camera.position.y = 300;
-		}else if(camera.position.y > 5325 - 300){
-			camera.position.y = 5325 - 300;
+		}else if(camera.position.y > (5325*2)-300){
+			camera.position.y = (5325*2)-300;
 		}
 
 		
