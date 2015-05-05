@@ -3,6 +3,7 @@ package com.game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.ButtonGroup;
@@ -16,6 +17,8 @@ public class CreationScreen implements Screen {
 
 	private DontCry game;
 	private MainMenuScreen mainmenu;
+	
+	private Texture preview; //shows wether male or female character
 	
 	private Stage stage;
 	private TextField tf_name;
@@ -34,6 +37,7 @@ public class CreationScreen implements Screen {
 		
 		tf_name = new TextField("", Settings.skin);
 		tf_name.setPosition(360, 250);
+		tf_name.setMaxLength(15);
 		
 		l_name = new Label("Name:", Settings.skin);
 		l_name.setPosition(410, 280);
@@ -72,10 +76,28 @@ public class CreationScreen implements Screen {
 		cb_male.setChecked(true);
 		cb_male.setName("male");
 		cb_male.setPosition(375, 190);
+		cb_male.addListener(new ClickListener(){
+			
+			@Override
+			public void clicked(InputEvent event, float x, float y) {
+				Settings.setMaleFemale("male");
+				changePreview();
+			}
+			
+		});
 		
 		cb_female = new CheckBox("Female", Settings.skin);
 		cb_female.setName("female");
 		cb_female.setPosition(445, 190);
+		cb_female.addListener(new ClickListener(){
+			
+			@Override
+			public void clicked(InputEvent event, float x, float y) {
+				Settings.setMaleFemale("female");
+				changePreview();
+			}
+			
+		});
 		
 		btng_male = new ButtonGroup<CheckBox>(cb_male, cb_female);
 		
@@ -86,6 +108,8 @@ public class CreationScreen implements Screen {
 		stage.addActor(cb_male);
 		stage.addActor(cb_female);
 		
+		preview = Settings.playerFront;
+		
 	}
 	
 	@Override
@@ -95,11 +119,15 @@ public class CreationScreen implements Screen {
 
 	@Override
 	public void render(float delta) {
-		Gdx.gl.glClearColor(1, 0, 0, 1);
+		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
 		stage.act(delta);
 		stage.draw();
+		
+		game.batch.begin();
+		game.batch.draw(preview, 423, 350);
+		game.batch.end();
 		
 	}
 
@@ -130,6 +158,11 @@ public class CreationScreen implements Screen {
 	@Override
 	public void dispose() {
 		stage.dispose();
+	}
+	
+	private void changePreview(){ //true -> change to male, false -> change to female
+		preview.dispose();
+		preview = Settings.playerFront;
 	}
 
 }
