@@ -14,20 +14,19 @@ public class OptionScreen implements Screen {
 
 	private DontCry game;
 	private MainMenuScreen mainmenu;
+	private OptionScreen thisScreen;
 	
 	private Stage stage;
 	private Label l_volume, l_volAmount;
 	private Slider s_volume;
-	private TextButton txtbtn_ok;
+	private TextButton txtbtn_ok, txtbtn_controlls;
 	
 	public OptionScreen(final DontCry game, MainMenuScreen parentScreen){
 		this.game = game;
 		mainmenu = parentScreen;
 		stage = new Stage();
-	}
-	
-	@Override
-	public void show() {
+		thisScreen = this;
+		
 		l_volume = new Label("Volume: ", Settings.skin);
 		l_volume.setPosition(290, 370);
 		
@@ -50,10 +49,28 @@ public class OptionScreen implements Screen {
 		txtbtn_ok.setSize(150, 50);
 		txtbtn_ok.setPosition(375, 50);
 		
+		txtbtn_controlls = new TextButton("How to play", Settings.skin);
+		txtbtn_controlls.addListener(new ClickListener(){
+			
+			@Override
+			public void clicked(InputEvent event, float x, float y) {
+				game.setScreen(new ControllsScreen(game, thisScreen));
+			}
+			
+		});
+		txtbtn_controlls.setPosition(375, 110);
+		txtbtn_controlls.setSize(150, 50);
+		
 		stage.addActor(l_volume);
 		stage.addActor(l_volAmount);
 		stage.addActor(s_volume);
 		stage.addActor(txtbtn_ok);
+		stage.addActor(txtbtn_controlls);
+		
+	}
+	
+	@Override
+	public void show() {
 		
 		Gdx.input.setInputProcessor(stage);
 		
