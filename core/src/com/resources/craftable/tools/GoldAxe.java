@@ -14,9 +14,6 @@ import com.resources.Tool;
  */
 public class GoldAxe extends Resource implements Tool{
 
-	/**
-	 * @param name
-	 */
 	public GoldAxe() {
 		super("GoldAxe", 1);
 		// assign the resources needed
@@ -25,12 +22,8 @@ public class GoldAxe extends Resource implements Tool{
 		resourcesNeeded.add("GoldPlate");
 	}
 
-	/* (non-Javadoc)
-	 * @see com.resources.Craftable#neededToCraft()
-	 */
 	@Override
 	public ArrayList<String> neededToCraft() {
-		// TODO Auto-generated method stub
 		return resourcesNeeded;
 	}
 

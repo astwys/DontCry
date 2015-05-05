@@ -18,12 +18,8 @@ public class Diamond extends Resource {
 		// no resources needed
 	}
 
-	/* (non-Javadoc)
-	 * @see com.resources.Craftable#neededToCraft()
-	 */
 	@Override
 	public ArrayList<String> neededToCraft() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

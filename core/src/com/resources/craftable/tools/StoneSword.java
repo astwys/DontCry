@@ -14,9 +14,6 @@ import com.resources.Resource;
  */
 public class StoneSword extends Resource implements Damage {
 
-	/**
-	 * @param name
-	 */
 	public StoneSword() {
 		super("StoneSword", 1);
 		// assign the resources needed
@@ -26,12 +23,8 @@ public class StoneSword extends Resource implements Damage {
 		resourcesNeeded.add("StonePlate");
 	}
 
-	/* (non-Javadoc)
-	 * @see com.resources.Craftable#neededToCraft()
-	 */
 	@Override
 	public ArrayList<String> neededToCraft() {
-		// TODO Auto-generated method stub
 		return resourcesNeeded;
 	}
 

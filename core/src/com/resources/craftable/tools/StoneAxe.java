@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.resources.craftable.tools;
 
 import java.util.ArrayList;
@@ -23,9 +20,6 @@ public class StoneAxe extends Resource implements Tool{
 		resourcesNeeded.add("StonePlate");
 	}
 
-	/* (non-Javadoc)
-	 * @see com.resources.IfCraftable#neededToCraft()
-	 */
 	@Override
 	public ArrayList<String> neededToCraft() {
 		return resourcesNeeded;

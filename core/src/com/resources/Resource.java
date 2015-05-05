@@ -49,7 +49,6 @@ public abstract class Resource implements Craftable{
 	 */
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return getName();
 	}
 	

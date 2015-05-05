@@ -91,24 +91,16 @@ public class FinalScreen implements Screen {
 	}
 
 	@Override
-	public void resize(int width, int height) {
-
-	}
+	public void resize(int width, int height) {}
 
 	@Override
-	public void pause() {
-
-	}
+	public void pause() {}
 
 	@Override
-	public void resume() {
-
-	}
+	public void resume() {}
 
 	@Override
-	public void hide() {
-
-	}
+	public void hide() {}
 
 	@Override
 	public void dispose() {

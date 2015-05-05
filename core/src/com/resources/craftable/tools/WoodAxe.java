@@ -14,9 +14,7 @@ import com.resources.Tool;
  * 
  */
 public class WoodAxe extends Resource implements Tool{
-	/**
-	 * @param name
-	 */
+	
 	public WoodAxe() {
 		super("WoodAxe", 1);
 		// assign the resources needed
@@ -25,12 +23,8 @@ public class WoodAxe extends Resource implements Tool{
 		resourcesNeeded.add("WoodPlate");
 	}
 
-	/* (non-Javadoc)
-	 * @see com.resources.IfCraftable#neededToCraft()
-	 */
 	@Override
 	public ArrayList<String> neededToCraft() {
-		// TODO Auto-generated method stub
 		return resourcesNeeded;
 	}
 }
