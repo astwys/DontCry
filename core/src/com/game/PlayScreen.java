@@ -143,8 +143,8 @@ public class PlayScreen implements Screen {
 	
 	private void updateCamera(){
 		// scroll so that the player is in the center
-		camera.position.x = player.getX()+player.getWidth()/2;
-		camera.position.y = player.getY()+player.getHeight();
+		camera.position.x = (int)(player.getX()+player.getWidth()/2);
+		camera.position.y = (int)(player.getY()+player.getHeight());
 		
 		// do not let the camera show places, where there is no map
 		if(camera.position.x < 450){
