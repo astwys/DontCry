@@ -1,0 +1,2544 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.2">
+  <help_text>// Uncomment the following line to change the fontsize and font:
+// fontsize=14
+fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
+
+
+////////////////////////////////////////////////++++//////////////////////////////////////////////
+// Welcome to UMLet!
+//
+// Double-click on elements to add them to the diagram, or to copy them
+// Edit elements by modifying the text in this panel
+// Hold Cmd to select multiple elements
+// Use Cmd+mouse to select via lasso
+//
+// Use +/- or Cmd+mouse wheel to zoom
+// Drag a whole relation at its central square icon
+//
+// Press Cmd+C to copy the whole diagram to the system clipboard (then just paste it to, eg, Word)
+// Edit the files in the "palettes" directory to create your own element palettes
+//
+// Select "Custom Elements &gt; New..." to create new element types
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// This text will be stored with each diagram;  use it for notes.</help_text>
+  <zoom_level>1</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>888</x>
+      <y>407</y>
+      <w>41</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>com.character::Character
+--
+-name: String
+-hunger = 100: int
+-health = 100: int
+-strength = 3: int
+-bag: Bag
+-craftingbook: Craftingbook
+--
++Character(String name): ctor
++decreaseHungerDef(): int
++decreaseHunger(int dec): int
++increaseHunger(int inc): int
++decreaseHealthDef(): int
++decreaseHealth(int dec): int
++increaseHealth(int inc): int
++showInventory(): Bag
++canRun(): boolean
++addResource(Resource r, int plus): boolean
++setStrength(): void
++getName(): String
++setName(String name): void
++getHunger(): int
++setHunger(int hunger): void
++getHealth(): int
++setHealth(int health): void
++getStrength(): int
++setStrength(int strength): void
++getBag(): Bag
++setBag(Bag bag): boolean
++craftsInto(ArrayList&lt;String&gt; from): String
++getCraftingBook(): Craftingbook
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>531</x>
+      <y>407</y>
+      <w>43</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>com.craft::Craftingbook
+--
++craftMap: HashMap&lt;Resource, ArrayList&lt;String&gt;&gt;
+--
++Craftingbook(): ctor
+-craftsInto(ArrayList&lt;String&gt; resources): Resource
++craft(ArrayList&lt;String&gt; resources): ReturnForCraft
++getCraftingMap(): HashMap&lt;Resource, ArrayList&lt;String&gt;&gt;
+-initialiseCraftMap(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>531</x>
+      <y>441</y>
+      <w>19</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>com.craft::Test
+--
+--
++main(String[] args): void
++test(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>413</x>
+      <y>742</y>
+      <w>57</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>com.game::Collector
+--
+-player: Player
+-blockedLayer: TiledMapTileLayer
++finishFound = false: boolean
+-tileWidth = 20.8f, tileHeight = 20.8f: float
+-r: Random
+--
++Collector(Player p, TiledMapTileLayer blocking): ctor
++collect(): boolean
+-checkForKey(TiledMapTileLayer layer, float x, float y): boolean
+-decideResource(TiledMapTile tile): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>501</x>
+      <y>578</y>
+      <w>65</w>
+      <h>61</h>
+    </coordinates>
+    <panel_attributes>com.game::ControllsScreen
+--
+-game: DontCry
+-optionScreen: OptionScreen
+-stage: Stage
+-txtbtn_back: TextButton
+-l_move_up: Label
+-l_move_up_cmd: Label
+-l_move_down: Label
+-l_move_down_cmd: Label
+-l_move_right: Label
+-l_move_right_cmd: Label
+-l_move_left: Label
+-l_move_left_cmd: Label
+-l_move_run: Label
+-l_move_run_cmd: Label
+-cc_collect: Label
+-cc_collect_cmd: Label
+-cc_inventory: Label
+-cc_inventory_cmd: Label
+-cc_scroll: Label
+-cc_scroll_cmd: Label
+-cc_moveItem: Label
+-cc_moveItem_cmd: Label
+-cc_dropItem: Label
+-cc_dropItem_cmd: Label
+-eh_eat: Label
+-eh_eat_cmd: Label
+--
++ControllsScreen(final DontCry dontcry, OptionScreen parentScreen): ctor
++show(): void
++render(float delta): void
++resize(int width, int height): void
++pause(): void
++resume(): void
++hide(): void
++dispose(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>763</x>
+      <y>578</y>
+      <w>72</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>com.game::CraftingScreen
+--
+-game: DontCry
+-screen: PlayScreen
+-player: Player
+-bag: Bag
+-craftTo: Bag
+-inputp: CSInputProcessor
+-stage: Stage
+-txtbtn_craft: TextButton
+-txtbtn_cancle: TextButton
+-txtbtn_returnToGame: TextButton
+--
++CraftingScreen(Player player, PlayScreen playscreen, final DontCry dontcry): ctor
++addResourceToCraft(): void
++cancle(): void
++returnToGame(): void
++craftStuff(): void
++show(): void
++render(float delta): void
++resize(int width, int height): void
++pause(): void
++resume(): void
++hide(): void
++dispose(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>682</x>
+      <y>578</y>
+      <w>65</w>
+      <h>39</h>
+    </coordinates>
+    <panel_attributes>com.game::CreationScreen
+--
+-game: DontCry
+-mainmenu: MainMenuScreen
+-preview: Texture
+-stage: Stage
+-tf_name: TextField
+-l_name: Label
+-txtbtn_back: TextButton
+-txtbtn_start: TextButton
+-cb_male: CheckBox
+-cb_female: CheckBox
+-btng_male: ButtonGroup&lt;CheckBox&gt;
+--
++CreationScreen(final DontCry dontcry, final MainMenuScreen screen): ctor
++show(): void
++render(float delta): void
++resize(int width, int height): void
++pause(): void
++resume(): void
++hide(): void
++dispose(): void
+-changePreview(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>592</x>
+      <y>701</y>
+      <w>20</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>com.game::DontCry
+--
+~batch: SpriteBatch
+~font: BitmapFont
++music: Music
+--
++create(): void
++render(): void
++dispose(): void
++setVolume(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>855</x>
+      <y>578</y>
+      <w>68</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>com.game::FinalScreen
+--
+-game: DontCry
+-mainmenu: MainMenuScreen
+-stage: Stage
+-l_text: Label
+-txtbtn_mainmenu: TextButton
+-txtbtn_restart: TextButton
+-up = true: boolean
+-multiplicator = 100.f: float
+--
++FinalScreen(final DontCry dontcry, MainMenuScreen screen, String text): ctor
++show(): void
++render(float delta): void
++resize(int width, int height): void
++pause(): void
++resume(): void
++hide(): void
++dispose(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>343</x>
+      <y>578</y>
+      <w>49</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>com.game::MainMenuScreen
+--
+-game: DontCry
+-thisScreen: MainMenuScreen
+-skin: Skin
+-stage: Stage
+-txtbtn_play, txtbtn_options, txtbtn_exit: TextButton
+--
++MainMenuScreen(final DontCry dontcry): ctor
++show(): void
++render(float delta): void
++resize(int width, int height): void
++pause(): void
++resume(): void
++hide(): void
++dispose(): void
++initialiseButtons(): void
++getScreen(): MainMenuScreen
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>262</x>
+      <y>578</y>
+      <w>61</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>com.game::OpeningScreen
+--
+-game: DontCry
+-texture: Texture
+-increase: boolean
+-alpha: float
+--
++OpeningScreen(final DontCry dontcry): ctor
++show(): void
++render(float delta): void
++resize(int width, int height): void
++pause(): void
++resume(): void
++hide(): void
++dispose(): void
++keyDown(int keycode): boolean
++keyUp(int keycode): boolean
++keyTyped(char character): boolean
++touchDown(int screenX, int screenY, int pointer, int button): boolean
++touchUp(int screenX, int screenY, int pointer, int button): boolean
++touchDragged(int screenX, int screenY, int pointer): boolean
++mouseMoved(int screenX, int screenY): boolean
++scrolled(int amount): boolean
+-goAhead(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>411</x>
+      <y>578</y>
+      <w>62</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>com.game::OptionScreen
+--
+-game: DontCry
+-mainmenu: MainMenuScreen
+-thisScreen: OptionScreen
+-stage: Stage
+-l_volume, l_volAmount: Label
+-s_volume: Slider
+-txtbtn_ok, txtbtn_controlls: TextButton
+--
++OptionScreen(final DontCry game, MainMenuScreen parentScreen): ctor
++show(): void
++render(float delta): void
++resize(int width, int height): void
++pause(): void
++resume(): void
++hide(): void
++dispose(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>726</x>
+      <y>724</y>
+      <w>100</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>com.game::Player
+--
+-game: DontCry
+-screen: PlayScreen
+-character: Character
+-collector: Collector
+-velocity: Vector2
+-normalSpeed = 50 * 2: float
+-runSpeed = 50 * 4: float
+-speed = normalSpeed: float
+-collisionLayer: TiledMapTileLayer
+-tileWidth = 20.8f, tileHeight = 20.8f: float
+-skins = { Settings.playerBack, Settings.playerFront, Settings.playerRight, Settings.playerLeft }: Texture[]
+--
++Player(final DontCry dontcry, String name, PlayScreen playscreen, Sprite sprite, TiledMapTileLayer blocking): ctor
++draw(SpriteBatch spriteBatch): void
++update(float deltaTime): void
+-collides(float x, float y): boolean
++getCharacter(): Character
++getCollisionLayer(): TiledMapTileLayer
++getName(): String
++keyDown(int keycode): boolean
++keyUp(int keycode): boolean
++keyTyped(char character): boolean
++touchDown(int screenX, int screenY, int pointer, int button): boolean
++touchUp(int screenX, int screenY, int pointer, int button): boolean
++touchDragged(int screenX, int screenY, int pointer): boolean
++mouseMoved(int screenX, int screenY): boolean
++scrolled(int amount): boolean
+-useItem(): void
++craftingMode(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>594</x>
+      <y>578</y>
+      <w>70</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>com.game::PlayScreen
+--
+-game: DontCry
+-mainmenu: MainMenuScreen
+-map: TiledMap
+-renderer: OrthogonalTiledMapRenderer
+-camera: OrthographicCamera
+-background = { 0, 1, 2 }: int[]
+-stage: Stage
+-txtbtn_inventory: TextButton
+-healthStatus: StatusIndicator
+-hungerStatus: StatusIndicator
+-player: Player
+-hunger: float
+--
++PlayScreen(final DontCry dontcry, MainMenuScreen mainScreen, String name): ctor
++reinitialiseBag(Bag bag): void
++show(): void
++render(float delta): void
+-updateCamera(): void
++resize(int width, int height): void
++pause(): void
++resume(): void
++hide(): void
++dispose(): void
++getPLayer(): Player
++endGame(boolean managed): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>382</x>
+      <y>683</y>
+      <w>88</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>com.game::Settings
+--
+-game: DontCry
++logo = new Texture("../core/assets/openingscreen/badlogic.jpg"): Texture
++volume = 1.0f: float
++skin = new Skin(new FileHandle("../core/assets/skins/mainmenu/uiskin.json")): Skin
++music = new FileHandle("../core/assets/music/01.mp3"): FileHandle
++halfheart = new Texture("../core/assets/icons/hearts/halfheart.png"): Texture
++fullheart = new Texture("../core/assets/icons/hearts/fullheart.png"): Texture
++halfchickenleg = new Texture("../core/assets/icons/chickenlegs/halfchickenleg.png"): Texture
++fullchickenleg = new Texture("../core/assets/icons/chickenlegs/fullchickenleg.png"): Texture
++maleFemale = "male": String
++playerBack = new Texture(new FileHandle("../core/assets/player/" + maleFemale + "/" + maleFemale + "Back.png")): Texture
++playerFront = new Texture(new FileHandle("../core/assets/player/" + maleFemale + "/" + maleFemale + "Front.png")): Texture
++playerLeft = new Texture(new FileHandle("../core/assets/player/" + maleFemale + "/" + maleFemale + "Left.png")): Texture
++playerRight = new Texture(new FileHandle("../core/assets/player/" + maleFemale + "/" + maleFemale + "Right.png")): Texture
+--
++setGame(final DontCry dontcry): void
++setVolume(float vol): void
++setMaleFemale(String maleFemale): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>357</x>
+      <y>789</y>
+      <w>113</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>com.game::StatusIndicator
+--
+-player: Player
+-hunger: boolean
+-indicator: Label
+-currentAmount: int
+-maxAmount: int
+-full = new Image[10]: Image[]
+-half: Image
+--
++StatusIndicator(Player p, boolean hunger, int currentAmount, int maxAmount, Skin skin, Texture fullImage, Texture halfImage): ctor
++act(float delta): void
++draw(Batch batch, float parentAlpha): void
++setPosition(float x, float y): void
++setColor(float r, float g, float b, float a): void
++decreaseByOne(): int
++increaseByOne(): int
++decrease(int amount): int
++increase(int amount): int
++setStatus(int currentAmount): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>530</x>
+      <y>203</y>
+      <w>32</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>com.resources.craftable::DiamondPlate
+--
+--
++DiamondPlate(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>674</x>
+      <y>243</y>
+      <w>33</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>com.resources.craftable.edible::Chips
+--
+--
++Chips(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
++restoreHungerBy(): int
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>401</x>
+      <y>225</y>
+      <w>27</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>com.resources.craftable::Fire
+--
+--
++Fire(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>491</x>
+      <y>203</y>
+      <w>34</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>com.resources.craftable::GoldPlate
+--
+--
++GoldPlate(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>452</x>
+      <y>203</y>
+      <w>34</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>com.resources.craftable::IronPlate
+--
+--
++IronPlate(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>632</x>
+      <y>318</y>
+      <w>42</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>com.resources.craftable.potions::HealthPotionBig
+--
+--
++HealthPotionBig(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
++restoreHealthBy(): int
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>703</x>
+      <y>317</y>
+      <w>47</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>com.resources.craftable.potions::HealthPotionSmall
+--
+--
++HealthPotionSmall(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
++restoreHealthBy(): int
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>416</x>
+      <y>203</y>
+      <w>32</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>com.resources.craftable::StonePlate
+--
+--
++StonePlate(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>681</x>
+      <y>150</y>
+      <w>39</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes>com.resources.craftable.tools::DiamondAxe
+--
+--
++DiamondAxe(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>631</x>
+      <y>150</y>
+      <w>39</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>com.resources.craftable.tools::DiamondPickaxe
+--
+--
++DiamondPickaxe(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>745</x>
+      <y>149</y>
+      <w>36</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>com.resources.craftable.tools::DiamondSword
+--
+--
++DiamondSword(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
++dealsDamage(): int
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>681</x>
+      <y>133</y>
+      <w>39</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>com.resources.craftable.tools::GoldAxe
+--
+--
++GoldAxe(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>631</x>
+      <y>133</y>
+      <w>38</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>com.resources.craftable.tools::GoldPickaxe
+--
+--
++GoldPickaxe(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>745</x>
+      <y>133</y>
+      <w>36</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>com.resources.craftable.tools::GoldSword
+--
+--
++GoldSword(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
++dealsDamage(): int
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>681</x>
+      <y>118</y>
+      <w>39</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>com.resources.craftable.tools::IronAxe
+--
+--
++IronAxe(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>631</x>
+      <y>118</y>
+      <w>38</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>com.resources.craftable.tools::IronPickaxe
+--
+--
++IronPickaxe(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>745</x>
+      <y>118</y>
+      <w>36</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>com.resources.craftable.tools::IronSword
+--
+--
++IronSword(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
++dealsDamage(): int
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>681</x>
+      <y>104</y>
+      <w>39</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>com.resources.craftable.tools::StoneAxe
+--
+--
++StoneAxe(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>631</x>
+      <y>104</y>
+      <w>38</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>com.resources.craftable.tools::StonePickaxe
+--
+--
++StonePickaxe(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>745</x>
+      <y>104</y>
+      <w>36</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>com.resources.craftable.tools::StoneSword
+--
+--
++StoneSword(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
++dealsDamage(): int
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>681</x>
+      <y>90</y>
+      <w>39</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>com.resources.craftable.tools::WoodAxe
+--
+--
++WoodAxe(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>631</x>
+      <y>90</y>
+      <w>38</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>com.resources.craftable.tools::WoodPickaxe
+--
+--
++WoodPickaxe(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>745</x>
+      <y>90</y>
+      <w>36</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>com.resources.craftable.tools::WoodSword
+--
+--
++WoodSword(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
++dealsDamage(): int
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>379</x>
+      <y>203</y>
+      <w>32</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>com.resources.craftable::WoodPlate
+--
+--
++WoodPlate(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>514</x>
+      <y>225</y>
+      <w>26</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>com.resources.craftable::WoodStick
+--
+--
++WoodStick(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>401</x>
+      <y>277</y>
+      <w>33</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+com.resources::Craftable
+--
+--
++neededToCraft(): ArrayList&lt;String&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>732</x>
+      <y>69</y>
+      <w>18</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+com.resources::Damage
+--
+--
++dealsDamage(): int
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>345</x>
+      <y>124</y>
+      <w>22</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+com.resources::Edible
+--
+--
++restoreHungerBy(): int
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>396</x>
+      <y>124</y>
+      <w>38</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>com.resources.natural.edible::Apple
+--
+--
++Apple(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
++restoreHungerBy(): int
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>396</x>
+      <y>139</y>
+      <w>38</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>com.resources.natural.edible::Potato
+--
+--
++Potato(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
++restoreHungerBy(): int
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>396</x>
+      <y>154</y>
+      <w>38</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>com.resources.natural.edible::RedFlower
+--
+--
++RedFlower(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
++restoreHungerBy(): int
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>396</x>
+      <y>170</y>
+      <w>38</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>com.resources.natural.edible::YellowFlower
+--
+--
++YellowFlower(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
++restoreHungerBy(): int
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>239</x>
+      <y>127</y>
+      <w>34</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>com.resources.natural.minerals::Coal
+--
+--
++Coal(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>239</x>
+      <y>187</y>
+      <w>34</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>com.resources.natural.minerals::Diamond
+--
+--
++Diamond(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>239</x>
+      <y>175</y>
+      <w>34</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>com.resources.natural.minerals::Gold
+--
+--
++Gold(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>239</x>
+      <y>163</y>
+      <w>34</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>com.resources.natural.minerals::Iron
+--
+--
++Iron(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>239</x>
+      <y>151</y>
+      <w>34</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>com.resources.natural.minerals::Stone
+--
+--
++Stone(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>239</x>
+      <y>139</y>
+      <w>34</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>com.resources.natural.minerals::Wood
+--
+--
++Wood(): ctor
++neededToCraft(): ArrayList&lt;String&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>726</x>
+      <y>352</y>
+      <w>25</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+com.resources::Potions
+--
+--
++restoreHealthBy(): int
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>359</x>
+      <y>358</y>
+      <w>30</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>/com.resources::Resource/
+--
+#resourcesNeeded: ArrayList&lt;String&gt;
+-name: String
+-amount: int
+--
++Resource(String name, int amount): ctor
++getName(): String
++getAmount(): int
++getResourcesNeeded(): ArrayList&lt;String&gt;
++toString(): String
++equals(Object obj): boolean
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>731</x>
+      <y>224</y>
+      <w>17</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+com.resources::Tool
+--
+--
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>728</x>
+      <y>407</y>
+      <w>44</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>com.slot::Bag
+--
+-player: com.character.Character
+-resources: Slot[]
+-selectedIndex = 0: int
+-itemTaken: Slot
+-indexTaken: int
+--
++Bag(com.character.Character character): ctor
++add(Resource r, int plus): int
++placeItem(): void
++takeItem(): void
++getIndexTaken(): int
++useItem(): void
++addSelectedItemToCraft(): void
+-getSelectedItemValue(String name): int
++dispose(Resource r, int amount): int
++clearSlot(int index): boolean
++clearBackpack(): void
++isEmpty(): boolean
++setSelected(int plus): void
++getSelectedItem(): Resource
++getSelectedIndex(): int
++getResources(): Slot[]
++setSize(int size): void
++toString(): String
++act(float delta): void
++draw(Batch batch, float parentAlpha): void
++setPosition(float x, float y): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>648</x>
+      <y>407</y>
+      <w>47</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>com.slot::Slot
+--
+-resource: Resource
+-label: Label
+-amount: int
+-selected: boolean
+-taken: boolean
++size = 32: int
+--
++Slot(Resource r, int a): ctor
++Slot(): ctor
++isEmpty(): boolean
++getSize(): int
++setSize(int size): void
++getAmount(): int
++setAmountPrecise(int amount): int
++setAmount(int amount): void
++isSelected(): boolean
++setSelected(boolean b): void
++resourcesToAdd(): int
++getResource(): Resource
++setResource(Resource r): void
++getLabel(): Label
++setTaken(boolean taken): void
++isTaken(): boolean
++toString(): String
++act(float delta): void
++draw(Batch batch, float parentAlpha): void
++setPosition(float x, float y): void
++setColor(float r, float g, float b, float a): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>674</x>
+      <y>349</y>
+      <w>21</w>
+      <h>13</h>
+    </coordinates>
+    <panel_attributes>potions
+--
++HealthPotionBig
++HealthPotionSmall
+bg=gray
+fg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>690</x>
+      <y>326</y>
+      <w>15</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;250.0;10.0;10.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>673</x>
+      <y>326</y>
+      <w>13</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>110.0;250.0;110.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>690</x>
+      <y>173</y>
+      <w>23</w>
+      <h>38</h>
+    </coordinates>
+    <panel_attributes>tools
+--
++WoodPickaxe
++WoodAxe
++WoodSword
+
++StonePickaxe
++StoneAxe
++StoneSword
+
++IronPickaxe
++IronAxe
++IronSword
+
++GoldPickaxe
++GoldAxe
++GoldSword
+
++DiamondPickaxe
++DiamondAxe
++DiamondSword
+
+bg=gray
+fg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>712</x>
+      <y>137</y>
+      <w>14</w>
+      <h>41</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;390.0;120.0;390.0;120.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>712</x>
+      <y>108</y>
+      <w>87</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;960.0;850.0;960.0;850.0;10.0;690.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>702</x>
+      <y>157</y>
+      <w>3</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>712</x>
+      <y>108</y>
+      <w>19</w>
+      <h>74</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;720.0;170.0;720.0;170.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>595</x>
+      <y>108</y>
+      <w>97</w>
+      <h>97</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>950.0;950.0;10.0;950.0;10.0;10.0;360.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>610</x>
+      <y>137</y>
+      <w>82</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>800.0;540.0;10.0;540.0;10.0;10.0;210.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>712</x>
+      <y>124</y>
+      <w>82</w>
+      <h>76</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;740.0;800.0;740.0;800.0;10.0;690.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>673</x>
+      <y>122</y>
+      <w>19</w>
+      <h>59</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>170.0;570.0;10.0;570.0;10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>712</x>
+      <y>153</y>
+      <w>72</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;340.0;700.0;340.0;700.0;10.0;690.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>712</x>
+      <y>137</y>
+      <w>77</w>
+      <h>58</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;560.0;750.0;560.0;750.0;10.0;690.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>602</x>
+      <y>122</y>
+      <w>90</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>880.0;750.0;10.0;750.0;10.0;10.0;290.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>587</x>
+      <y>94</y>
+      <w>105</w>
+      <h>115</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>1030.0;1130.0;10.0;1130.0;10.0;10.0;440.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>616</x>
+      <y>154</y>
+      <w>76</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>740.0;330.0;10.0;330.0;10.0;10.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>712</x>
+      <y>94</y>
+      <w>94</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;1140.0;920.0;1140.0;920.0;10.0;690.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>463</x>
+      <y>237</y>
+      <w>13</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>craftable
+--
++WoodPlate
++StonePlate
++IronPlate
++GoldPlate
++DiamondPlate
+
++Fire
++WoodStick
+bg=gray
+fg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>393</x>
+      <y>211</y>
+      <w>72</w>
+      <h>38</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>700.0;360.0;500.0;360.0;500.0;100.0;10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>427</x>
+      <y>229</y>
+      <w>38</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>360.0;240.0;100.0;240.0;100.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>432</x>
+      <y>211</y>
+      <w>33</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>310.0;320.0;190.0;320.0;190.0;70.0;10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>472</x>
+      <y>211</y>
+      <w>3</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;280.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>475</x>
+      <y>211</y>
+      <w>72</w>
+      <h>39</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;370.0;260.0;370.0;260.0;100.0;700.0;100.0;700.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>475</x>
+      <y>229</y>
+      <w>41</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;240.0;300.0;240.0;300.0;10.0;390.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>475</x>
+      <y>211</y>
+      <w>33</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;320.0;100.0;320.0;100.0;70.0;310.0;70.0;310.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>347</x>
+      <y>156</y>
+      <w>14</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>edible
+--
++Apple
++Potato
++RedFlower
++YellowFlower
+bg=gray
+fg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>689</x>
+      <y>253</y>
+      <w>3</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;330.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>128</y>
+      <w>38</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;320.0;240.0;320.0;240.0;10.0;360.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>144</y>
+      <w>38</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;190.0;260.0;190.0;260.0;10.0;360.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>159</y>
+      <w>38</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;280.0;70.0;280.0;10.0;360.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>169</y>
+      <w>38</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;260.0;10.0;260.0;70.0;360.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>304</x>
+      <y>156</y>
+      <w>14</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>minerals
+--
++Coal
++Wood
++Stone
++Iron
++Gold
++Diamond
+bg=gray
+fg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>272</x>
+      <y>143</y>
+      <w>34</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>320.0;190.0;210.0;190.0;210.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>272</x>
+      <y>155</y>
+      <w>34</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>320.0;90.0;190.0;90.0;190.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>272</x>
+      <y>167</y>
+      <w>34</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>320.0;10.0;220.0;10.0;220.0;120.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>272</x>
+      <y>165</y>
+      <w>34</w>
+      <h>5</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>320.0;10.0;190.0;10.0;190.0;30.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>272</x>
+      <y>130</y>
+      <w>34</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>320.0;300.0;250.0;300.0;250.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>272</x>
+      <y>169</y>
+      <w>34</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>320.0;10.0;250.0;10.0;250.0;220.0;10.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>694</x>
+      <y>356</y>
+      <w>34</w>
+      <h>3</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;230.0;10.0;320.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>681</x>
+      <y>284</y>
+      <w>14</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>edible
+--
++Chips
+bg=gray
+fg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>325</x>
+      <y>181</y>
+      <w>14</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>natural
+--
++edible
++minerals
+bg=gray
+fg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>317</x>
+      <y>164</y>
+      <w>10</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>80.0;220.0;40.0;220.0;40.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>338</x>
+      <y>163</y>
+      <w>11</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;230.0;40.0;230.0;40.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>706</x>
+      <y>272</y>
+      <w>17</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+com.resources::Edible
+--
+--
++restoreHungerBy(): int
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>356</x>
+      <y>134</y>
+      <w>3</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;240.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>694</x>
+      <y>280</y>
+      <w>23</w>
+      <h>11</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;90.0;210.0;90.0;210.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>706</x>
+      <y>210</y>
+      <w>27</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;180.0;250.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>433</x>
+      <y>254</y>
+      <w>34</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>320.0;10.0;320.0;280.0;10.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>741</x>
+      <y>77</y>
+      <w>6</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>40.0;170.0;10.0;170.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>735</x>
+      <y>77</y>
+      <w>12</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>100.0;610.0;10.0;610.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>737</x>
+      <y>77</y>
+      <w>10</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>80.0;480.0;10.0;480.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>739</x>
+      <y>77</y>
+      <w>8</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>60.0;330.0;10.0;330.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>733</x>
+      <y>77</y>
+      <w>14</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>120.0;780.0;10.0;780.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>473</x>
+      <y>210</y>
+      <w>223</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;450.0;10.0;470.0;1230.0;470.0;1230.0;170.0;2210.0;170.0;2210.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>471</x>
+      <y>254</y>
+      <w>212</w>
+      <h>37</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0;1730.0;130.0;1730.0;350.0;2100.0;350.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>469</x>
+      <y>254</y>
+      <w>207</w>
+      <h>103</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;280.0;1520.0;280.0;1520.0;1010.0;2050.0;1010.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>367</x>
+      <y>308</y>
+      <w>14</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>resources
+--
++craftable
++natural
+bg=gray
+fg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>380</x>
+      <y>254</y>
+      <w>89</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;580.0;870.0;580.0;870.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>331</x>
+      <y>187</y>
+      <w>38</w>
+      <h>127</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>360.0;1250.0;10.0;1250.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>373</x>
+      <y>314</y>
+      <w>3</w>
+      <h>46</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;440.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>959</x>
+      <y>433</y>
+      <w>14</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>character
+--
++Character
+bg=gray
+fg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>928</x>
+      <y>436</y>
+      <w>33</w>
+      <h>3</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>310.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>703</x>
+      <y>477</y>
+      <w>14</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>slot
+--
++Slot
++Bag
+bg=gray
+fg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>716</x>
+      <y>458</y>
+      <w>37</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;230.0;350.0;230.0;350.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>668</x>
+      <y>458</y>
+      <w>37</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>350.0;230.0;10.0;230.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>496</x>
+      <y>428</y>
+      <w>14</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>craft
+--
++Craftingbook
++Test
+bg=gray
+fg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>505</x>
+      <y>434</y>
+      <w>28</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0;260.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>505</x>
+      <y>413</y>
+      <w>28</w>
+      <h>19</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;170.0;10.0;10.0;260.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>595</x>
+      <y>752</y>
+      <w>18</w>
+      <h>29</h>
+    </coordinates>
+    <panel_attributes>game
+--
++OpeningScreen
++MainMenuScreen
++OptionScreen
++ControllsScreen
++PlayScreen
++CreationScreen
++CraftingScreen
++FinalScreen
+
++Settings
++Collector
++StatusIndicator
+
++Player
++DontCry
+bg=gray
+fg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>472</x>
+      <y>588</y>
+      <w>31</w>
+      <h>3</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>290.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>531</x>
+      <y>638</y>
+      <w>63</w>
+      <h>71</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>610.0;690.0;10.0;690.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>469</x>
+      <y>752</y>
+      <w>128</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>1260.0;230.0;130.0;230.0;130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>611</x>
+      <y>619</y>
+      <w>190</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>1880.0;10.0;1880.0;940.0;10.0;940.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>625</x>
+      <y>553</y>
+      <w>173</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>1710.0;250.0;1710.0;10.0;10.0;10.0;10.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>813</x>
+      <y>619</y>
+      <w>3</w>
+      <h>107</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1050.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>765</x>
+      <y>458</y>
+      <w>54</w>
+      <h>122</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>520.0;1200.0;520.0;230.0;10.0;230.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>611</x>
+      <y>616</y>
+      <w>102</w>
+      <h>92</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;900.0;1000.0;900.0;1000.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>363</x>
+      <y>607</y>
+      <w>336</w>
+      <h>47</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;450.0;3340.0;450.0;3340.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>611</x>
+      <y>609</y>
+      <w>279</w>
+      <h>215</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>2770.0;10.0;2770.0;2130.0;520.0;2130.0;520.0;1200.0;10.0;1200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>365</x>
+      <y>538</y>
+      <w>524</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>5220.0;400.0;5220.0;10.0;10.0;10.0;10.0;400.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>351</x>
+      <y>607</y>
+      <w>243</w>
+      <h>107</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;530.0;1660.0;530.0;1660.0;1050.0;2410.0;1050.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>304</x>
+      <y>617</y>
+      <w>290</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;490.0;2040.0;490.0;2040.0;1000.0;2880.0;1000.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>448</x>
+      <y>607</y>
+      <w>146</w>
+      <h>118</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;260.0;350.0;260.0;350.0;1160.0;1440.0;1160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>391</x>
+      <y>589</y>
+      <w>22</w>
+      <h>3</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>200.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>611</x>
+      <y>721</y>
+      <w>117</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>1150.0;180.0;850.0;180.0;850.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>915</x>
+      <y>461</y>
+      <w>3</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>469</x>
+      <y>745</y>
+      <w>259</w>
+      <h>3</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;2570.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>605</x>
+      <y>622</y>
+      <w>3</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;790.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>377</x>
+      <y>553</y>
+      <w>234</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;250.0;10.0;10.0;2320.0;10.0;2320.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>469</x>
+      <y>709</y>
+      <w>125</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0;80.0;190.0;1230.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>469</x>
+      <y>775</y>
+      <w>285</w>
+      <h>41</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;390.0;2830.0;390.0;2830.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>605</x>
+      <y>732</y>
+      <w>3</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;220.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>759</x>
+      <y>395</y>
+      <w>131</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-&gt;&gt;</panel_attributes>
+    <additional_attributes>1290.0;470.0;290.0;470.0;290.0;10.0;10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>553</x>
+      <y>372</y>
+      <w>337</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>3350.0;540.0;2490.0;540.0;2490.0;10.0;10.0;10.0;10.0;350.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>379</x>
+      <y>378</y>
+      <w>188</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>1860.0;450.0;1860.0;1120.0;10.0;1120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>539</x>
+      <y>422</y>
+      <w>3</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;190.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>694</x>
+      <y>440</y>
+      <w>36</w>
+      <h>3</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>340.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>369</x>
+      <y>378</y>
+      <w>300</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>2980.0;290.0;2980.0;160.0;2350.0;160.0;2350.0;1260.0;10.0;1260.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
