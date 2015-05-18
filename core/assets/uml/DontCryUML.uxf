@@ -24,14 +24,14 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
 
 
 // This text will be stored with each diagram;  use it for notes.</help_text>
-  <zoom_level>1</zoom_level>
+  <zoom_level>3</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>888</x>
-      <y>407</y>
-      <w>41</w>
-      <h>55</h>
+      <x>1947</x>
+      <y>1014</y>
+      <w>123</w>
+      <h>165</h>
     </coordinates>
     <panel_attributes>com.character::Character
 --
@@ -72,10 +72,10 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>531</x>
-      <y>407</y>
-      <w>43</w>
-      <h>16</h>
+      <x>876</x>
+      <y>1014</y>
+      <w>129</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>com.craft::Craftingbook
 --
@@ -93,10 +93,10 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>531</x>
-      <y>441</y>
-      <w>19</w>
-      <h>9</h>
+      <x>876</x>
+      <y>1116</y>
+      <w>57</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>com.craft::Test
 --
@@ -110,10 +110,10 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>413</x>
-      <y>742</y>
-      <w>57</w>
-      <h>21</h>
+      <x>522</x>
+      <y>2019</y>
+      <w>171</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>com.game::Collector
 --
@@ -134,10 +134,10 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>501</x>
-      <y>578</y>
-      <w>65</w>
-      <h>61</h>
+      <x>786</x>
+      <y>1527</y>
+      <w>195</w>
+      <h>183</h>
     </coordinates>
     <panel_attributes>com.game::ControllsScreen
 --
@@ -183,10 +183,10 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>763</x>
-      <y>578</y>
-      <w>72</w>
-      <h>42</h>
+      <x>1572</x>
+      <y>1527</y>
+      <w>216</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>com.game::CraftingScreen
 --
@@ -220,10 +220,10 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>682</x>
-      <y>578</y>
-      <w>65</w>
-      <h>39</h>
+      <x>1329</x>
+      <y>1527</y>
+      <w>195</w>
+      <h>117</h>
     </coordinates>
     <panel_attributes>com.game::CreationScreen
 --
@@ -255,10 +255,10 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>592</x>
-      <y>701</y>
-      <w>20</w>
-      <h>32</h>
+      <x>1059</x>
+      <y>1896</y>
+      <w>60</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>com.game::DontCry
 --
@@ -277,10 +277,10 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>855</x>
-      <y>578</y>
-      <w>68</w>
-      <h>32</h>
+      <x>1848</x>
+      <y>1527</y>
+      <w>204</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>com.game::FinalScreen
 --
@@ -308,10 +308,10 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>343</x>
-      <y>578</y>
-      <w>49</w>
-      <h>30</h>
+      <x>312</x>
+      <y>1527</y>
+      <w>147</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>com.game::MainMenuScreen
 --
@@ -338,10 +338,10 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>262</x>
-      <y>578</y>
-      <w>61</w>
-      <h>40</h>
+      <x>69</x>
+      <y>1527</y>
+      <w>183</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>com.game::OpeningScreen
 --
@@ -374,10 +374,10 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>411</x>
-      <y>578</y>
-      <w>62</w>
-      <h>30</h>
+      <x>516</x>
+      <y>1527</y>
+      <w>186</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>com.game::OptionScreen
 --
@@ -404,10 +404,10 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>726</x>
-      <y>724</y>
-      <w>100</w>
-      <h>52</h>
+      <x>1461</x>
+      <y>1965</y>
+      <w>300</w>
+      <h>156</h>
     </coordinates>
     <panel_attributes>com.game::Player
 --
@@ -447,10 +447,10 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>594</x>
-      <y>578</y>
-      <w>70</w>
-      <h>45</h>
+      <x>1065</x>
+      <y>1527</y>
+      <w>210</w>
+      <h>135</h>
     </coordinates>
     <panel_attributes>com.game::PlayScreen
 --
@@ -486,10 +486,10 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>382</x>
-      <y>683</y>
-      <w>88</w>
-      <h>34</h>
+      <x>429</x>
+      <y>1842</y>
+      <w>264</w>
+      <h>102</h>
     </coordinates>
     <panel_attributes>com.game::Settings
 --
@@ -518,10 +518,10 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>357</x>
-      <y>789</y>
-      <w>113</w>
-      <h>34</h>
+      <x>354</x>
+      <y>2160</y>
+      <w>339</w>
+      <h>102</h>
     </coordinates>
     <panel_attributes>com.game::StatusIndicator
 --
@@ -550,15 +550,15 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>530</x>
-      <y>203</y>
-      <w>32</w>
-      <h>9</h>
+      <x>873</x>
+      <y>402</y>
+      <w>96</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>com.resources.craftable::DiamondPlate
 --
 --
-+DiamondPlate(): ctor
++DiamondPlate()
 +neededToCraft(): ArrayList&lt;String&gt;
 --
 </panel_attributes>
@@ -567,15 +567,15 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>674</x>
-      <y>243</y>
-      <w>33</w>
-      <h>11</h>
+      <x>1305</x>
+      <y>522</y>
+      <w>99</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>com.resources.craftable.edible::Chips
 --
 --
-+Chips(): ctor
++Chips()
 +neededToCraft(): ArrayList&lt;String&gt;
 +restoreHungerBy(): int
 --
@@ -585,15 +585,15 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>401</x>
-      <y>225</y>
-      <w>27</w>
-      <h>9</h>
+      <x>486</x>
+      <y>468</y>
+      <w>81</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>com.resources.craftable::Fire
 --
 --
-+Fire(): ctor
++Fire()
 +neededToCraft(): ArrayList&lt;String&gt;
 --
 </panel_attributes>
@@ -602,15 +602,15 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>491</x>
-      <y>203</y>
-      <w>34</w>
-      <h>9</h>
+      <x>756</x>
+      <y>402</y>
+      <w>102</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>com.resources.craftable::GoldPlate
 --
 --
-+GoldPlate(): ctor
++GoldPlate()
 +neededToCraft(): ArrayList&lt;String&gt;
 --
 </panel_attributes>
@@ -619,15 +619,15 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>452</x>
-      <y>203</y>
-      <w>34</w>
-      <h>9</h>
+      <x>639</x>
+      <y>402</y>
+      <w>102</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>com.resources.craftable::IronPlate
 --
 --
-+IronPlate(): ctor
++IronPlate()
 +neededToCraft(): ArrayList&lt;String&gt;
 --
 </panel_attributes>
@@ -636,15 +636,15 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>632</x>
-      <y>318</y>
-      <w>42</w>
-      <h>16</h>
+      <x>1179</x>
+      <y>747</y>
+      <w>126</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>com.resources.craftable.potions::HealthPotionBig
 --
 --
-+HealthPotionBig(): ctor
++HealthPotionBig()
 +neededToCraft(): ArrayList&lt;String&gt;
 +restoreHealthBy(): int
 --
@@ -654,15 +654,15 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>703</x>
-      <y>317</y>
-      <w>47</w>
-      <h>16</h>
+      <x>1392</x>
+      <y>744</y>
+      <w>141</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>com.resources.craftable.potions::HealthPotionSmall
 --
 --
-+HealthPotionSmall(): ctor
++HealthPotionSmall()
 +neededToCraft(): ArrayList&lt;String&gt;
 +restoreHealthBy(): int
 --
@@ -672,15 +672,15 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>416</x>
-      <y>203</y>
-      <w>32</w>
-      <h>9</h>
+      <x>531</x>
+      <y>402</y>
+      <w>96</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>com.resources.craftable::StonePlate
 --
 --
-+StonePlate(): ctor
++StonePlate()
 +neededToCraft(): ArrayList&lt;String&gt;
 --
 </panel_attributes>
@@ -689,15 +689,15 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>681</x>
-      <y>150</y>
-      <w>39</w>
-      <h>8</h>
+      <x>1326</x>
+      <y>243</y>
+      <w>117</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>com.resources.craftable.tools::DiamondAxe
 --
 --
-+DiamondAxe(): ctor
++DiamondAxe()
 +neededToCraft(): ArrayList&lt;String&gt;
 --
 </panel_attributes>
@@ -706,15 +706,15 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>631</x>
-      <y>150</y>
-      <w>39</w>
-      <h>9</h>
+      <x>1176</x>
+      <y>243</y>
+      <w>117</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>com.resources.craftable.tools::DiamondPickaxe
 --
 --
-+DiamondPickaxe(): ctor
++DiamondPickaxe()
 +neededToCraft(): ArrayList&lt;String&gt;
 --
 </panel_attributes>
@@ -723,15 +723,15 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>745</x>
-      <y>149</y>
-      <w>36</w>
-      <h>10</h>
+      <x>1518</x>
+      <y>240</y>
+      <w>108</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>com.resources.craftable.tools::DiamondSword
 --
 --
-+DiamondSword(): ctor
++DiamondSword()
 +neededToCraft(): ArrayList&lt;String&gt;
 +dealsDamage(): int
 --
@@ -741,15 +741,15 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>681</x>
-      <y>133</y>
-      <w>39</w>
-      <h>10</h>
+      <x>1326</x>
+      <y>192</y>
+      <w>117</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>com.resources.craftable.tools::GoldAxe
 --
 --
-+GoldAxe(): ctor
++GoldAxe()
 +neededToCraft(): ArrayList&lt;String&gt;
 --
 </panel_attributes>
@@ -758,15 +758,15 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>631</x>
-      <y>133</y>
-      <w>38</w>
-      <h>9</h>
+      <x>1176</x>
+      <y>192</y>
+      <w>114</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>com.resources.craftable.tools::GoldPickaxe
 --
 --
-+GoldPickaxe(): ctor
++GoldPickaxe()
 +neededToCraft(): ArrayList&lt;String&gt;
 --
 </panel_attributes>
@@ -775,15 +775,15 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>745</x>
-      <y>133</y>
-      <w>36</w>
-      <h>10</h>
+      <x>1518</x>
+      <y>192</y>
+      <w>108</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>com.resources.craftable.tools::GoldSword
 --
 --
-+GoldSword(): ctor
++GoldSword()
 +neededToCraft(): ArrayList&lt;String&gt;
 +dealsDamage(): int
 --
@@ -793,15 +793,15 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>681</x>
-      <y>118</y>
-      <w>39</w>
-      <h>9</h>
+      <x>1326</x>
+      <y>147</y>
+      <w>117</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>com.resources.craftable.tools::IronAxe
 --
 --
-+IronAxe(): ctor
++IronAxe()
 +neededToCraft(): ArrayList&lt;String&gt;
 --
 </panel_attributes>
@@ -810,15 +810,15 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>631</x>
-      <y>118</y>
-      <w>38</w>
-      <h>10</h>
+      <x>1176</x>
+      <y>147</y>
+      <w>114</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>com.resources.craftable.tools::IronPickaxe
 --
 --
-+IronPickaxe(): ctor
++IronPickaxe()
 +neededToCraft(): ArrayList&lt;String&gt;
 --
 </panel_attributes>
@@ -827,15 +827,15 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>745</x>
-      <y>118</y>
-      <w>36</w>
-      <h>12</h>
+      <x>1518</x>
+      <y>147</y>
+      <w>108</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>com.resources.craftable.tools::IronSword
 --
 --
-+IronSword(): ctor
++IronSword()
 +neededToCraft(): ArrayList&lt;String&gt;
 +dealsDamage(): int
 --
@@ -845,15 +845,15 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>681</x>
-      <y>104</y>
-      <w>39</w>
-      <h>10</h>
+      <x>1326</x>
+      <y>105</y>
+      <w>117</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>com.resources.craftable.tools::StoneAxe
 --
 --
-+StoneAxe(): ctor
++StoneAxe()
 +neededToCraft(): ArrayList&lt;String&gt;
 --
 </panel_attributes>
@@ -862,15 +862,15 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>631</x>
-      <y>104</y>
-      <w>38</w>
-      <h>10</h>
+      <x>1176</x>
+      <y>105</y>
+      <w>114</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>com.resources.craftable.tools::StonePickaxe
 --
 --
-+StonePickaxe(): ctor
++StonePickaxe()
 +neededToCraft(): ArrayList&lt;String&gt;
 --
 </panel_attributes>
@@ -879,15 +879,15 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>745</x>
-      <y>104</y>
-      <w>36</w>
-      <h>11</h>
+      <x>1518</x>
+      <y>105</y>
+      <w>108</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>com.resources.craftable.tools::StoneSword
 --
 --
-+StoneSword(): ctor
++StoneSword()
 +neededToCraft(): ArrayList&lt;String&gt;
 +dealsDamage(): int
 --
@@ -897,15 +897,15 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>681</x>
-      <y>90</y>
-      <w>39</w>
-      <h>10</h>
+      <x>1326</x>
+      <y>63</y>
+      <w>117</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>com.resources.craftable.tools::WoodAxe
 --
 --
-+WoodAxe(): ctor
++WoodAxe()
 +neededToCraft(): ArrayList&lt;String&gt;
 --
 </panel_attributes>
@@ -914,15 +914,15 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>631</x>
-      <y>90</y>
-      <w>38</w>
-      <h>10</h>
+      <x>1176</x>
+      <y>63</y>
+      <w>114</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>com.resources.craftable.tools::WoodPickaxe
 --
 --
-+WoodPickaxe(): ctor
++WoodPickaxe()
 +neededToCraft(): ArrayList&lt;String&gt;
 --
 </panel_attributes>
@@ -931,15 +931,15 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>745</x>
-      <y>90</y>
-      <w>36</w>
-      <h>11</h>
+      <x>1518</x>
+      <y>63</y>
+      <w>108</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>com.resources.craftable.tools::WoodSword
 --
 --
-+WoodSword(): ctor
++WoodSword()
 +neededToCraft(): ArrayList&lt;String&gt;
 +dealsDamage(): int
 --
@@ -949,15 +949,15 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>379</x>
-      <y>203</y>
-      <w>32</w>
-      <h>9</h>
+      <x>420</x>
+      <y>402</y>
+      <w>96</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>com.resources.craftable::WoodPlate
 --
 --
-+WoodPlate(): ctor
++WoodPlate()
 +neededToCraft(): ArrayList&lt;String&gt;
 --
 </panel_attributes>
@@ -966,15 +966,15 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>514</x>
-      <y>225</y>
-      <w>26</w>
-      <h>9</h>
+      <x>825</x>
+      <y>468</y>
+      <w>78</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>com.resources.craftable::WoodStick
 --
 --
-+WoodStick(): ctor
++WoodStick()
 +neededToCraft(): ArrayList&lt;String&gt;
 --
 </panel_attributes>
@@ -983,10 +983,10 @@ fontfamily=Monospaced //possible: SansSerif,Serif,Monospaced
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>401</x>
-      <y>277</y>
-      <w>33</w>
-      <h>10</h>
+      <x>486</x>
+      <y>624</y>
+      <w>99</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 com.resources::Craftable
@@ -1000,10 +1000,10 @@ com.resources::Craftable
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>732</x>
-      <y>69</y>
-      <w>18</w>
-      <h>9</h>
+      <x>1479</x>
+      <y>0</y>
+      <w>54</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 com.resources::Damage
@@ -1017,10 +1017,10 @@ com.resources::Damage
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>345</x>
-      <y>124</y>
-      <w>22</w>
-      <h>11</h>
+      <x>318</x>
+      <y>165</y>
+      <w>66</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 com.resources::Edible
@@ -1034,15 +1034,15 @@ com.resources::Edible
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>396</x>
-      <y>124</y>
-      <w>38</w>
-      <h>11</h>
+      <x>471</x>
+      <y>165</y>
+      <w>114</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>com.resources.natural.edible::Apple
 --
 --
-+Apple(): ctor
++Apple()
 +neededToCraft(): ArrayList&lt;String&gt;
 +restoreHungerBy(): int
 --
@@ -1052,15 +1052,15 @@ com.resources::Edible
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>396</x>
-      <y>139</y>
-      <w>38</w>
-      <h>11</h>
+      <x>471</x>
+      <y>210</y>
+      <w>114</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>com.resources.natural.edible::Potato
 --
 --
-+Potato(): ctor
++Potato()
 +neededToCraft(): ArrayList&lt;String&gt;
 +restoreHungerBy(): int
 --
@@ -1070,15 +1070,15 @@ com.resources::Edible
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>396</x>
-      <y>154</y>
-      <w>38</w>
-      <h>11</h>
+      <x>471</x>
+      <y>255</y>
+      <w>114</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>com.resources.natural.edible::RedFlower
 --
 --
-+RedFlower(): ctor
++RedFlower()
 +neededToCraft(): ArrayList&lt;String&gt;
 +restoreHungerBy(): int
 --
@@ -1088,15 +1088,15 @@ com.resources::Edible
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>396</x>
-      <y>170</y>
-      <w>38</w>
-      <h>11</h>
+      <x>471</x>
+      <y>303</y>
+      <w>114</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>com.resources.natural.edible::YellowFlower
 --
 --
-+YellowFlower(): ctor
++YellowFlower()
 +neededToCraft(): ArrayList&lt;String&gt;
 +restoreHungerBy(): int
 --
@@ -1106,15 +1106,15 @@ com.resources::Edible
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>239</x>
-      <y>127</y>
-      <w>34</w>
-      <h>9</h>
+      <x>0</x>
+      <y>174</y>
+      <w>102</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>com.resources.natural.minerals::Coal
 --
 --
-+Coal(): ctor
++Coal()
 +neededToCraft(): ArrayList&lt;String&gt;
 --
 </panel_attributes>
@@ -1123,15 +1123,15 @@ com.resources::Edible
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>239</x>
-      <y>187</y>
-      <w>34</w>
-      <h>9</h>
+      <x>0</x>
+      <y>354</y>
+      <w>102</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>com.resources.natural.minerals::Diamond
 --
 --
-+Diamond(): ctor
++Diamond()
 +neededToCraft(): ArrayList&lt;String&gt;
 --
 </panel_attributes>
@@ -1140,15 +1140,15 @@ com.resources::Edible
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>239</x>
-      <y>175</y>
-      <w>34</w>
-      <h>9</h>
+      <x>0</x>
+      <y>318</y>
+      <w>102</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>com.resources.natural.minerals::Gold
 --
 --
-+Gold(): ctor
++Gold()
 +neededToCraft(): ArrayList&lt;String&gt;
 --
 </panel_attributes>
@@ -1157,15 +1157,15 @@ com.resources::Edible
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>239</x>
-      <y>163</y>
-      <w>34</w>
-      <h>9</h>
+      <x>0</x>
+      <y>282</y>
+      <w>102</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>com.resources.natural.minerals::Iron
 --
 --
-+Iron(): ctor
++Iron()
 +neededToCraft(): ArrayList&lt;String&gt;
 --
 </panel_attributes>
@@ -1174,15 +1174,15 @@ com.resources::Edible
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>239</x>
-      <y>151</y>
-      <w>34</w>
-      <h>9</h>
+      <x>0</x>
+      <y>246</y>
+      <w>102</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>com.resources.natural.minerals::Stone
 --
 --
-+Stone(): ctor
++Stone()
 +neededToCraft(): ArrayList&lt;String&gt;
 --
 </panel_attributes>
@@ -1191,15 +1191,15 @@ com.resources::Edible
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>239</x>
-      <y>139</y>
-      <w>34</w>
-      <h>9</h>
+      <x>0</x>
+      <y>210</y>
+      <w>102</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>com.resources.natural.minerals::Wood
 --
 --
-+Wood(): ctor
++Wood()
 +neededToCraft(): ArrayList&lt;String&gt;
 --
 </panel_attributes>
@@ -1208,10 +1208,10 @@ com.resources::Edible
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>726</x>
-      <y>352</y>
-      <w>25</w>
-      <h>9</h>
+      <x>1461</x>
+      <y>849</y>
+      <w>75</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 com.resources::Potions
@@ -1225,10 +1225,10 @@ com.resources::Potions
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>359</x>
-      <y>358</y>
-      <w>30</w>
-      <h>21</h>
+      <x>360</x>
+      <y>867</y>
+      <w>90</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>/com.resources::Resource/
 --
@@ -1249,10 +1249,10 @@ com.resources::Potions
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>731</x>
-      <y>224</y>
-      <w>17</w>
-      <h>7</h>
+      <x>1476</x>
+      <y>465</y>
+      <w>54</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 com.resources::Tool
@@ -1265,10 +1265,10 @@ com.resources::Tool
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>728</x>
-      <y>407</y>
-      <w>44</w>
-      <h>52</h>
+      <x>1467</x>
+      <y>1014</y>
+      <w>132</w>
+      <h>156</h>
     </coordinates>
     <panel_attributes>com.slot::Bag
 --
@@ -1306,10 +1306,10 @@ com.resources::Tool
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>648</x>
-      <y>407</y>
-      <w>47</w>
-      <h>52</h>
+      <x>1227</x>
+      <y>1014</y>
+      <w>141</w>
+      <h>156</h>
     </coordinates>
     <panel_attributes>com.slot::Slot
 --
@@ -1348,10 +1348,10 @@ com.resources::Tool
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>674</x>
-      <y>349</y>
-      <w>21</w>
-      <h>13</h>
+      <x>1305</x>
+      <y>840</y>
+      <w>63</w>
+      <h>39</h>
     </coordinates>
     <panel_attributes>potions
 --
@@ -1364,10 +1364,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>690</x>
-      <y>326</y>
-      <w>15</w>
-      <h>27</h>
+      <x>1353</x>
+      <y>771</y>
+      <w>45</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;250.0;10.0;10.0;130.0;10.0</additional_attributes>
@@ -1375,10 +1375,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>673</x>
-      <y>326</y>
-      <w>13</w>
-      <h>27</h>
+      <x>1302</x>
+      <y>771</y>
+      <w>39</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>110.0;250.0;110.0;10.0;10.0;10.0</additional_attributes>
@@ -1386,10 +1386,10 @@ fg=red</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>690</x>
-      <y>173</y>
-      <w>23</w>
-      <h>38</h>
+      <x>1353</x>
+      <y>312</y>
+      <w>69</w>
+      <h>114</h>
     </coordinates>
     <panel_attributes>tools
 --
@@ -1420,10 +1420,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>712</x>
-      <y>137</y>
-      <w>14</w>
-      <h>41</h>
+      <x>1419</x>
+      <y>204</y>
+      <w>42</w>
+      <h>123</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;390.0;120.0;390.0;120.0;10.0;80.0;10.0</additional_attributes>
@@ -1431,10 +1431,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>712</x>
-      <y>108</y>
-      <w>87</w>
-      <h>98</h>
+      <x>1419</x>
+      <y>117</y>
+      <w>261</w>
+      <h>294</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;960.0;850.0;960.0;850.0;10.0;690.0;10.0</additional_attributes>
@@ -1442,10 +1442,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>702</x>
-      <y>157</y>
-      <w>3</w>
-      <h>20</h>
+      <x>1389</x>
+      <y>264</y>
+      <w>9</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;180.0;10.0;10.0</additional_attributes>
@@ -1453,10 +1453,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>712</x>
-      <y>108</y>
-      <w>19</w>
-      <h>74</h>
+      <x>1419</x>
+      <y>117</y>
+      <w>57</w>
+      <h>222</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;720.0;170.0;720.0;170.0;10.0;80.0;10.0</additional_attributes>
@@ -1464,10 +1464,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>595</x>
-      <y>108</y>
-      <w>97</w>
-      <h>97</h>
+      <x>1068</x>
+      <y>117</y>
+      <w>291</w>
+      <h>291</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>950.0;950.0;10.0;950.0;10.0;10.0;360.0;10.0</additional_attributes>
@@ -1475,10 +1475,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>610</x>
-      <y>137</y>
-      <w>82</w>
-      <h>56</h>
+      <x>1113</x>
+      <y>204</y>
+      <w>246</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>800.0;540.0;10.0;540.0;10.0;10.0;210.0;10.0</additional_attributes>
@@ -1486,10 +1486,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>712</x>
-      <y>124</y>
-      <w>82</w>
-      <h>76</h>
+      <x>1419</x>
+      <y>165</y>
+      <w>246</w>
+      <h>228</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;740.0;800.0;740.0;800.0;10.0;690.0;10.0</additional_attributes>
@@ -1497,21 +1497,21 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>673</x>
-      <y>122</y>
-      <w>19</w>
-      <h>59</h>
+      <x>1311</x>
+      <y>159</y>
+      <w>48</w>
+      <h>177</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>170.0;570.0;10.0;570.0;10.0;10.0;80.0;10.0</additional_attributes>
+    <additional_attributes>140.0;570.0;10.0;570.0;10.0;10.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>712</x>
-      <y>153</y>
-      <w>72</w>
-      <h>36</h>
+      <x>1419</x>
+      <y>252</y>
+      <w>216</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;340.0;700.0;340.0;700.0;10.0;690.0;10.0</additional_attributes>
@@ -1519,10 +1519,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>712</x>
-      <y>137</y>
-      <w>77</w>
-      <h>58</h>
+      <x>1419</x>
+      <y>204</y>
+      <w>231</w>
+      <h>174</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;560.0;750.0;560.0;750.0;10.0;690.0;10.0</additional_attributes>
@@ -1530,10 +1530,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>602</x>
-      <y>122</y>
-      <w>90</w>
-      <h>77</h>
+      <x>1089</x>
+      <y>159</y>
+      <w>270</w>
+      <h>231</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>880.0;750.0;10.0;750.0;10.0;10.0;290.0;10.0</additional_attributes>
@@ -1541,10 +1541,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>587</x>
-      <y>94</y>
-      <w>105</w>
-      <h>115</h>
+      <x>1044</x>
+      <y>75</y>
+      <w>315</w>
+      <h>345</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>1030.0;1130.0;10.0;1130.0;10.0;10.0;440.0;10.0</additional_attributes>
@@ -1552,10 +1552,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>616</x>
-      <y>154</y>
-      <w>76</w>
-      <h>35</h>
+      <x>1131</x>
+      <y>255</y>
+      <w>228</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>740.0;330.0;10.0;330.0;10.0;10.0;150.0;10.0</additional_attributes>
@@ -1563,10 +1563,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>712</x>
-      <y>94</y>
-      <w>94</w>
-      <h>116</h>
+      <x>1419</x>
+      <y>75</y>
+      <w>282</w>
+      <h>348</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;1140.0;920.0;1140.0;920.0;10.0;690.0;10.0</additional_attributes>
@@ -1574,10 +1574,10 @@ fg=red</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>463</x>
-      <y>237</y>
-      <w>13</w>
-      <h>18</h>
+      <x>672</x>
+      <y>504</y>
+      <w>39</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>craftable
 --
@@ -1596,10 +1596,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>393</x>
-      <y>211</y>
-      <w>72</w>
-      <h>38</h>
+      <x>462</x>
+      <y>426</y>
+      <w>216</w>
+      <h>114</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>700.0;360.0;500.0;360.0;500.0;100.0;10.0;100.0;10.0;10.0</additional_attributes>
@@ -1607,10 +1607,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>427</x>
-      <y>229</y>
-      <w>38</w>
-      <h>26</h>
+      <x>564</x>
+      <y>480</y>
+      <w>114</w>
+      <h>78</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>360.0;240.0;100.0;240.0;100.0;10.0;10.0;10.0</additional_attributes>
@@ -1618,10 +1618,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>432</x>
-      <y>211</y>
-      <w>33</w>
-      <h>34</h>
+      <x>579</x>
+      <y>426</y>
+      <w>99</w>
+      <h>102</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>310.0;320.0;190.0;320.0;190.0;70.0;10.0;70.0;10.0;10.0</additional_attributes>
@@ -1629,10 +1629,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>472</x>
-      <y>211</y>
-      <w>3</w>
-      <h>30</h>
+      <x>699</x>
+      <y>426</y>
+      <w>9</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;280.0;10.0;10.0</additional_attributes>
@@ -1640,10 +1640,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>475</x>
-      <y>211</y>
-      <w>72</w>
-      <h>39</h>
+      <x>708</x>
+      <y>426</y>
+      <w>216</w>
+      <h>117</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;370.0;260.0;370.0;260.0;100.0;700.0;100.0;700.0;10.0</additional_attributes>
@@ -1651,10 +1651,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>475</x>
-      <y>229</y>
-      <w>41</w>
-      <h>26</h>
+      <x>708</x>
+      <y>480</y>
+      <w>123</w>
+      <h>78</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;240.0;300.0;240.0;300.0;10.0;390.0;10.0</additional_attributes>
@@ -1662,10 +1662,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>475</x>
-      <y>211</y>
-      <w>33</w>
-      <h>34</h>
+      <x>708</x>
+      <y>426</y>
+      <w>99</w>
+      <h>102</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;320.0;100.0;320.0;100.0;70.0;310.0;70.0;310.0;10.0</additional_attributes>
@@ -1673,10 +1673,10 @@ fg=red</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>347</x>
-      <y>156</y>
-      <w>14</w>
-      <h>16</h>
+      <x>324</x>
+      <y>261</y>
+      <w>42</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>edible
 --
@@ -1691,10 +1691,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>689</x>
-      <y>253</y>
-      <w>3</w>
-      <h>35</h>
+      <x>1350</x>
+      <y>552</y>
+      <w>9</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;330.0;10.0;10.0</additional_attributes>
@@ -1702,10 +1702,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>360</x>
-      <y>128</y>
-      <w>38</w>
-      <h>34</h>
+      <x>363</x>
+      <y>177</y>
+      <w>114</w>
+      <h>102</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;320.0;240.0;320.0;240.0;10.0;360.0;10.0</additional_attributes>
@@ -1713,10 +1713,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>360</x>
-      <y>144</y>
-      <w>38</w>
-      <h>21</h>
+      <x>363</x>
+      <y>225</y>
+      <w>114</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;190.0;260.0;190.0;260.0;10.0;360.0;10.0</additional_attributes>
@@ -1724,10 +1724,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>360</x>
-      <y>159</y>
-      <w>38</w>
-      <h>9</h>
+      <x>363</x>
+      <y>270</y>
+      <w>114</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;70.0;280.0;70.0;280.0;10.0;360.0;10.0</additional_attributes>
@@ -1735,10 +1735,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>360</x>
-      <y>169</y>
-      <w>38</w>
-      <h>9</h>
+      <x>363</x>
+      <y>300</y>
+      <w>114</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;260.0;10.0;260.0;70.0;360.0;70.0</additional_attributes>
@@ -1746,10 +1746,10 @@ fg=red</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>304</x>
-      <y>156</y>
-      <w>14</w>
-      <h>16</h>
+      <x>195</x>
+      <y>261</y>
+      <w>42</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>minerals
 --
@@ -1766,10 +1766,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>272</x>
-      <y>143</y>
-      <w>34</w>
-      <h>21</h>
+      <x>99</x>
+      <y>222</y>
+      <w>102</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>320.0;190.0;210.0;190.0;210.0;10.0;10.0;10.0</additional_attributes>
@@ -1777,10 +1777,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>272</x>
-      <y>155</y>
-      <w>34</w>
-      <h>11</h>
+      <x>99</x>
+      <y>258</y>
+      <w>102</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>320.0;90.0;190.0;90.0;190.0;10.0;10.0;10.0</additional_attributes>
@@ -1788,10 +1788,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>272</x>
-      <y>167</y>
-      <w>34</w>
-      <h>14</h>
+      <x>99</x>
+      <y>294</y>
+      <w>102</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>320.0;10.0;220.0;10.0;220.0;120.0;10.0;120.0</additional_attributes>
@@ -1799,10 +1799,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>272</x>
-      <y>165</y>
-      <w>34</w>
-      <h>5</h>
+      <x>99</x>
+      <y>288</y>
+      <w>102</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>320.0;10.0;190.0;10.0;190.0;30.0;10.0;30.0</additional_attributes>
@@ -1810,10 +1810,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>272</x>
-      <y>130</y>
-      <w>34</w>
-      <h>32</h>
+      <x>99</x>
+      <y>183</y>
+      <w>102</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>320.0;300.0;250.0;300.0;250.0;10.0;10.0;10.0</additional_attributes>
@@ -1821,10 +1821,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>272</x>
-      <y>169</y>
-      <w>34</w>
-      <h>24</h>
+      <x>99</x>
+      <y>300</y>
+      <w>102</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>320.0;10.0;250.0;10.0;250.0;220.0;10.0;220.0</additional_attributes>
@@ -1832,10 +1832,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>694</x>
-      <y>356</y>
-      <w>34</w>
-      <h>3</h>
+      <x>1365</x>
+      <y>861</y>
+      <w>102</w>
+      <h>9</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;230.0;10.0;320.0;10.0</additional_attributes>
@@ -1843,10 +1843,10 @@ fg=red</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>681</x>
-      <y>284</y>
-      <w>14</w>
-      <h>9</h>
+      <x>1326</x>
+      <y>645</y>
+      <w>42</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>edible
 --
@@ -1858,10 +1858,10 @@ fg=red</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>325</x>
-      <y>181</y>
-      <w>14</w>
-      <h>7</h>
+      <x>258</x>
+      <y>336</y>
+      <w>42</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>natural
 --
@@ -1874,10 +1874,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>317</x>
-      <y>164</y>
-      <w>10</w>
-      <h>24</h>
+      <x>234</x>
+      <y>285</y>
+      <w>30</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>80.0;220.0;40.0;220.0;40.0;10.0;10.0;10.0</additional_attributes>
@@ -1885,10 +1885,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>338</x>
-      <y>163</y>
-      <w>11</w>
-      <h>25</h>
+      <x>297</x>
+      <y>282</y>
+      <w>33</w>
+      <h>75</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;230.0;40.0;230.0;40.0;10.0;90.0;10.0</additional_attributes>
@@ -1896,10 +1896,10 @@ fg=red</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>706</x>
-      <y>272</y>
-      <w>17</w>
-      <h>9</h>
+      <x>1401</x>
+      <y>609</y>
+      <w>72</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 com.resources::Edible
@@ -1913,10 +1913,10 @@ com.resources::Edible
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>356</x>
-      <y>134</y>
-      <w>3</w>
-      <h>26</h>
+      <x>351</x>
+      <y>195</y>
+      <w>9</w>
+      <h>78</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;240.0;10.0;10.0</additional_attributes>
@@ -1924,21 +1924,21 @@ com.resources::Edible
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>694</x>
-      <y>280</y>
-      <w>23</w>
-      <h>11</h>
+      <x>1365</x>
+      <y>630</y>
+      <w>69</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;90.0;210.0;90.0;210.0;10.0</additional_attributes>
+    <additional_attributes>10.0;100.0;210.0;100.0;210.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>706</x>
-      <y>210</y>
-      <w>27</w>
-      <h>20</h>
+      <x>1401</x>
+      <y>423</y>
+      <w>81</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;180.0;250.0;180.0</additional_attributes>
@@ -1946,10 +1946,10 @@ com.resources::Edible
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>433</x>
-      <y>254</y>
-      <w>34</w>
-      <h>30</h>
+      <x>582</x>
+      <y>555</y>
+      <w>102</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>320.0;10.0;320.0;280.0;10.0;280.0</additional_attributes>
@@ -1957,10 +1957,10 @@ com.resources::Edible
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>741</x>
-      <y>77</y>
-      <w>6</w>
-      <h>19</h>
+      <x>1506</x>
+      <y>24</y>
+      <w>18</w>
+      <h>57</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>40.0;170.0;10.0;170.0;10.0;10.0</additional_attributes>
@@ -1968,10 +1968,10 @@ com.resources::Edible
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>735</x>
-      <y>77</y>
-      <w>12</w>
-      <h>63</h>
+      <x>1488</x>
+      <y>24</y>
+      <w>36</w>
+      <h>189</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>100.0;610.0;10.0;610.0;10.0;10.0</additional_attributes>
@@ -1979,10 +1979,10 @@ com.resources::Edible
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>737</x>
-      <y>77</y>
-      <w>10</w>
-      <h>50</h>
+      <x>1494</x>
+      <y>24</y>
+      <w>30</w>
+      <h>150</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>80.0;480.0;10.0;480.0;10.0;10.0</additional_attributes>
@@ -1990,10 +1990,10 @@ com.resources::Edible
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>739</x>
-      <y>77</y>
-      <w>8</w>
-      <h>35</h>
+      <x>1500</x>
+      <y>24</y>
+      <w>24</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>60.0;330.0;10.0;330.0;10.0;10.0</additional_attributes>
@@ -2001,10 +2001,10 @@ com.resources::Edible
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>733</x>
-      <y>77</y>
-      <w>14</w>
-      <h>80</h>
+      <x>1482</x>
+      <y>24</y>
+      <w>42</w>
+      <h>240</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>120.0;780.0;10.0;780.0;10.0;10.0</additional_attributes>
@@ -2012,10 +2012,10 @@ com.resources::Edible
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>473</x>
-      <y>210</y>
-      <w>223</w>
-      <h>49</h>
+      <x>702</x>
+      <y>423</y>
+      <w>669</w>
+      <h>147</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;450.0;10.0;470.0;1230.0;470.0;1230.0;170.0;2210.0;170.0;2210.0;10.0</additional_attributes>
@@ -2023,10 +2023,10 @@ com.resources::Edible
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>471</x>
-      <y>254</y>
-      <w>212</w>
-      <h>37</h>
+      <x>696</x>
+      <y>555</y>
+      <w>636</w>
+      <h>111</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;130.0;1730.0;130.0;1730.0;350.0;2100.0;350.0</additional_attributes>
@@ -2034,10 +2034,10 @@ com.resources::Edible
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>469</x>
-      <y>254</y>
-      <w>207</w>
-      <h>103</h>
+      <x>690</x>
+      <y>555</y>
+      <w>621</w>
+      <h>309</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;280.0;1520.0;280.0;1520.0;1010.0;2050.0;1010.0</additional_attributes>
@@ -2045,10 +2045,10 @@ com.resources::Edible
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>367</x>
-      <y>308</y>
-      <w>14</w>
-      <h>7</h>
+      <x>384</x>
+      <y>717</y>
+      <w>42</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>resources
 --
@@ -2061,10 +2061,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>380</x>
-      <y>254</y>
-      <w>89</w>
-      <h>60</h>
+      <x>423</x>
+      <y>555</y>
+      <w>267</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;580.0;870.0;580.0;870.0;10.0</additional_attributes>
@@ -2072,10 +2072,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>331</x>
-      <y>187</y>
-      <w>38</w>
-      <h>127</h>
+      <x>276</x>
+      <y>354</y>
+      <w>114</w>
+      <h>381</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>360.0;1250.0;10.0;1250.0;10.0;10.0</additional_attributes>
@@ -2083,10 +2083,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>373</x>
-      <y>314</y>
-      <w>3</w>
-      <h>46</h>
+      <x>402</x>
+      <y>735</y>
+      <w>9</w>
+      <h>138</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;440.0</additional_attributes>
@@ -2094,10 +2094,10 @@ fg=red</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>959</x>
-      <y>433</y>
-      <w>14</w>
-      <h>7</h>
+      <x>2160</x>
+      <y>1092</y>
+      <w>42</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>character
 --
@@ -2109,10 +2109,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>928</x>
-      <y>436</y>
-      <w>33</w>
-      <h>3</h>
+      <x>2067</x>
+      <y>1101</y>
+      <w>99</w>
+      <h>9</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>310.0;10.0;10.0;10.0</additional_attributes>
@@ -2120,10 +2120,10 @@ fg=red</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>703</x>
-      <y>477</y>
-      <w>14</w>
-      <h>7</h>
+      <x>1392</x>
+      <y>1224</y>
+      <w>42</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>slot
 --
@@ -2136,10 +2136,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>716</x>
-      <y>458</y>
-      <w>37</w>
-      <h>25</h>
+      <x>1431</x>
+      <y>1167</y>
+      <w>111</w>
+      <h>75</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;230.0;350.0;230.0;350.0;10.0</additional_attributes>
@@ -2147,10 +2147,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>668</x>
-      <y>458</y>
-      <w>37</w>
-      <h>25</h>
+      <x>1287</x>
+      <y>1167</y>
+      <w>111</w>
+      <h>75</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>350.0;230.0;10.0;230.0;10.0;10.0</additional_attributes>
@@ -2158,10 +2158,10 @@ fg=red</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>496</x>
-      <y>428</y>
-      <w>14</w>
-      <h>7</h>
+      <x>771</x>
+      <y>1077</y>
+      <w>42</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>craft
 --
@@ -2174,10 +2174,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>505</x>
-      <y>434</y>
-      <w>28</w>
-      <h>14</h>
+      <x>798</x>
+      <y>1095</y>
+      <w>84</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;120.0;260.0;120.0</additional_attributes>
@@ -2185,10 +2185,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>505</x>
-      <y>413</y>
-      <w>28</w>
-      <h>19</h>
+      <x>798</x>
+      <y>1032</y>
+      <w>84</w>
+      <h>57</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;170.0;10.0;10.0;260.0;10.0</additional_attributes>
@@ -2196,10 +2196,10 @@ fg=red</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>595</x>
-      <y>752</y>
-      <w>18</w>
-      <h>29</h>
+      <x>1068</x>
+      <y>2049</y>
+      <w>54</w>
+      <h>87</h>
     </coordinates>
     <panel_attributes>game
 --
@@ -2225,10 +2225,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>472</x>
-      <y>588</y>
-      <w>31</w>
-      <h>3</h>
+      <x>699</x>
+      <y>1557</y>
+      <w>93</w>
+      <h>9</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>290.0;10.0;10.0;10.0</additional_attributes>
@@ -2236,10 +2236,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>531</x>
-      <y>638</y>
-      <w>63</w>
-      <h>71</h>
+      <x>876</x>
+      <y>1707</y>
+      <w>189</w>
+      <h>213</h>
     </coordinates>
     <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>610.0;690.0;10.0;690.0;10.0;10.0</additional_attributes>
@@ -2247,10 +2247,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>469</x>
-      <y>752</y>
-      <w>128</w>
-      <h>25</h>
+      <x>690</x>
+      <y>2049</y>
+      <w>384</w>
+      <h>75</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>1260.0;230.0;130.0;230.0;130.0;10.0;10.0;10.0</additional_attributes>
@@ -2258,10 +2258,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>611</x>
-      <y>619</y>
-      <w>190</w>
-      <h>96</h>
+      <x>1116</x>
+      <y>1650</y>
+      <w>570</w>
+      <h>288</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>1880.0;10.0;1880.0;940.0;10.0;940.0</additional_attributes>
@@ -2269,10 +2269,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>625</x>
-      <y>553</y>
-      <w>173</w>
-      <h>27</h>
+      <x>1158</x>
+      <y>1452</y>
+      <w>519</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>1710.0;250.0;1710.0;10.0;10.0;10.0;10.0;250.0</additional_attributes>
@@ -2280,10 +2280,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>813</x>
-      <y>619</y>
-      <w>3</w>
-      <h>107</h>
+      <x>1722</x>
+      <y>1650</y>
+      <w>9</w>
+      <h>321</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1050.0</additional_attributes>
@@ -2291,10 +2291,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>765</x>
-      <y>458</y>
-      <w>54</w>
-      <h>122</h>
+      <x>1578</x>
+      <y>1167</y>
+      <w>162</w>
+      <h>366</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>520.0;1200.0;520.0;230.0;10.0;230.0;10.0;10.0</additional_attributes>
@@ -2302,10 +2302,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>611</x>
-      <y>616</y>
-      <w>102</w>
-      <h>92</h>
+      <x>1116</x>
+      <y>1641</y>
+      <w>306</w>
+      <h>276</h>
     </coordinates>
     <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;900.0;1000.0;900.0;1000.0;10.0</additional_attributes>
@@ -2313,10 +2313,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>363</x>
-      <y>607</y>
-      <w>336</w>
-      <h>47</h>
+      <x>372</x>
+      <y>1614</y>
+      <w>1008</w>
+      <h>141</h>
     </coordinates>
     <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;450.0;3340.0;450.0;3340.0;100.0</additional_attributes>
@@ -2324,10 +2324,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>611</x>
-      <y>609</y>
-      <w>279</w>
-      <h>215</h>
+      <x>1116</x>
+      <y>1620</y>
+      <w>837</w>
+      <h>645</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>2770.0;10.0;2770.0;2130.0;520.0;2130.0;520.0;1200.0;10.0;1200.0</additional_attributes>
@@ -2335,10 +2335,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>365</x>
-      <y>538</y>
-      <w>524</w>
-      <h>42</h>
+      <x>378</x>
+      <y>1407</y>
+      <w>1572</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>5220.0;400.0;5220.0;10.0;10.0;10.0;10.0;400.0</additional_attributes>
@@ -2346,10 +2346,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>351</x>
-      <y>607</y>
-      <w>243</w>
-      <h>107</h>
+      <x>336</x>
+      <y>1614</y>
+      <w>729</w>
+      <h>321</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;530.0;1660.0;530.0;1660.0;1050.0;2410.0;1050.0</additional_attributes>
@@ -2357,10 +2357,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>304</x>
-      <y>617</y>
-      <w>290</w>
-      <h>102</h>
+      <x>195</x>
+      <y>1644</y>
+      <w>870</w>
+      <h>306</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;490.0;2040.0;490.0;2040.0;1000.0;2880.0;1000.0</additional_attributes>
@@ -2368,10 +2368,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>448</x>
-      <y>607</y>
-      <w>146</w>
-      <h>118</h>
+      <x>627</x>
+      <y>1614</y>
+      <w>438</w>
+      <h>354</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;260.0;350.0;260.0;350.0;1160.0;1440.0;1160.0</additional_attributes>
@@ -2379,10 +2379,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>391</x>
-      <y>589</y>
-      <w>22</w>
-      <h>3</h>
+      <x>456</x>
+      <y>1560</y>
+      <w>66</w>
+      <h>9</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>200.0;10.0;10.0;10.0</additional_attributes>
@@ -2390,10 +2390,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>611</x>
-      <y>721</y>
-      <w>117</w>
-      <h>20</h>
+      <x>1116</x>
+      <y>1956</y>
+      <w>351</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>1150.0;180.0;850.0;180.0;850.0;10.0;10.0;10.0</additional_attributes>
@@ -2401,10 +2401,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>915</x>
-      <y>461</y>
-      <w>3</w>
-      <h>119</h>
+      <x>2028</x>
+      <y>1176</y>
+      <w>9</w>
+      <h>357</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1170.0</additional_attributes>
@@ -2412,10 +2412,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>469</x>
-      <y>745</y>
-      <w>259</w>
-      <h>3</h>
+      <x>690</x>
+      <y>2028</y>
+      <w>777</w>
+      <h>9</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;2570.0;10.0</additional_attributes>
@@ -2423,10 +2423,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>605</x>
-      <y>622</y>
-      <w>3</w>
-      <h>81</h>
+      <x>1098</x>
+      <y>1659</y>
+      <w>9</w>
+      <h>243</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;790.0</additional_attributes>
@@ -2434,10 +2434,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>377</x>
-      <y>553</y>
-      <w>234</w>
-      <h>27</h>
+      <x>414</x>
+      <y>1452</y>
+      <w>702</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>10.0;250.0;10.0;10.0;2320.0;10.0;2320.0;250.0</additional_attributes>
@@ -2445,10 +2445,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>469</x>
-      <y>709</y>
-      <w>125</w>
-      <h>21</h>
+      <x>690</x>
+      <y>1920</y>
+      <w>375</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;80.0;10.0;80.0;190.0;1230.0;190.0</additional_attributes>
@@ -2456,10 +2456,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>469</x>
-      <y>775</y>
-      <w>285</w>
-      <h>41</h>
+      <x>690</x>
+      <y>2118</y>
+      <w>855</w>
+      <h>123</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;390.0;2830.0;390.0;2830.0;10.0</additional_attributes>
@@ -2467,10 +2467,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>605</x>
-      <y>732</y>
-      <w>3</w>
-      <h>24</h>
+      <x>1098</x>
+      <y>1989</y>
+      <w>9</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;220.0;10.0;10.0</additional_attributes>
@@ -2478,10 +2478,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>759</x>
-      <y>395</y>
-      <w>131</w>
-      <h>49</h>
+      <x>1560</x>
+      <y>978</y>
+      <w>393</w>
+      <h>147</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-&gt;&gt;</panel_attributes>
     <additional_attributes>1290.0;470.0;290.0;470.0;290.0;10.0;10.0;10.0;10.0;120.0</additional_attributes>
@@ -2489,10 +2489,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>553</x>
-      <y>372</y>
-      <w>337</w>
-      <h>56</h>
+      <x>942</x>
+      <y>909</y>
+      <w>1011</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>3350.0;540.0;2490.0;540.0;2490.0;10.0;10.0;10.0;10.0;350.0</additional_attributes>
@@ -2500,10 +2500,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>379</x>
-      <y>378</y>
-      <w>188</w>
-      <h>114</h>
+      <x>420</x>
+      <y>927</y>
+      <w>564</w>
+      <h>342</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>1860.0;450.0;1860.0;1120.0;10.0;1120.0;10.0;10.0</additional_attributes>
@@ -2511,10 +2511,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>539</x>
-      <y>422</y>
-      <w>3</w>
-      <h>21</h>
+      <x>900</x>
+      <y>1059</y>
+      <w>9</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;190.0;10.0;10.0</additional_attributes>
@@ -2522,10 +2522,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>694</x>
-      <y>440</y>
-      <w>36</w>
-      <h>3</h>
+      <x>1365</x>
+      <y>1113</y>
+      <w>108</w>
+      <h>9</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>340.0;10.0;10.0;10.0</additional_attributes>
@@ -2533,12 +2533,23 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>369</x>
-      <y>378</y>
-      <w>300</w>
-      <h>128</h>
+      <x>390</x>
+      <y>927</y>
+      <w>900</w>
+      <h>384</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>2980.0;290.0;2980.0;160.0;2350.0;160.0;2350.0;1260.0;10.0;1260.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1299</x>
+      <y>75</y>
+      <w>60</w>
+      <h>273</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>180.0;890.0;10.0;890.0;10.0;10.0;90.0;10.0</additional_attributes>
   </element>
 </diagram>
