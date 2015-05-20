@@ -31,10 +31,10 @@ public class Player extends Sprite implements InputProcessor{
 	private Vector2 velocity;
 	
 	//speed of player when walking
-	private float normalSpeed = 50*2;
+	private float normalSpeed = 40*2;
 	
 	//speed of player when running
-	private float runSpeed = 50*4;
+	private float runSpeed = 50*3;
 	
 	// current speed of the player
 	private float speed = normalSpeed;
@@ -216,8 +216,10 @@ public class Player extends Sprite implements InputProcessor{
 		}
 		//running
 		if(keycode == Keys.SHIFT_LEFT || keycode == Keys.SHIFT_RIGHT){
-			if (character.canRun())
+			if (character.canRun()){
 				speed = runSpeed;
+				screen.setHungerIndicator(4.0f);
+			}
 		}
 		//dump stuff
 		if(keycode == Keys.Q){
@@ -232,6 +234,7 @@ public class Player extends Sprite implements InputProcessor{
 		
 		if(keycode == Keys.SHIFT_LEFT){
 			speed = normalSpeed;
+			screen.setHungerIndicator(9.0f);
 		}
 		
 		if(keycode == Keys.W || keycode == Keys.UP){

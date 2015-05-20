@@ -38,6 +38,7 @@ public class PlayScreen implements Screen {
 	//player
 	private Player player;
 	private float hunger;
+	private float hungerIndicator; //the amount of time that needs to be passed until hunger is decreased 
 	
 	public PlayScreen(final DontCry dontcry, MainMenuScreen mainScreen, String name){
 		game = dontcry;
@@ -77,6 +78,7 @@ public class PlayScreen implements Screen {
 		hungerStatus.setColor(1, 0.4f, 0, 1);
 		hungerStatus.setPosition(20, 465);
 		stage.addActor(hungerStatus);
+		setHungerIndicator(9.0f);
 		
 		//assign the bag to the stage
 		player.getCharacter().getBag().setPosition(730, 550);
@@ -122,7 +124,7 @@ public class PlayScreen implements Screen {
 		renderer.render(background);
 		
 		hunger += delta;
-		if(hunger >= 9.0f){
+		if(hunger >= hungerIndicator){
 			hungerStatus.setStatus(player.getCharacter().decreaseHungerDef());
 			healthStatus.setStatus(player.getCharacter().getHealth());
 			hunger = 0;
@@ -185,6 +187,10 @@ public class PlayScreen implements Screen {
 		map.dispose();
 		player.getTexture().dispose();
 		stage.dispose();
+	}
+	
+	public void setHungerIndicator(float hi){
+		this.hungerIndicator = hi;
 	}
 	
 	public Player getPLayer(){
