@@ -45,7 +45,7 @@ public class PlayScreen implements Screen {
 		
 		//stuff for rendering the tiledmap
 		map = new TmxMapLoader().load("../core/assets/maps/map1/map1.tmx");
-		renderer = new OrthogonalTiledMapRenderer(map, 1.3f, game.batch);
+		renderer = new OrthogonalTiledMapRenderer(map, 1.3f, game.batch);//1.3f
 		camera = new OrthographicCamera();
 		
 		//create and initialise the player with the collisionlayer
