@@ -81,78 +81,118 @@ public class Player extends Sprite implements InputProcessor{
 		setY(getY()+velocity.y*deltaTime);
 		setX(getX()+velocity.x*deltaTime);
 		
+		//coordinates and data for position detection
+		float x = getX();
+		float y = getY();
+		float width = getWidth();
+		float height = getHeight();
+		
+		boolean forward = false, back = false, left = false, right = false; //used to define in which direction the way needs to be corrected
+		boolean forwardP = true, backP = true, leftP = true, rightP = true; //used to define if the way can be corrected in the given direction 
+		
+		//when moving up
 		if(velocity.y > 0){
 			
 			//top left
-			collisionY = collides(getX(), getY()+getHeight()/2);
-			
-			if(!collisionY){
-				//top middle
-				collisionY = collides(getX()+getWidth()/2, getY()+getHeight()/2);
+			if(collides(x, y+height/2)){
+				right = true;
 			}
 			
-			if(!collisionY){
 			//top right
-				collisionY = collides(getX()+getWidth(), getY()+getHeight()/2);
+			if(collides(x+width, y+height/2)){
+				left = true;
 			}
+			
+			//top middle
+			if(collides(x+width/2, y+height/2)){
+				forwardP = false;
+				right = false;
+				left = false;
+			}
+			
 			
 		//when moving down
 		}else if(velocity.y < 0){
+			
 			//bottom left
-			collisionY = collides(getX(), getY());
-			
-			if(!collisionY){
-				//bottom middle
-				collisionY = collides(getX()+getWidth()/2, getY());
+			if(collides(x, y)){
+				right = true;
 			}
 			
-			if(!collisionY){
-				//bottom right
-				collisionY = collides(getX()+getWidth(), getY());
+			//bottom right
+			if(collides(x+width, y)){
+				left = true;
 			}
+
+			//bottom middle
+			if(collides(x+width/2, y)){
+				backP = false;
+				right = false;
+				left = false;
+			}
+			
 		}
 		
 		
 		//when moving right
 		if(velocity.x > 0){
-			//right top
-			collisionX = collides(getX()+getWidth(), getY()+getHeight()/2);
 			
 			//right bottom
-			if(!collisionX){
-				collisionX = collides(getX()+getWidth(), getY());
+			if(collides(x+width, y)){
+				forward = true;
 			}
+			
+			//right middle
+			if(collides(x+width, y+height/2)){
+				rightP = false;
+				back = true;
+				if(forward){
+					forward = false;
+					back = false;
+				}
+			}
+			
+			
 		
 		//when moving left
 		}else if(velocity.x < 0){
-			//left top
-			collisionX = collides(getX(), getY()+getHeight()/2);
 			
-			if(!collisionX){
-			//left bottom	
-				collisionX = collides(getX(), getY());
+			//left bottom
+			if(collides(x, y)){
+				forward = true;
 			}
+			
+			//left middle
+			if(collides(x, y+height/2)){
+				leftP = false;
+				back = true;
+				if(forward){
+					forward = false;
+					back = false;
+				}
+			}	
+			
 		}
 		
 		//if player walks out of the screen
 		//left
-		if((getX()) <= 0){
+		if((x) <= 0){
 			collisionX = true;
 		}
 		//right
-		else if((getX()+getWidth()) >= 5325.75f*2){
+		else if((x+width) >= 5325.75f*2){
 			collisionX = true;
 		}
 		//bottom
-		else if(getY() <= 0){
+		else if(y <= 0){
 			collisionY = true;
 		}
 		//top
-		else if((getY()+getHeight()) >= 5325.75f*2){
+		else if((y+height) >= 5325.75f*2){
 			collisionY = true;
 		}
 		
-		//reaction to collision
+		//reaction to collision if the player walks out of the screen
 		if(collisionY){
 			setY(oldY);
 			velocity.y = 0;
@@ -161,6 +201,30 @@ public class Player extends Sprite implements InputProcessor{
 		if(collisionX){
 			setX(oldX);
 			velocity.x = 0;
+		}
+		
+		//way correction
+		if(forward || back || right || left || !forwardP || !backP || !rightP || !leftP){
+			float newX = oldX, newY = oldY;
+		
+			if(forward && forwardP){
+				newY = oldY+0.5f;
+			}
+			
+			if(back && backP){
+				newY = oldY-0.5f;
+			}
+		
+			if(left && leftP){
+				newX = oldX-0.5f;
+			}
+		
+			if(right && rightP){
+				newX = oldX+0.5f;
+			}
+			
+			setX(newX);
+			setY(newY);
 		}
 		
 	}
