@@ -105,16 +105,18 @@ public class Collector {
 		int num = r.nextInt();
 		if(num%16 != 0) return;
 		
+		boolean collected = false;
+		
 		String name = (String)tile.getProperties().get("Resource");
 		
 		switch(name){
-			case "Apple": 		player.getCharacter().getBag().add(new Apple(), 1); break;
+			case "Apple": 		player.getCharacter().getBag().add(new Apple(), 1); collected = true; break;
 			
-			case "Potato": 		player.getCharacter().getBag().add(new Potato(), 1); break;
+			case "Potato": 		player.getCharacter().getBag().add(new Potato(), 1); collected = true; break;
 			
-			case "RedFlower": 	player.getCharacter().getBag().add(new RedFlower(), 1); break;
+			case "RedFlower": 	player.getCharacter().getBag().add(new RedFlower(), 1); collected = true; break;
 			
-			case "YellowFlower":player.getCharacter().getBag().add(new YellowFlower(), 1); break;
+			case "YellowFlower":player.getCharacter().getBag().add(new YellowFlower(), 1); collected = true; break;
 		}
 		
 		//if we want to collect wood, stone, diamond, ...
@@ -131,36 +133,46 @@ public class Collector {
 			case "GoldAxe": 	categoryAxe = 4; break;
 			case "DiamondAxe": 	categoryAxe = 5; break;
 		
-			case "a": return;
-			case "b": return;
-			case "c": return; //TODO pickaxe
-			case "d": return;
-			case "e": return;
+			case "WoodPickaxe":		categoryPick = 1; break;
+			case "StonePickaxe": 	categoryPick = 2; break;
+			case "IronPickaxe": 	categoryPick = 3; break;
+			case "GoldPickaxe": 	categoryPick = 4; break;
+			case "DiamondPickaxe": 	categoryPick = 5; break;
 			
 			default: categoryAxe = 0; categoryPick = 0;
 		}
 		
 		if(name.equals("Stone")){
 			player.getCharacter().getBag().add(new Stone(), 1);
+			collected = true;
 			
 			//reduce the probability
 			num = r.nextInt();
-			if(num%4 != 0) return;
+			if(num%4 != 0){
 			
-			if(categoryPick == 1){
-				player.getCharacter().getBag().add(new Stone(), 1);
-			}else if(categoryPick == 2){
-				player.getCharacter().getBag().add(new Iron(), 1);
-			}else if(categoryPick == 3){
-				player.getCharacter().getBag().add(new Gold(), 1);
-			}else if(categoryPick >= 4){
-				player.getCharacter().getBag().add(new Diamond(), 1);
+				if(categoryPick == 1){
+					player.getCharacter().getBag().add(new Stone(), 1);
+				}else if(categoryPick == 2){
+					player.getCharacter().getBag().add(new Iron(), 1);
+				}else if(categoryPick == 3){
+					player.getCharacter().getBag().add(new Gold(), 1);
+				}else if(categoryPick >= 4){
+					player.getCharacter().getBag().add(new Diamond(), 1);
+				}
+			
 			}
 		}else if(name.equals("Coal")){
 			player.getCharacter().getBag().add(new Coal(), categoryAxe+1);
+			collected = true;
 			
 		}else if(name.equals("Wood")){
 			player.getCharacter().getBag().add(new Wood(), categoryAxe+1);
+			collected = true;
+		}
+		
+		if(collected){
+			//TODO play sound
+			Settings.sound.play(Settings.volume);
 		}
 		
 	}	

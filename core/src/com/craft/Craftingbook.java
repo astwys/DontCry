@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 
-import com.resources.Craftable;
 import com.resources.Resource;
 import com.resources.craftable.DiamondPlate;
 import com.resources.craftable.Fire;
@@ -17,14 +16,19 @@ import com.resources.craftable.edible.Chips;
 import com.resources.craftable.potions.HealthPotionBig;
 import com.resources.craftable.potions.HealthPotionSmall;
 import com.resources.craftable.tools.DiamondAxe;
+import com.resources.craftable.tools.DiamondPickaxe;
 import com.resources.craftable.tools.DiamondSword;
 import com.resources.craftable.tools.GoldAxe;
+import com.resources.craftable.tools.GoldPickaxe;
 import com.resources.craftable.tools.GoldSword;
 import com.resources.craftable.tools.IronAxe;
+import com.resources.craftable.tools.IronPickaxe;
 import com.resources.craftable.tools.IronSword;
 import com.resources.craftable.tools.StoneAxe;
+import com.resources.craftable.tools.StonePickaxe;
 import com.resources.craftable.tools.StoneSword;
 import com.resources.craftable.tools.WoodAxe;
+import com.resources.craftable.tools.WoodPickaxe;
 import com.resources.craftable.tools.WoodSword;
 
 public class Craftingbook{
@@ -125,18 +129,23 @@ public class Craftingbook{
 		
 		//Initialising listOfCraftables
 		listOfCraftables.add(new DiamondAxe());
+		listOfCraftables.add(new DiamondPickaxe());
 		listOfCraftables.add(new DiamondPlate());
 		listOfCraftables.add(new DiamondSword());
 		listOfCraftables.add(new GoldAxe());
+		listOfCraftables.add(new GoldPickaxe());
 		listOfCraftables.add(new GoldPlate());
 		listOfCraftables.add(new GoldSword());
 		listOfCraftables.add(new IronAxe());
+		listOfCraftables.add(new IronPickaxe());
 		listOfCraftables.add(new IronPlate());
 		listOfCraftables.add(new IronSword());
 		listOfCraftables.add(new StoneAxe());
+		listOfCraftables.add(new StonePickaxe());
 		listOfCraftables.add(new StonePlate());
 		listOfCraftables.add(new StoneSword());
 		listOfCraftables.add(new WoodAxe());
+		listOfCraftables.add(new WoodPickaxe());
 		listOfCraftables.add(new WoodPlate());
 		listOfCraftables.add(new WoodStick());
 		listOfCraftables.add(new WoodSword());

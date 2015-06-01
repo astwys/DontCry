@@ -1,5 +1,7 @@
 package com.game;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
@@ -15,6 +17,9 @@ public class Settings {
 	public static Skin skin 				= new Skin(new FileHandle("../core/assets/skins/mainmenu/uiskin.json"));
 	
 	public static FileHandle music			= new FileHandle("../core/assets/music/01.mp3");
+	
+	public static Sound sound				= Gdx.audio.newSound(new FileHandle("../core/assets/sounds/collect.mp3"));
+	public static long soundID				= sound.play(0.0f);
 	
 	public static Texture halfheart			= new Texture("../core/assets/icons/hearts/halfheart.png");
 	public static Texture fullheart 		= new Texture("../core/assets/icons/hearts/fullheart.png");
