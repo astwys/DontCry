@@ -40,6 +40,10 @@ import com.slot.Bag;
 
 public class CraftingScreen implements Screen {
 
+	/**
+	 * inner class for handling the inputs in the crafting screen
+	 *
+	 */
 	public class CSInputProcessor implements InputProcessor{
 
 		@Override
@@ -102,7 +106,7 @@ public class CraftingScreen implements Screen {
 	//InputProcessor
 	private CSInputProcessor inputp;
 	
-	//Stage
+	//Stage with its components
 	private Stage stage;
 	private TextButton txtbtn_craft;
 	private TextButton txtbtn_cancle;
@@ -115,6 +119,9 @@ public class CraftingScreen implements Screen {
 		this.bag = player.getCharacter().getBag();
 	}
 	
+	/**
+	 * adds the resource we select to the slots for crafting bag
+	 */
 	public void addResourceToCraft(){
 		Resource r = bag.getSelectedItem();
 		if(r != null){
@@ -143,6 +150,9 @@ public class CraftingScreen implements Screen {
 		}
 	}
 	
+	/**
+	 * returns the resources back the the bag
+	 */
 	public void cancle(){
 		for(int i=0; i<craftTo.getResources().length; i++){
 			bag.add(craftTo.getResources()[i].getResource(), craftTo.getResources()[i].getAmount());
@@ -151,6 +161,9 @@ public class CraftingScreen implements Screen {
 		}
 	}
 	
+	/**
+	 * updates the bag and returns to the game
+	 */
 	public void returnToGame(){
 		if(!craftTo.isEmpty()){
 			for(int i=0; i<craftTo.getResources().length; i++){
@@ -165,6 +178,9 @@ public class CraftingScreen implements Screen {
 		this.dispose();
 	}
 	
+	/**
+	 * actually crafts the resources we selected for crafting and adds the new resource to the bag
+	 */
 	public void craftStuff(){
 		if(craftTo.isEmpty()) return;
 		//recognize and craft the item

@@ -9,6 +9,10 @@ import com.badlogic.gdx.utils.Disposable;
 
 public class DontCry extends Game implements Disposable {
 	
+	/**
+	 * the basis of the whole game, starts the processes
+	 */
+	
 	SpriteBatch batch;
 	BitmapFont font;
 	
@@ -20,11 +24,13 @@ public class DontCry extends Game implements Disposable {
 		batch = new SpriteBatch();
 		font = new BitmapFont();
 		
+		//starting the music
 		music = Gdx.audio.newMusic(Settings.music);
 		music.setVolume(Settings.volume);
 		music.setLooping(true);
 		music.play();
 		
+		//start the game with the opening screen
 		this.setScreen(new OpeningScreen(this));
 	}
 
@@ -39,6 +45,7 @@ public class DontCry extends Game implements Disposable {
 		music.dispose();
 	}
 	
+	//used if we cahnge the volume in the option screen
 	public static void setVolume(){
 		music.setVolume(Settings.volume);
 	}

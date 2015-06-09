@@ -16,12 +16,11 @@ import com.slot.Bag;
  */
 public class Character {
 	private String name;
-
-	/**
-	 * default starting values
-	 */
+	
+		// default starting values
 	private int hunger=100;
 	private int health=100;
+		// only makes sense as soon as enemies/bots are implemented
 	private int strength=3;
 
 	private Bag bag;
@@ -29,7 +28,10 @@ public class Character {
 	
 	
 //---------------------------------------------------Constructor---------------------------------------------------
-
+	/**
+	 * set the desired name of the character and create new Bag & Craftingbook objects
+	 * @param name
+	 */
 	public Character(String name) {
 		setName(name);
 
@@ -47,7 +49,7 @@ public class Character {
 	
 	/**
 	 * default reduction of hunger by 1
-	 * @return 
+	 * @return hunger
 	 */
 	public int decreaseHungerDef() {
 		setHunger(getHunger() - 1);
@@ -57,7 +59,7 @@ public class Character {
 	/**
 	 * reduction of hunger by a certain number
 	 * @param dec (decrement)
-	 * @return
+	 * @return hunger
 	 */
 	public int decreaseHunger (int dec) {
 		setHunger(getHunger() - dec);
@@ -67,11 +69,11 @@ public class Character {
 	/**
 	 * increase hunger by a certain number
 	 * @param inc (increment)
-	 * @return
+	 * @return hunger
 	 */
 	public int increaseHunger (int inc) {
 		setHunger(getHunger() + inc);
-		return getHealth();
+		return getHunger();
 	}
 	
 	
@@ -79,7 +81,7 @@ public class Character {
 	
 	/**
 	 * default reduction of health by 1 of hunger is at 0
-	 * @return
+	 * @return health
 	 */
 	public int decreaseHealthDef() {
 		setHealth(getHealth() - 1);
@@ -89,7 +91,7 @@ public class Character {
 	/**
 	 * reduction of health by a certain number
 	 * @param dec (decrement)
-	 * @return
+	 * @return health
 	 */
 	public int decreaseHealth (int dec) {
 		setHealth(getHealth() - dec);
@@ -99,7 +101,7 @@ public class Character {
 	/**
 	 * increase health by a certain number
 	 * @param inc (increment)
-	 * @return
+	 * @return health
 	 */
 	public int increaseHealth (int inc) {
 		setHealth(getHealth() + inc);
@@ -118,7 +120,7 @@ public class Character {
 
 	/**
 	 * the character is only able to run if his hunger is >= 30
-	 * @return
+	 * @return if the character is able to run
 	 */
 	public boolean canRun() {
 		return (getHunger() >= 30);
@@ -136,27 +138,20 @@ public class Character {
 		if(remainder > 0) return false;
 		return true;
 	}
-
-	/**
-	 * set the strength of the character according to the resource that is selected
-	 */
-	public void setStrength() {
-		// selected slot method needed
-	}
 	
 	
 //---------------------------------------------------Getters/Setters---------------------------------------------------
 	
 //-------------------------------Name-------------------------------
 	/**
-	 * @return the name
+	 * @return the name of the character
 	 */
 	public String getName() {
 		return name;
 	}
 	
 	/**
-	 * @param name the name to set
+	 * @param set the name of the character
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -173,7 +168,8 @@ public class Character {
 	}
 	
 	/**
-	 * @param hunger the hunger to set
+	 * has to be between 100 (no hunger) and 0 (full hunger --> health gets decreased)
+	 * @param set the hunger of the character
 	 */
 	public void setHunger(int hunger) {
 		if (hunger>=0 && hunger <= 100) {
@@ -196,7 +192,7 @@ public class Character {
 	
 	/**
 	 * has to be between 100 (full health) and 1 (at 0 you die)
-	 * @param health the health to set
+	 * @param set the health of the character
 	 */
 	public void setHealth(int health) {
 		if (health >= 0 && health <= 100) {
@@ -212,20 +208,36 @@ public class Character {
 
 //-------------------------------Strength-------------------------------
 
+	/**
+	 * get the strength of the character
+	 * @return strength
+	 */
 	public int getStrength() {
 		return strength;
 	}
 
+	/**
+	 * set the strength of the character
+	 * @param strength
+	 */
 	public void setStrength(int strength) {
 		this.strength = strength;
 	}
 	
 //---------------------------- Bag ------------------------------------
-
+	/**
+	 * 
+	 * @return this.bag
+	 */
 	public Bag getBag(){
 		return this.bag;
 	}
 
+	/**
+	 * 
+	 * @param bag
+	 * @return boolean
+	 */
 	public boolean setBag(Bag bag){
 		if(bag != null){
 			return false;
@@ -236,12 +248,21 @@ public class Character {
 	}
 	
 //------------------------- CraftingBook ----------------------------
+	/**
+	 * 
+	 * @param from
+	 * @return craftable resource
+	 */
 	public String craftsInto(ArrayList<String> from){
 		ReturnForCraft rfc = craftingbook.craft(from);
 		if(rfc != null) return rfc.getResource().toString();
 		else return "Nothing :(";
 	}
 	
+	/**
+	 * 
+	 * @return this.craftingbook
+	 */
 	public Craftingbook getCraftingBook(){
 		return this.craftingbook;
 	}

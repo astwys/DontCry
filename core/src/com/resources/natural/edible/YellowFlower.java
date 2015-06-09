@@ -9,6 +9,8 @@ import java.util.ArrayList;
  * Created by michael on 3/30/15.
  *
  * yellow flowers should be extremly rare
+ * 
+ * also used to craft health potions
  */
 public class YellowFlower extends Resource implements Edible {
 
