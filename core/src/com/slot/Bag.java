@@ -20,7 +20,7 @@ import com.resources.natural.edible.YellowFlower;
 
 public class Bag extends Actor {
 
-	private com.character.Character player; //the player the bag referes to
+	private com.character.Character player; //the player the bag refers to
 	private Slot[] resources;
 	private int selectedIndex = 0;
 	
@@ -28,6 +28,10 @@ public class Bag extends Actor {
 	private Slot itemTaken;
 	private int indexTaken;
 	
+	/**
+	 * 
+	 * @param character
+	 */
 	public Bag(com.character.Character character) {
 		super();
 		resources = new Slot[12];
@@ -81,6 +85,16 @@ public class Bag extends Actor {
 		return plus;
 	}
 	
+	/**
+	 * places the item if you want to change the place in the slot
+	 * 		
+	 * 		if you change with the same slot, nothing will be changed
+	 * 
+	 * 		if the selected spot is empty, the empty one gets replaced with the filled one and the filled one will be empty
+	 * 
+	 * 		if the selected spot is not empty, the two slots are replaced by each other
+	 * 		
+	 */
 	public void placeItem(){
 		if(itemTaken != null && itemTaken.getResource() != null && itemTaken.getAmount() > 0){
 			
@@ -184,7 +198,7 @@ public class Bag extends Actor {
 	/**
 	 * deletes certain type of resources and
 	 * returns the amount which couldn't be deleted
-	 * 		(5 wood and you want to delete 6, it return 1)
+	 * 		(5 wood and you want to delete 6, it returns 1)
 	 * 
 	 *
 	 * checks if
@@ -245,6 +259,9 @@ public class Bag extends Actor {
 		}
 	}
 	
+	/**
+	 * searches for the first empty space in the SLOT
+	 */
 	public boolean isEmpty(){
 		for(int i=0; i<resources.length; i++){
 			if(!resources[i].isEmpty()){
@@ -254,6 +271,9 @@ public class Bag extends Actor {
 		return true;
 	}
 	
+	/**
+	 * responsible for changing the place [index] in the BAG
+	 */
 	public void setSelected(int plus){
 		resources[selectedIndex].setColor(1, 1, 1, 1);
 		int index = selectedIndex + plus;

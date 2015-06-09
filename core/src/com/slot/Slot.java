@@ -91,7 +91,7 @@ public class Slot extends Actor {
 	}
 
 	/**
-	 * sets the amount of the resource in the SLOT
+	 * sets the amount of the resource in the SLOT precisely
 	 * @param amount
 	 */
 	public int setAmountPrecise(int amount) {
@@ -110,6 +110,9 @@ public class Slot extends Actor {
 		return 0;
 	}
 	
+	/**
+	 * sets the amount of the resource in the SLOT
+	 */
 	public void setAmount(int amount){
 		if(amount <= 0){
 			resource = null;
@@ -121,10 +124,18 @@ public class Slot extends Actor {
 		return;
 	}
 	
+	/**
+	 * 
+	 * @return true if selected, false if not
+	 */
 	public boolean isSelected(){
 		return this.selected;
 	}
 	
+	/**
+	 * 
+	 * @param b sets if it is selected
+	 */
 	public void setSelected(boolean b){
 		this.selected = b;
 	}
@@ -159,6 +170,10 @@ public class Slot extends Actor {
 		label.setText(r.getName()+" x"+getAmount());
 	}
 	
+	/**
+	 * 
+	 * @returns the text-label
+	 */
 	public Label getLabel(){
 		return this.label;
 	}
@@ -174,10 +189,17 @@ public class Slot extends Actor {
 		
 	}
 	
+	/**
+	 * 
+	 * @returns true if it is taken, false if not
+	 */
 	public boolean isTaken(){
 		return this.taken;
 	}
 
+	/**
+	 * toString
+	 */
 	@Override
 	public String toString() {
 		return "Slot [resource=" + this.resource + ", amount=" + this.amount + "size=" + Slot.size +"]";
