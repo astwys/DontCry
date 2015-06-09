@@ -19,26 +19,37 @@ public abstract class Resource implements Craftable{
 	private String name;
 	private int amount;
 
+	/**
+	 * 
+	 * @param name
+	 * @param amount
+	 */
 	public Resource(String name, int amount) {
 		this.name=name;
 		this.amount=amount;
 		resourcesNeeded=new ArrayList<String>();
 	}
 	
-	/*
-	 * get name of current resource
+	/**
+	 * 
+	 * @return name of current resource
 	 */
 	public String getName() {
 		return this.name;
 	}
 	
-	/*
-	 * amount of items of the resource you are currently crafting
+	/**
+	 * 
+	 * @return amount of items of the resource you are currently crafting
 	 */
 	public int getAmount() {
 		return this.amount;
 	}
 	
+	/**
+	 * 
+	 * @return an Arraylist with all resources needed to craft the new resource
+	 */
 	public ArrayList<String> getResourcesNeeded(){
 		return resourcesNeeded;
 	}

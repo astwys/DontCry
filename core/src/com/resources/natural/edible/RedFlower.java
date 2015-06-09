@@ -9,6 +9,8 @@ import java.util.ArrayList;
  * Created by michael on 3/30/15.
  *
  * flowers should be relatively rare
+ * 
+ * also used to craft health potions
  */
 public class RedFlower extends Resource implements Edible {
 

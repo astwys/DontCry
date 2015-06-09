@@ -6,8 +6,8 @@ package com.resources;
 import java.util.ArrayList;
 
 /**
+ * used for resources that are craftable
  * @author michael
- *
  */
 public interface Craftable {
 	/*
