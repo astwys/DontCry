@@ -17,8 +17,12 @@ import com.resources.natural.minerals.Wood;
 
 public class Collector {
 	
+	/**
+	 * responsible for collecting the items
+	 */
+	
 	private Player player;
-	private TiledMapTileLayer blockedLayer;
+	private TiledMapTileLayer blockedLayer; //all resources we can collect are in the blocking layer
 	
 	//defines if the end of the game was found
 	public boolean finishFound = false;
@@ -26,7 +30,7 @@ public class Collector {
 	//important variables regarding the map for collision detection
 	private float tileWidth = 20.8f, tileHeight = 20.8f;
 	
-	private Random r; //togenerate the random number
+	private Random r; //to generate the random number
 	
 	public Collector(Player p, TiledMapTileLayer blocking){
 		player = p;
@@ -34,6 +38,10 @@ public class Collector {
 		blockedLayer = blocking;
 	}
 	
+	/**
+	 * called when we press space
+	 * @return if we found the finish
+	 */
 	public boolean collect(){ //returns true if the end of the game was reached
 		
 		//the position of the player
@@ -43,7 +51,7 @@ public class Collector {
 		boolean collect = false;
 		
 		/**
-		 * check in the blocked layer
+		 * check in the blocked layer all around the player
 		 */
 		//top left
 		collect = checkForKey(blockedLayer, x-2, y+player.getHeight());
@@ -78,6 +86,12 @@ public class Collector {
 		
 	}
 	
+	/**
+	 * @param layer
+	 * @param x
+	 * @param y
+	 * @return if we found the end or a tile with a resource
+	 */
 	private boolean checkForKey(TiledMapTileLayer layer, float x, float y){
 		try{
 			
@@ -100,6 +114,10 @@ public class Collector {
 		}
 	}
 	
+	/**
+	 * if we found a tile with a resource we need to find out which resource and how many we get from that kind
+	 * @param tile
+	 */
 	private void decideResource(TiledMapTile tile){
 		
 		int num = r.nextInt();
@@ -110,21 +128,22 @@ public class Collector {
 		String name = (String)tile.getProperties().get("Resource");
 		
 		switch(name){
-			case "Apple": 		player.getCharacter().getBag().add(new Apple(), 1); collected = true; break;
+			case "Apple": 		player.getCharacter().getBag().add(new Apple(), 1); collected = true; return;
 			
-			case "Potato": 		player.getCharacter().getBag().add(new Potato(), 1); collected = true; break;
+			case "Potato": 		player.getCharacter().getBag().add(new Potato(), 1); collected = true; return;
 			
-			case "RedFlower": 	player.getCharacter().getBag().add(new RedFlower(), 1); collected = true; break;
+			case "RedFlower": 	player.getCharacter().getBag().add(new RedFlower(), 1); collected = true; return;
 			
-			case "YellowFlower":player.getCharacter().getBag().add(new YellowFlower(), 1); collected = true; break;
+			case "YellowFlower":player.getCharacter().getBag().add(new YellowFlower(), 1); collected = true; return;
 		}
 		
 		//if we want to collect wood, stone, diamond, ...
 		String inUse = player.getCharacter().getBag().getSelectedItem().getName();
 		
-		int categoryAxe = 0; //for geting wood and coal
+		int categoryAxe = 0; //for getting wood and coal
 		int categoryPick = 0; //for getting stone, iron, ...
 		
+		//find out the category of the tool we have equipped
 		switch(inUse){
 		
 			case "WoodAxe": 	categoryAxe = 1; break;
@@ -171,7 +190,7 @@ public class Collector {
 		}
 		
 		if(collected){
-			//TODO play sound
+			//play sound so we know we found something
 			Settings.sound.play(Settings.volume);
 		}
 		

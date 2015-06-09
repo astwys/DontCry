@@ -21,7 +21,7 @@ public class Player extends Sprite implements InputProcessor{
 	private DontCry game;
 	private PlayScreen screen;
 	
-	//character reference
+	//character reference for managing bag, health, ...
 	private Character character;
 	
 	//the collector to compute the items we collect
@@ -45,7 +45,7 @@ public class Player extends Sprite implements InputProcessor{
 	//important variables regarding the map for collision detection
 	private float tileWidth = 20.8f, tileHeight = 20.8f;
 	
-	//the array of different textures
+	//the array of different textures of the player
 	private Texture[] skins = {Settings.playerBack, Settings.playerFront, Settings.playerRight, Settings.playerLeft};
 	
 	
@@ -61,6 +61,10 @@ public class Player extends Sprite implements InputProcessor{
 		character.addResource(new WoodAxe(), 1);
 	}
 	
+	/**
+	 * called every frame
+	 * @param spriteBatch
+	 */
 	public void draw(SpriteBatch spriteBatch){
 		update(Gdx.graphics.getDeltaTime());
 		super.draw(spriteBatch);
@@ -70,14 +74,18 @@ public class Player extends Sprite implements InputProcessor{
 // -------------------------------------------------- graphical stuff (collision detection and stuff) -----------------------------------------------------------	
 	public void update(float deltaTime){
 		
-		//collision detection
+		/**
+		 * collision detection
+		 * in whatever direction we move the tiles in front of us are checked if the are blocked or not
+		 * in the second layer (blocking) we check wether there is a tile that we collide with or not
+		 */
 		//old positions
 		float oldX = getX(), oldY = getY();
 		
-		//boolean collision
+		//boolean collision to tell if we collide with the map borders
 		boolean collisionX = false, collisionY = false;
 		
-		//moving on both axis
+		//moving on both axis set the positions
 		setY(getY()+velocity.y*deltaTime);
 		setX(getX()+velocity.x*deltaTime);
 		
@@ -203,7 +211,7 @@ public class Player extends Sprite implements InputProcessor{
 			velocity.x = 0;
 		}
 		
-		//way correction
+		//way correction if we run into the corner of an object
 		if(forward || back || right || left || !forwardP || !backP || !rightP || !leftP){
 			float newX = oldX, newY = oldY;
 		
@@ -229,6 +237,12 @@ public class Player extends Sprite implements InputProcessor{
 		
 	}
 	
+	/**
+	 * check if a tile is blocking or not
+	 * @param x
+	 * @param y
+	 * @return
+	 */
 	private boolean collides(float x, float y){
 		Cell cell = collisionLayer.getCell((int)(x/tileWidth),(int)(y/tileHeight));
 		
@@ -250,6 +264,9 @@ public class Player extends Sprite implements InputProcessor{
 
 	
 	//---------------------------------------- for InputProcessor -----------------------------------------
+	/*
+	 * manages the input the user makes 
+	 */
 	@Override
 	public boolean keyDown(int keycode) {
 		
@@ -280,9 +297,9 @@ public class Player extends Sprite implements InputProcessor{
 		}
 		//running
 		if(keycode == Keys.SHIFT_LEFT || keycode == Keys.SHIFT_RIGHT){
-			if (character.canRun()){
+			if (character.canRun()/*we can only run if we have more than 30 hunger*/){
 				speed = runSpeed;
-				screen.setHungerIndicator(4.0f);
+				screen.setHungerIndicator(4.0f); // if we run we lose hunger faster
 			}
 		}
 		//dump stuff
@@ -318,6 +335,9 @@ public class Player extends Sprite implements InputProcessor{
 		return true;
 	}
 
+	/**
+	 * action for collecting or finding the finish
+	 */
 	@Override
 	public boolean keyTyped(char character) {
 		
@@ -329,6 +349,9 @@ public class Player extends Sprite implements InputProcessor{
 		return true;
 	}
 
+	/**
+	 *action for eating/drinking or moving items in the bag
+	 */
 	@Override
 	public boolean touchDown(int screenX, int screenY, int pointer, int button) {
 		
@@ -365,6 +388,9 @@ public class Player extends Sprite implements InputProcessor{
 		return false;
 	}
 
+	/**
+	 * selecting the different items if scrolled
+	 */
 	@Override
 	public boolean scrolled(int amount) {
 		
@@ -375,10 +401,16 @@ public class Player extends Sprite implements InputProcessor{
 	
 	//--------------------------------------- interacting methods for bag -----------------------------------------
 	
+	/**
+	 *consume an item 
+	 */
 	private void useItem(){
 		character.getBag().useItem();
 	}
 	
+	/**
+	 * enters the crafting screen
+	 */
 	public void craftingMode(){
 		game.setScreen(new CraftingScreen(this, screen, game));
 	}

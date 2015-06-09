@@ -59,6 +59,7 @@ public class PlayScreen implements Screen {
 		txtbtn_inventory.setPosition(10, 10);
 		txtbtn_inventory.addListener(new ClickListener(){
 
+			//opens the craftin screen
 			public void clicked(InputEvent input, float x, float y){
 				player.craftingMode();
 			}
@@ -80,12 +81,16 @@ public class PlayScreen implements Screen {
 		stage.addActor(hungerStatus);
 		setHungerIndicator(9.0f);
 		
-		//assign the bag to the stage
+		//assign bag
 		player.getCharacter().getBag().setPosition(730, 550);
 		stage.addActor(player.getCharacter().getBag());
 
 	}
 	
+	/**
+	 * if the user exits the crafting screen the resources in thebag are deleted and added again to save the crafted resources
+	 * @param bag
+	 */
 	public void reinitialiseBag(Bag bag){
 		
 		bag.setPosition(730, 550);
@@ -100,6 +105,10 @@ public class PlayScreen implements Screen {
 		stage.addActor(bag);
 	}
 	
+	
+	/**
+	 * is called when the screen shows up
+	 */
 	@Override
 	public void show() {
 		camera.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
@@ -114,6 +123,9 @@ public class PlayScreen implements Screen {
 		
 	}
 
+	/**
+	 * called every frame, clears the whole screen and renders everything new
+	 */
 	@Override
 	public void render(float delta) {
 		Gdx.gl.glClearColor(0, 1, 0, 1);
@@ -143,6 +155,9 @@ public class PlayScreen implements Screen {
 		
 	}
 	
+	/**
+	 * updates the camera and the viewport, also regulates that the camera does not move out of the map
+	 */
 	private void updateCamera(){
 		// scroll so that the player is in the center
 		camera.position.x = (int)(player.getX()+player.getWidth()/2);
@@ -165,6 +180,9 @@ public class PlayScreen implements Screen {
 		camera.update();
 	}
 
+	/**
+	 * called if the window is resized, not used yet
+	 */
 	@Override
 	public void resize(int width, int height) {
 		camera.viewportHeight = height;
@@ -189,15 +207,26 @@ public class PlayScreen implements Screen {
 		stage.dispose();
 	}
 	
+	/**
+	 * sets how fast we get hungry
+	 * @param hi
+	 */
 	public void setHungerIndicator(float hi){
 		this.hungerIndicator = hi;
 	}
 	
+	/**
+	 * @return the initial player
+	 */
 	public Player getPLayer(){
 		return this.player;
 	}
 	
-	public void endGame(boolean managed){ //sets the screen to the final one --> true: found the end, false: died
+	/**
+	 * sets the screen to the final one --> true: found the end, false: died
+	 * @param managed
+	 */
+	public void endGame(boolean managed){
 		this.dispose();
 		if(managed) game.setScreen(new FinalScreen(game, mainmenu, "CONGRATULATIONS"));
 		else game.setScreen(new FinalScreen(game, mainmenu, "GAME OVER"));
