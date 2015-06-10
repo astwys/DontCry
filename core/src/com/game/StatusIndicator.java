@@ -1,6 +1,5 @@
 package com.game;
 
-import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
@@ -19,7 +18,7 @@ public class StatusIndicator extends Actor {
 	private int currentAmount;
 	private int maxAmount;
 	
-	//images
+	//images of full and half indicators
 	private Image[] full = new Image[10];
 	private Image half;
 	
@@ -30,6 +29,7 @@ public class StatusIndicator extends Actor {
 		this.currentAmount = currentAmount;
 		this.maxAmount = maxAmount;
 		
+		//initialise the texture
 		Texture image = fullImage;
 		int x = 10;
 		int y = 530;
@@ -44,6 +44,9 @@ public class StatusIndicator extends Actor {
 		
 	}
 	
+	/**
+	 * update the indicators
+	 */
 	public void act(float delta){
 		if(hunger) currentAmount = player.getCharacter().getHunger();
 		else currentAmount = player.getCharacter().getHealth();
@@ -62,6 +65,9 @@ public class StatusIndicator extends Actor {
 
 	}
 	
+	/**
+	 * draw the indicators according to the current amount
+	 */
 	public void draw(Batch batch, float parentAlpha){
 		if(hunger) currentAmount = player.getCharacter().getHunger();
 		else currentAmount = player.getCharacter().getHealth();
@@ -94,6 +100,11 @@ public class StatusIndicator extends Actor {
 	public void setColor(float r, float g, float b, float a){
 		indicator.setColor(r, g, b, a);
 	}
+	
+	/**
+	 * following methods are used to modify the indicators amount predefined, by a specific amount or totally new 
+	 * @return
+	 */
 	
 	public int decreaseByOne(){
 		indicator.setText((currentAmount-1)+"/"+maxAmount);

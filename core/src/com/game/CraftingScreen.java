@@ -200,15 +200,6 @@ public class CraftingScreen implements Screen {
 		int amount = rfc.getAmount();
 		bag.add(toAdd, amount);
 		
-		//delete stuff out of the craftTo & craftFrom array (ist noch die assoziale methode)
-//		ArrayList<String> resourcesUsed = toAdd.getResourcesNeeded();
-//		for(int i=0; i<craftFrom.size(); i++){
-//			for(int j=0; j<resourcesUsed.size(); i++){
-//				if(resourcesUsed.get(j).equals(craftFrom.get(i))){
-//					craftFrom.
-//				}
-//			}
-//		}
 		craftTo.clearBackpack();
 		
 	}
@@ -219,6 +210,8 @@ public class CraftingScreen implements Screen {
 	public void show() {
 		stage = new Stage();
 		inputp = new CSInputProcessor();
+		
+		//initalise the buttons of the menu
 		
 		txtbtn_craft = new TextButton("Craft", Settings.skin);
 		txtbtn_craft.setPosition(550, 310);
@@ -273,6 +266,7 @@ public class CraftingScreen implements Screen {
 		stage.addActor(bag);
 		stage.addActor(craftTo);
 		
+		//multiple inputs
 		InputMultiplexer inmulti = new InputMultiplexer();
 		inmulti.addProcessor(stage);
 		inmulti.addProcessor(inputp);

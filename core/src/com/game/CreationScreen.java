@@ -27,7 +27,7 @@ public class CreationScreen implements Screen {
 	private TextButton txtbtn_start;
 	private CheckBox cb_male;
 	private CheckBox cb_female;
-	private ButtonGroup<CheckBox> btng_male;
+	private ButtonGroup<CheckBox> btng_male; //used so that you can only check wether male or female (not both)
 
 	public CreationScreen(final DontCry dontcry, final MainMenuScreen screen){
 		game = dontcry;
@@ -35,6 +35,9 @@ public class CreationScreen implements Screen {
 
 		stage = new Stage();
 
+		/**
+		 * initialising the buttons with their listeners
+		 */
 		tf_name = new TextField("", Settings.skin);
 		tf_name.setPosition(360, 250);
 		tf_name.setMaxLength(15);
@@ -148,7 +151,7 @@ public class CreationScreen implements Screen {
 		stage.dispose();
 	}
 
-	private void changePreview(){ //true -> change to male, false -> change to female
+	private void changePreview(){ //true -> change to male, false -> change to female | change the texture that is previewed
 		preview.dispose();
 		preview = Settings.playerFront;
 	}

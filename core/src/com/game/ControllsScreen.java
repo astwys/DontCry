@@ -12,6 +12,10 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
 public class ControllsScreen implements Screen {
 
+	/**
+	 * just a damn big class containing the different labels to tell the user what the controls are
+	 */
+	
 	private DontCry game;
 	private OptionScreen optionScreen;
 	

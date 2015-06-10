@@ -19,6 +19,7 @@ public class FinalScreen implements Screen {
 	private TextButton txtbtn_mainmenu;
 	private TextButton txtbtn_restart;
 	
+	//for changing the background colour on the screen
 	private boolean up = true;
 	private float multiplicator = 100.f;
 	
@@ -75,7 +76,7 @@ public class FinalScreen implements Screen {
 
 	@Override
 	public void render(float delta) {
-		Gdx.gl.glClearColor(1-delta*multiplicator, 0+delta*multiplicator, 0+delta*multiplicator, 1);
+		Gdx.gl.glClearColor(1-delta*multiplicator, 0+delta*multiplicator, 0+delta*multiplicator, 1); //different background colour
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		
 		stage.act();

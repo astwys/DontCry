@@ -34,7 +34,7 @@ import com.resources.craftable.tools.WoodSword;
 public class Craftingbook{
 
 	
-	//special class for returning the craft (out of some resources) and the amount that is crafted
+	//used to return the resource that can be crafted in addition to the amount you get
 	public class ReturnForCraft{
 		int amount;
 		Resource craftable;
@@ -60,7 +60,7 @@ public class Craftingbook{
 	
 	
 	//-------------------------------------------------------------------------- fields -----------------------------------------------------------
-	
+	//the map used to search what resource can be crafted
 	public HashMap<Resource, ArrayList<String>> craftMap;
 	
 	//-------------------------------------------------------------------------- methods ----------------------------------------------------------
@@ -69,7 +69,11 @@ public class Craftingbook{
 		initialiseCraftMap();
 	}
 	
-	//checking for a possible crafting
+	/**
+	 * checking for a possible craftings
+	 * @param resources
+	 * @return the Resource that can be crafted
+	 */
 	private Resource craftsInto(ArrayList<String> resources){
 		
 		Set<Resource> keySet = craftMap.keySet();
@@ -111,6 +115,11 @@ public class Craftingbook{
 		
 	}
 	
+	/**
+	 * calls craftsInto and returns the data craftsInto returns as an ReturnForCraftObject
+	 * @param resources
+	 * @return an object of ReturnForCraft
+	 */
 	public ReturnForCraft craft(ArrayList<String> resources){
 		Resource craft = craftsInto(resources);
 		if(craft == null) return null;
@@ -121,6 +130,9 @@ public class Craftingbook{
 		return this.craftMap;
 	}
 	
+	/**
+	 * used to add the resources with their recipes so we can use it for identifying the resource that can be crafted out of the given resources
+	 */
 	private void initialiseCraftMap(){
 		
 		craftMap = new HashMap<Resource, ArrayList<String>>();

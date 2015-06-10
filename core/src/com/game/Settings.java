@@ -8,6 +8,10 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
 public class Settings {
 	
+	/**
+	 * contains the main data so it does not have to be loaded during the game
+	 */
+	
 	private static DontCry game;
 	
 	public static Texture logo				= new Texture("../core/assets/openingscreen/badlogic.jpg");
@@ -42,6 +46,10 @@ public class Settings {
 		game.setVolume();
 	}
 	
+	/**
+	 * used to change the textures according to the sex of our player
+	 * @param maleFemale
+	 */
 	public static void setMaleFemale(String maleFemale){
 		Settings.maleFemale = maleFemale;
 		

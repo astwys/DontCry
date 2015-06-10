@@ -27,6 +27,7 @@ public class OptionScreen implements Screen {
 		stage = new Stage();
 		thisScreen = this;
 		
+		//initialise the components of the stage
 		l_volume = new Label("Volume: ", Settings.skin);
 		l_volume.setPosition(290, 370);
 		
