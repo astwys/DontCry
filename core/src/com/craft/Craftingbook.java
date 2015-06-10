@@ -71,7 +71,7 @@ public class Craftingbook{
 	
 	/**
 	 * checking for a possible craftings
-	 * @param resources
+	 * @param resources (we want to craft into smth)
 	 * @return the Resource that can be crafted
 	 */
 	private Resource craftsInto(ArrayList<String> resources){
@@ -79,24 +79,28 @@ public class Craftingbook{
 		Set<Resource> keySet = craftMap.keySet();
 		Object[] keys = keySet.toArray();
 		
-		// go through possible crafts
+		// go through possible resources that we can craft (the amount of keys of the craftMap)
 		for(int i=0; i<keys.length; i++){
 			Resource crafting = (Resource) keys[i];
 			ArrayList<String> comparedWithArr = crafting.neededToCraft();
+			int checkIfNull = comparedWithArr.size(); //checks if we really have ALL the resources needed
 			
-			Object[] required = resources.toArray();
-			int checkIfNull = comparedWithArr.size();
+			//the resources we get as a parameter as an Array
+			Object[] given = resources.toArray();
 			
-			// go through the resources needed for crafting
+			/**
+			 * as we got the resources that we need to craft the resource we are currently checking on (i-for loop) we now
+			 * go through the array of resources needed and check if we have exactly those resources as a parameter
+			 */
 			for(int j=0; j<comparedWithArr.size(); j++){
-				String compareWithStr = comparedWithArr.get(j);
+				String compareWithStr = comparedWithArr.get(j); //we compare the strings so we need the name of the resource
 				
 				// go through the parameter array to check which resources match and set them to null
-				for(int c=0; c<required.length; c++){
-					String compareToRes = (String)required[c];
-					if(required[c]!=null){
+				for(int c=0; c<given.length; c++){
+					String compareToRes = (String)given[c];
+					if(given[c]!=null){
 						if(compareToRes.equalsIgnoreCase(compareWithStr)){
-							required[c] = null;
+							given[c] = null;
 							checkIfNull--;
 							break;
 						}
