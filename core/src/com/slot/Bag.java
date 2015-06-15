@@ -87,12 +87,10 @@ public class Bag extends Actor {
 	
 	/**
 	 * places the item if you want to change the place in the slot
-	 * 		
-	 * 		if you change with the same slot, nothing will be changed
 	 * 
 	 * 		if the selected spot is empty, the empty one gets replaced with the filled one and the filled one will be empty
 	 * 
-	 * 		if the selected spot is not empty, the two slots are replaced by each other
+	 * 		if the selected spot is not empty, the two slots are put together
 	 * 		
 	 */
 	public void placeItem(){
@@ -172,6 +170,12 @@ public class Bag extends Actor {
 		resources[selectedIndex].setAmount(resources[selectedIndex].getAmount()-1);
 	}
 	
+	/**
+	 * restores hunger, depending on what you eat
+	 * 
+	 * @param name
+	 * @return the new health
+	 */
 	private int getSelectedItemValue(String name){
 		switch(name){
 			//for hunger
@@ -289,18 +293,34 @@ public class Bag extends Actor {
 		resources[selectedIndex].setColor(0.32f, 0.11f, 0.11f, 1);
 	}
 	
+	/**
+	 * 
+	 * @return type of resource of selected index
+	 */
 	public Resource getSelectedItem(){
 		return resources[selectedIndex].getResource();
 	}
 	
+	/**
+	 * 
+	 * @return selected index
+	 */
 	public int getSelectedIndex(){
 		return this.selectedIndex;
 	}
 
+	/**
+	 * 
+	 * @return the slot array
+	 */
 	public Slot[] getResources() {
 		return resources;
 	}
 	
+	/**
+	 * 
+	 * @param sets size of resources array
+	 */
 	public void setSize(int size){
 		Slot[] copy = resources;
 		clearBackpack();
@@ -312,6 +332,9 @@ public class Bag extends Actor {
 		}
 	}
 	
+	/**
+	 * toString of resources array
+	 */
 	public String toString(){
 		StringBuilder strb = new StringBuilder();
 		for(int i=0; i<resources.length; i++){
